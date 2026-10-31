@@ -1069,3 +1069,12 @@ h1 { max-width: 1040px; line-height: .95; }
 .category-card, .lot-card { border-color: var(--line); }
 ::selection { background: var(--arthub-lime); color: #08268c; }
 @media (max-width: 768px) { .hero-intro::after { width: 170px; height: 170px; right: -60px; bottom: -90px; } .brand-star { width: 22px; height: 22px; } }
+
+/* Approved header: royal blue, white wordmark and original ArtHub star */
+.topbar { background: #173ED8; color: #ffffff; border-bottom-color: transparent; }
+.topbar .brand, .topbar .nav a { color: #ffffff; }
+.topbar .brand { font-family: "Manrope", system-ui, sans-serif; font-weight: 800; letter-spacing: -.055em; }
+.brand-star-image { display: inline-block; width: 38px; height: 38px; object-fit: contain; margin-left: 10px; }
+.topbar .button { background: #ffffff; color: #173ED8; }
+.topbar .button:hover { background: #CFE103; color: #173ED8; }
+@media(max-width:768px) { .brand-star-image { width: 31px; height: 31px; } }
