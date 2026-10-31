@@ -25,6 +25,7 @@
   let lang='ru';
   function render() {
     document.documentElement.lang=lang;
+    document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[lang];});
     document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
     for (const n of allTextNodes(document.body)) {
       if(!n.parentElement || ['SCRIPT','STYLE'].includes(n.parentElement.tagName)) continue;
