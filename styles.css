@@ -1341,3 +1341,19 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
   background:transparent!important;
   overflow:hidden!important;
 }
+
+/* The poster is the rounded shape, not a colored rectangular backdrop. */
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:transparent!important;padding:0!important;
+ overflow:visible!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image > img{
+ display:block!important;flex:0 1 auto!important;
+ width:auto!important;height:auto!important;
+ max-width:100%!important;max-height:100%!important;
+ object-fit:contain!important;
+ border-radius:24px!important;
+ clip-path:inset(0 round 24px)!important;
+ overflow:clip!important;
+}
