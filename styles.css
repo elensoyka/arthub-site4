@@ -1034,3 +1034,38 @@ footer#contacts {
 .space-showcase.refined {
   grid-template-columns: minmax(0, 1fr);
 }
+
+/* ArtHub identity / editorial concept — separate preview branch */
+:root {
+  --red: #173ed8;
+  --ink: #173bbf;
+  --paper: #eef2ff;
+  --white: #ffffff;
+  --pink: #f4f7ff;
+  --line: rgba(23,59,191,.2);
+  --arthub-blue: #173ed8;
+  --arthub-lime: #c8f236;
+}
+body { background: #fff; color: var(--ink); }
+.topbar { background: rgba(255,255,255,.95); }
+.brand-text-only { font-family: "Roboto Condensed", "Manrope", sans-serif; font-weight: 800; letter-spacing: -.045em; }
+.brand-star, .hero-star {
+  display: inline-block; flex: none; background: var(--arthub-lime);
+  clip-path: polygon(50% 0%,61% 36%,85% 14%,70% 42%,100% 50%,70% 58%,85% 86%,61% 64%,50% 100%,39% 64%,15% 86%,30% 58%,0 50%,30% 42%,15% 14%,39% 36%);
+}
+.brand-star { width: 27px; height: 27px; margin-left: 6px; transform: rotate(-10deg); }
+.hero-star { width: clamp(35px,5.2vw,78px); height: clamp(35px,5.2vw,78px); margin-left: .17em; transform: rotate(12deg); vertical-align: middle; }
+h1, h2, .section-heading h2 { font-family: "Roboto Condensed", "Manrope", sans-serif; font-stretch: condensed; font-weight: 600; letter-spacing: -.05em; }
+h1 { max-width: 1040px; line-height: .95; }
+.eyebrow, .lot-tag, .category-number { color: var(--arthub-blue); }
+.button, .filter.active { background: var(--arthub-blue); color: #fff; }
+.button:hover { background: #0c2da5; }
+.support { background: var(--arthub-blue); }
+.entrance-banner { background: var(--arthub-blue); }
+.hero-intro { position: relative; overflow: hidden; background: #fff; }
+.hero-intro-inner { position: relative; z-index: 1; }
+.hero-intro::after { content: ""; position: absolute; right: -90px; bottom: -140px; width: 280px; height: 280px; background: var(--arthub-lime); clip-path: polygon(50% 0%,61% 36%,85% 14%,70% 42%,100% 50%,70% 58%,85% 86%,61% 64%,50% 100%,39% 64%,15% 86%,30% 58%,0 50%,30% 42%,15% 14%,39% 36%); transform: rotate(-12deg); opacity: .85; }
+.category-card:hover { background: #eff3ff; }
+.category-card, .lot-card { border-color: var(--line); }
+::selection { background: var(--arthub-lime); color: #08268c; }
+@media (max-width: 768px) { .hero-intro::after { width: 170px; height: 170px; right: -60px; bottom: -90px; } .brand-star { width: 22px; height: 22px; } }
