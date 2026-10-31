@@ -146,16 +146,8 @@
   <div class="exhibition-availability">
     <h3 data-ru="Выставочные недели" data-en="Exhibition weeks">Выставочные недели</h3>
     <p data-ru="Брони до 18 декабря. Названия будущих выставок появятся после согласования с организаторами." data-en="Booked through December 18. Exhibition details will be announced once confirmed.">Брони до 18 декабря. Названия будущих выставок появятся после согласования с организаторами.</p>
-    <div class="week-grid">
-      <div class="week-slot available"><span>30.10–06.11</span><strong data-ru="Свободно" data-en="Available">Свободно</strong></div>
-      <div class="week-slot booked"><span>06.11–13.11</span><strong data-ru="Фёдор Дыдыкин" data-en="Fedor Dydykin">Фёдор Дыдыкин</strong></div>
-      <div class="week-slot booked"><span>13.11–20.11</span><strong data-ru="Занято" data-en="Booked">Занято</strong></div>
-      <div class="week-slot booked"><span>20.11–27.11</span><strong data-ru="Занято" data-en="Booked">Занято</strong></div>
-      <div class="week-slot booked"><span>27.11–04.12</span><strong data-ru="Занято" data-en="Booked">Занято</strong></div>
-      <div class="week-slot booked"><span>04.12–11.12</span><strong data-ru="Занято" data-en="Booked">Занято</strong></div>
-      <div class="week-slot booked"><span>11.12–18.12</span><strong data-ru="Занято" data-en="Booked">Занято</strong></div>
-    </div>
-    <p class="exhibition-note" data-ru="Это предварительное отображение по подтверждённым в беседе бронированиям. Автоматическая синхронизация с Google Calendar будет подключена следующим этапом." data-en="This is a preliminary availability view. Live Google Calendar synchronization will be added next.">Это предварительное отображение по подтверждённым в беседе бронированиям. Автоматическая синхронизация с Google Calendar будет подключена следующим этапом.</p>
+    <div class="week-grid" id="exhibitionWeeks" aria-live="polite"><p data-ru="Проверяем доступность выставочных недель…" data-en="Checking exhibition-week availability…">Проверяем доступность выставочных недель…</p></div>
+    <p class="exhibition-note" id="exhibitionSyncStatus" data-ru="Проверяем бронирования в Google Calendar. Пока проверка не завершена, свободные даты не подтверждены." data-en="Checking reservations in Google Calendar. Dates are not confirmed available until the check completes.">Проверяем бронирования в Google Calendar. Пока проверка не завершена, свободные даты не подтверждены.</p>
   </div>
   <div class="section-heading exhibition-archive-heading">
     <p class="eyebrow" data-ru="История галереи" data-en="Gallery history">История галереи</p>
@@ -257,5 +249,6 @@
 <div class="toast" id="toast" role="status" aria-live="polite">Скопировано</div>
   <script src="script.js"></script>
   <script src="i18n.js"></script>
+  <script src="exhibitions-calendar.js"></script>
 </body>
 </html>
