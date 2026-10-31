@@ -68,7 +68,7 @@ export default {
   if(!["/api/exhibitions","/api/workshops"].includes(url.pathname))return new Response("Not found",{status:404});
   try {
    const events=await getEvents(await accessToken(env),url.pathname==="/api/workshops"?WORKSHOP_ID:CALENDAR_ID);
-   if(url.pathname==="/api/workshops"){const visible=publicWorkshops(events);return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible});}
+   if(url.pathname==="/api/workshops"){const visible=publicWorkshops(events);return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible,diagnostics:{fetched:events.length,published:visible.length,with_description:events.filter(e=>!!e.description).length,with_publish_tag:events.filter(e=>/STATUS:\\s*published/i.test(e.description||"")).length}});}
    const visible=publicEvents(events);
    return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible,diagnostics:{fetched:events.length,published:visible.length}});
   } catch(error){
