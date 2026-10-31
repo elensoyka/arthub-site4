@@ -20,12 +20,12 @@ async function accessToken(env){
  if(!resp.ok) throw new Error("Google authentication failed");
  return (await resp.json()).access_token;
 }
-async function getEvents(token){
+async function getEvents(token,calendarId=CALENDAR_ID){
  const start=new Date();start.setUTCDate(start.getUTCDate()-8);
  const end=new Date();end.setUTCDate(end.getUTCDate()+140);
  let next,events=[];
  do {
-  const url=new URL("https://www.googleapis.com/calendar/v3/calendars/"+encodeURIComponent(CALENDAR_ID)+"/events");
+  const url=new URL("https://www.googleapis.com/calendar/v3/calendars/"+encodeURIComponent(calendarId)+"/events");
   url.searchParams.set("timeMin",start.toISOString());url.searchParams.set("timeMax",end.toISOString());
   url.searchParams.set("singleEvents","true");url.searchParams.set("maxResults","250");
   if(next)url.searchParams.set("pageToken",next);
@@ -56,12 +56,19 @@ function publicEvents(events){
    title_ru:f.TITLE_RU||"",title_en:f.TITLE_EN||"",artist_ru:f.ARTIST_RU||"",artist_en:f.ARTIST_EN||""};
  }).filter(Boolean);
 }
+const WORKSHOP_ID="4fd74f2aee05d7828a8a1e2eeab99d95b2c7a2c2602a403ba59bd438b87e132a@group.calendar.google.com";
+function publicWorkshops(items){
+ return items.filter(x=>x.status!=="cancelled"&&!/^\\[Черновик\\]/.test(x.summary||"") && /\\bSTATUS:\\s*published\\b/i.test(x.description||"")).map(x=>({
+ title:x.summary||"Занятие",start:x.start?.dateTime||x.start?.date,end:x.end?.dateTime||x.end?.date
+ })).filter(x=>x.start&&x.end).sort((a,b)=>a.start.localeCompare(b.start));
+}
 export default {
  async fetch(request,env){
   const url=new URL(request.url);
-  if(url.pathname!=="/api/exhibitions")return new Response("Not found",{status:404});
+  if(!["/api/exhibitions","/api/workshops"].includes(url.pathname))return new Response("Not found",{status:404});
   try {
-   const events=await getEvents(await accessToken(env));
+   const events=await getEvents(await accessToken(env),url.pathname==="/api/workshops"?WORKSHOP_ID:CALENDAR_ID);
+   if(url.pathname==="/api/workshops"){const visible=publicWorkshops(events);return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible});}
    const visible=publicEvents(events);
    return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible,diagnostics:{fetched:events.length,published:visible.length}});
   } catch(error){
