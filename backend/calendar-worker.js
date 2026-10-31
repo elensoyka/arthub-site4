@@ -59,7 +59,11 @@ function publicEvents(events){
 const WORKSHOP_ID="4fd74f2aee05d7828a8a1e2eeab99d95b2c7a2c2602a403ba59bd438b87e132a@group.calendar.google.com";
 function publicWorkshops(items){
  return items.filter(x=>x.status!=="cancelled"&&!/^\[Черновик\]/.test(x.summary||"") && /\bSTATUS:\s*published\b/i.test(x.description||"")).map(x=>({
- title:x.summary||"Занятие",start:x.start?.dateTime||x.start?.date,end:x.end?.dateTime||x.end?.date
+ title:x.summary||"Занятие",start:x.start?.dateTime||x.start?.date,end:x.end?.dateTime||x.end?.date,
+ description_ru:(x.description||"").match(/(?:^|\\n)DESCRIPTION_RU:\\s*([^\\n]+)/i)?.[1]||"",
+ price_single:(x.description||"").match(/(?:^|\\n)PRICE_SINGLE:\\s*([^\\n]+)/i)?.[1]||"",
+ price_4:(x.description||"").match(/(?:^|\\n)PRICE_4:\\s*([^\\n]+)/i)?.[1]||"",
+ price_8:(x.description||"").match(/(?:^|\\n)PRICE_8:\\s*([^\\n]+)/i)?.[1]||""
  })).filter(x=>x.start&&x.end).sort((a,b)=>a.start.localeCompare(b.start));
 }
 export default {
