@@ -38,10 +38,13 @@ async function getEvents(token){
 }
 function parseFields(description=""){
  const fields={};
- for(const line of description.split(/\r?\n/)){
-  const match=line.match(/^([A-Z_]+):\s*(.*?)\s*$/);
-  if(match)fields[match[1]]=match[2];
- }
+ const keys="TYPE|STATUS|SPACE|ARTIST_RU|ARTIST_EN|TITLE_RU|TITLE_EN|PUBLIC";
+ const rx=new RegExp("(?:^|\\s)("+keys+"):\\s*([\\s\\S]*?)(?=\\s+(?:"+keys+"):|$)","g");
+ for(const match of description.matchAll(rx))fields[match[1]]=match[2].trim();
+ // Match exact machine values even when a calendar client wraps or flattens lines.
+ const type=description.match(/\\bTYPE:\\s*(exhibition-opening|exhibition-booking|exhibition)\\b/);
+ const status=description.match(/\\bSTATUS:\\s*(reserved-unannounced|published)\\b/);
+ if(type)fields.TYPE=type[1];if(status)fields.STATUS=status[1];
  return fields;
 }
 function publicEvents(events){
@@ -59,7 +62,7 @@ export default {
   if(url.pathname!=="/api/exhibitions")return new Response("Not found",{status:404});
   try {
    const events=await getEvents(await accessToken(env));
-   return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:publicEvents(events)});
+   const visible=publicEvents(events);\n   return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible,diagnostics:{fetched:events.length,published:visible.length}});
   } catch(error){
    console.error("Calendar sync unavailable",String(error));
    return json({error:"calendar_unavailable"},503);
