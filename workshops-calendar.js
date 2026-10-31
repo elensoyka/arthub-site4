@@ -29,7 +29,7 @@
       const group=node('section','workshop-day-group');
       group.append(node('h4','workshop-day-heading',fmt(d,{weekday:'long',day:'numeric',month:'long'})));
       for(const e of items){
-        const a=node('a','workshop-event-card');a.href='https://t.me/arthub_tbilisi';a.target='_blank';a.rel='noopener noreferrer';
+        const a=node('a','workshop-event-card');a.href='workshop.html?name='+encodeURIComponent(e.title);
         const tm=node('span','workshop-event-time',fmt(new Date(e.start),{hour:'2-digit',minute:'2-digit'})+'–'+fmt(new Date(e.end),{hour:'2-digit',minute:'2-digit'}));
         const name=node('strong','workshop-event-name',e.title);
         const arrow=node('span','workshop-event-arrow','↗');arrow.setAttribute('aria-hidden','true');
@@ -38,7 +38,7 @@
     }
     if(!groups.childElementCount)groups.append(node('p','workshop-empty',en()?'No published classes this week. Ask us on Telegram.':'На эту неделю нет опубликованных занятий. Уточните в Telegram.'));
     root.append(groups);
-    status.textContent=en()?'Select a week and tap a class to ask about joining.':'Выберите неделю и нажмите на занятие, чтобы записаться.';
+    status.textContent=en()?'Select a week and tap a class to open its page.':'Выберите неделю и нажмите на занятие, чтобы открыть его страницу.';
   }
   fetch(API,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('offline');return r.json()}).then(d=>{
     if(!Array.isArray(d.events))throw Error('invalid');
