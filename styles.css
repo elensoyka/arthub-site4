@@ -1097,3 +1097,6 @@ h1 { max-width: 1040px; line-height: .95; }
 @media(max-width:768px){.exhibition-feature{grid-template-columns:1fr;padding:20px;gap:18px}.exhibition-feature-art{min-height:175px}.exhibition-feature-art img{height:155px}.week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.exhibition-archive-grid{grid-template-columns:1fr}.archive-poster{height:245px}.exhibition-rental{padding:22px}}
 
 .exhibition-feature-art.exhibition-poster{background:#f5f2ea;min-height:0;display:block}.exhibition-feature-art.exhibition-poster img{display:block;width:100%;height:auto;max-height:550px;object-fit:contain}
+
+/* Original exhibition posters: preserve the artworks' aspect ratios */
+.archive-poster.archive-poster-image{height:auto;padding:0;display:block;background:#fff}.archive-poster-image img{width:100%;height:auto;display:block;object-fit:contain}
