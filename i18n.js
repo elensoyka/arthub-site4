@@ -20,7 +20,7 @@
     "Место, где у идей появляется время и место для того, чтобы выйти в масштаб.":"A place where ideas find the time and space to grow."
   };
   const sourceText = new WeakMap();
-  const trim = s => s.replace(/\\s+/g,' ').trim();
+  const trim = s => s.replace(/\s+/g,' ').trim();
   const allTextNodes = root => { const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const items=[];while(walker.nextNode())items.push(walker.currentNode);return items; };
   let lang='ru';
   function render() {
