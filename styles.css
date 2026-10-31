@@ -1179,3 +1179,19 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
   border-radius:17px!important;
   clip-path:none!important;
 }
+
+/* 2026-10-31 archive poster correction: avoid clipped top against rounded mask */
+.exhibition-archive-grid .archive-poster.archive-poster-image {
+  overflow:visible!important;
+  border-radius:0!important;
+  padding:26px 0 0!important;
+  box-sizing:border-box!important;
+  background:transparent!important;
+}
+.exhibition-archive-grid .archive-poster-image img {
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+  border-radius:14px!important;
+  overflow:visible!important;
+}
