@@ -1239,3 +1239,6 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
  .exhibition-archive-grid .exhibition-archive-card{flex-basis:320px!important;width:320px!important}
  .exhibition-archive-grid .archive-poster.archive-poster-image{height:295px!important}
 }
+
+/* ArtHub workshop overview */
+.workshops-section{scroll-margin-top:80px}.workshop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.workshop-card{border-radius:20px;background:#eff3ff;padding:26px;display:flex;flex-direction:column;align-items:flex-start;min-height:275px}.workshop-card h3{font:800 clamp(25px,3vw,36px)/1.08 Manrope,sans-serif;letter-spacing:-.05em;margin:18px 0}.workshop-card p{line-height:1.55;margin:0 0 22px}.workshop-card strong{margin-top:auto}.workshop-schedule{border-top:1px solid var(--line);margin-top:38px;padding-top:30px}.workshop-schedule h3{font-size:32px;margin:0 0 10px}.workshop-schedule p{max-width:680px;line-height:1.6}.workshop-schedule .button{margin-top:14px}@media(max-width:650px){.workshop-grid{grid-template-columns:1fr}.workshop-card{min-height:0;padding:22px}}
