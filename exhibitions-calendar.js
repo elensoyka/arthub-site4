@@ -14,7 +14,8 @@
    root.replaceChildren();
    if(!cached){setStatus('Не удалось проверить бронирования. Уточните даты у ArtHub.','Availability cannot be verified. Please ask ArtHub about dates.');root.append(el('p','',locale()==='en'?'Availability requires confirmation.':'Доступность требует подтверждения.'));return;}
    const events=cached.events;
-   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));\n   const today=parts.year+'-'+parts.month+'-'+parts.day;
+   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+   const today=parts.year+'-'+parts.month+'-'+parts.day;
    // Friday week boundaries are the booking unit; first grid slot starts this Friday or next Friday.
    const base=new Date(today+'T12:00:00Z');const weekday=base.getUTCDay();
    const offset=(weekday-5+7)%7;base.setUTCDate(base.getUTCDate()-offset);
