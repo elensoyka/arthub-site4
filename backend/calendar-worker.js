@@ -5,7 +5,7 @@ const encoder = new TextEncoder();
 const b64url = bytes => btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
 const encode = text => b64url(encoder.encode(text));
 const json = (data,status=200) => new Response(JSON.stringify(data),{
- status,headers:{"content-type":"application/json; charset=utf-8","cache-control":status===200?"public, max-age=300":"no-store"}
+ status,headers:{"content-type":"application/json; charset=utf-8","cache-control":status===200?"public, max-age=300":"no-store","access-control-allow-origin":"https://arthub-site4.elensoyka.workers.dev","vary":"Origin"}
 });
 async function accessToken(env){
  if(!env.GOOGLE_SERVICE_ACCOUNT_EMAIL||!env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY) throw new Error("Calendar credentials not configured");
