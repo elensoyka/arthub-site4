@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="ArtHub Tbilisi — творческое пространство, мастерские, резиденции, события и поддержка." />
-  <title>ArtHub Tbilisi — карта возможностей</title>
+  <title>ArtHub Tbilisi — пространство для идей</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand brand-text-only" href="#top" aria-label="ArtHub — на главную">ARTHUB</a>
+    <a class="brand brand-text-only" href="#top" aria-label="ArtHub — на главную">ARTHUB<span class="brand-star" aria-hidden="true"></span></a>
     <nav class="nav" aria-label="Основная навигация">
       <a href="#about">О нас</a>
       <a href="#space">Пространство</a>
@@ -29,10 +29,10 @@
       <img src="entrance-hero.webp" alt="Вход в пространство ArtHub в Тбилиси">
     </section>
 
-    <section class="hero-intro">
+    <section class="hero-intro" aria-labelledby="hero-title">
       <div class="hero-intro-inner">
         <p class="eyebrow">Творческое пространство в Тбилиси</p>
-        <h1>Место, где у идей появляется время и место для того, чтобы выйти в масштаб</h1>
+        <h1 id="hero-title">Место, где идеи<br>становятся реальностью<span class="hero-star" aria-hidden="true"></span></h1>
         <p class="lead">
           ArtHub — мастерская, площадка для событий и пространство для долгих и масштабных творческих процессов.
           Здесь можно создавать, учиться, проводить, заказывать, рассказывать о себе и поддерживать.
