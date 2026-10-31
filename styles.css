@@ -1195,3 +1195,14 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
   border-radius:14px!important;
   overflow:visible!important;
 }
+
+/* Final archive poster rule: intrinsic size + rounded visible corners */
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+ height:auto!important;aspect-ratio:auto!important;overflow:hidden!important;
+ border-radius:18px!important;display:block!important;background:transparent!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image img{
+ display:block!important;width:100%!important;height:auto!important;
+ max-height:none!important;object-fit:contain!important;
+ border-radius:18px!important;
+}
