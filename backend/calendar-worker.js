@@ -62,7 +62,8 @@ export default {
   if(url.pathname!=="/api/exhibitions")return new Response("Not found",{status:404});
   try {
    const events=await getEvents(await accessToken(env));
-   const visible=publicEvents(events);\n   return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible,diagnostics:{fetched:events.length,published:visible.length}});
+   const visible=publicEvents(events);
+   return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:visible,diagnostics:{fetched:events.length,published:visible.length}});
   } catch(error){
    console.error("Calendar sync unavailable",String(error));
    return json({error:"calendar_unavailable"},503);
