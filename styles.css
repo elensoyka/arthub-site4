@@ -1078,3 +1078,10 @@ h1 { max-width: 1040px; line-height: .95; }
 .topbar .button { background: #ffffff; color: #173ED8; }
 .topbar .button:hover { background: #CFE103; color: #173ED8; }
 @media(max-width:768px) { .brand-star-image { width: 31px; height: 31px; } }
+
+/* Language switch in the approved blue header */
+.header-actions { display:flex;align-items:center;gap:12px; }
+.language-switch { display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.6);border-radius:99px;padding:3px;gap:2px; }
+.language-switch button { border:0;background:transparent;color:white;border-radius:99px;padding:8px 11px;font:700 12px Manrope, sans-serif;cursor:pointer;min-width:39px; }
+.language-switch button[aria-pressed="true"] { background:#fff;color:#173ED8; }
+@media(max-width:768px){ .header-actions {gap:5px} .header-actions .button-small {display:none;} .language-switch button {padding:7px 8px;min-width:32px;} }
