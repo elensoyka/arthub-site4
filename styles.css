@@ -1374,3 +1374,10 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 .workshop-event-arrow{text-align:right;font-size:23px}
 .workshop-empty{margin:12px 0;color:#526aa4}
 @media(max-width:650px){.workshop-event-card{grid-template-columns:1fr 24px;column-gap:8px;row-gap:6px;padding:17px}.workshop-event-time{grid-column:1}.workshop-event-name{grid-column:1}.workshop-event-arrow{grid-column:2;grid-row:1 / span 2}.workshop-week-controls{padding-bottom:17px}}
+
+/* Three cofounders aligned on desktop; stacked on phones. */
+#founders .founder-grid-three{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;align-items:stretch!important}
+#founders .founder-grid-three .founder-card{min-width:0!important;width:auto!important}
+#founders .founder-grid-three .founder-photo-image{width:100%!important;aspect-ratio:4/5!important;height:auto!important;object-fit:cover!important;object-position:center top!important;border-radius:22px!important}
+#founders .founder-grid-three .founder-card h3{overflow-wrap:anywhere}
+@media(max-width:800px){#founders .founder-grid-three{grid-template-columns:1fr!important}}
