@@ -1255,3 +1255,39 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 .exhibition-archive-grid .archive-poster.archive-poster-image{height:auto!important;min-height:0!important;display:block!important}
 .exhibition-archive-grid .archive-poster-image img{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;aspect-ratio:auto!important}
 @media(max-width:650px){.gallery-photo-track figure{flex-basis:86vw;width:86vw}.gallery-photo-track img{height:440px}.gallery-slider-controls{font-size:12px}}
+
+/* Archive exhibition posters: matching visual frames and aligned descriptions.
+   No crop: each source scales proportionally inside the same rounded rectangle. */
+.exhibition-archive-grid{align-items:stretch!important}
+.exhibition-archive-grid .exhibition-archive-card{
+ display:flex!important;flex-direction:column!important;
+ align-items:stretch!important;overflow:hidden!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+ box-sizing:border-box!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ flex:0 0 410px!important;width:100%!important;height:410px!important;
+ min-height:410px!important;max-height:410px!important;
+ overflow:hidden!important;border-radius:18px!important;
+ background:#f5f6fb!important;padding:10px!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image img{
+ box-sizing:border-box!important;display:block!important;
+ width:100%!important;height:100%!important;
+ max-width:100%!important;max-height:100%!important;
+ object-fit:contain!important;object-position:center!important;
+ border-radius:14px!important;
+}
+.exhibition-archive-grid .archive-copy{
+ box-sizing:border-box!important;flex:1 1 auto!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:flex-start!important;
+ padding:18px 3px 10px!important;
+}
+.exhibition-archive-grid .archive-copy h3{margin-top:12px!important}
+@media(max-width:650px){
+ .exhibition-archive-grid .archive-poster.archive-poster-image{
+  flex-basis:370px!important;height:370px!important;
+  min-height:370px!important;max-height:370px!important;
+ }
+}
