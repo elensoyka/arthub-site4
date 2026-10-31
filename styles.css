@@ -1319,3 +1319,25 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
   border-radius:20px!important;
   clip-path:inset(0 round 20px);
 }
+
+/* Image-edge rounding: clip the visible pixels of the image itself. */
+.exhibition-archive-grid .archive-poster.archive-poster-image,
+.exhibition-archive-grid .archive-poster.archive-poster-image img,
+.gallery-photo-track figure,
+.gallery-photo-track figure img{
+  border-radius:22px!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image img,
+.gallery-photo-track figure img{
+  clip-path:inset(0 round 22px)!important;
+  overflow:hidden!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+  padding:0!important;
+  background:transparent!important;
+  overflow:hidden!important;
+}
+.gallery-photo-track figure{
+  background:transparent!important;
+  overflow:hidden!important;
+}
