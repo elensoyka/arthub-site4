@@ -1155,3 +1155,27 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
  .exhibition-archive-grid .archive-poster.archive-poster-image{height:auto!important}
  .exhibition-archive-grid .archive-poster-image img{height:auto!important;max-height:none!important}
 }
+
+/* Poster frame follows each actual image's intrinsic aspect ratio. */
+.exhibition-archive-grid .archive-poster.archive-poster-image {
+  display:block!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  overflow:visible!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+.exhibition-archive-grid .archive-poster-image img {
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:17px!important;
+  clip-path:none!important;
+}
