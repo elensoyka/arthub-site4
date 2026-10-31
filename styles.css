@@ -1138,3 +1138,20 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
   .exhibition-archive-grid .archive-poster.archive-poster-image{height:clamp(260px,82vw,390px)!important;border-radius:18px!important}
   .exhibition-archive-grid .archive-copy{padding:22px 3px 6px!important}
 }
+
+/* Archive poster v2: each original image determines its own height, no side gutters. */
+.exhibition-archive-grid .exhibition-archive-card{padding:18px!important;background:#eef2ff!important}
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+ display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;
+ padding:0!important;margin:0!important;border-radius:16px!important;overflow:hidden!important;
+ background:transparent!important;
+}
+.exhibition-archive-grid .archive-poster-image img{
+ display:block!important;position:static!important;width:100%!important;height:auto!important;
+ max-height:none!important;min-height:0!important;max-width:100%!important;object-fit:unset!important;
+ border-radius:0!important;margin:0!important;
+}
+@media(max-width:768px){
+ .exhibition-archive-grid .archive-poster.archive-poster-image{height:auto!important}
+ .exhibition-archive-grid .archive-poster-image img{height:auto!important;max-height:none!important}
+}
