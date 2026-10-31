@@ -1100,3 +1100,13 @@ h1 { max-width: 1040px; line-height: .95; }
 
 /* Original exhibition posters: preserve the artworks' aspect ratios */
 .archive-poster.archive-poster-image{height:auto;padding:0;display:block;background:#fff}.archive-poster-image img{width:100%;height:auto;display:block;object-fit:contain}
+
+/* Archive layout fix: isolate poster from description on mobile and desktop */
+.exhibition-archive-grid .exhibition-archive-card{display:flex!important;flex-direction:column!important;position:relative!important;height:auto!important;min-height:0!important;background:#fff!important;overflow:hidden!important;align-items:stretch!important}
+.exhibition-archive-grid .archive-poster.archive-poster-image{display:block!important;position:relative!important;flex:none!important;width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#f6f6f6!important;transform:none!important}
+.exhibition-archive-grid .archive-poster-image img{position:static!important;display:block!important;width:100%!important;height:auto!important;max-height:450px!important;object-fit:contain!important;object-position:center!important;margin:0 auto!important;transform:none!important}
+.exhibition-archive-grid .archive-copy{display:block!important;position:relative!important;inset:auto!important;z-index:1!important;flex:none!important;background:#fff!important;color:#173bbf!important;margin:0!important;padding:20px 22px 25px!important;transform:none!important;opacity:1!important}
+.exhibition-archive-grid .archive-copy h3{color:#173bbf!important;margin:8px 0 12px!important}
+.exhibition-archive-grid .archive-copy p{color:#173bbf!important;position:static!important;margin:0!important;line-height:1.5!important}
+/* Match approved header color; remove legacy pink overrides */
+html body .topbar{background:#173ed8!important;color:#fff!important}
