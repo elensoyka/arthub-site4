@@ -1242,3 +1242,16 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 
 /* ArtHub workshop overview */
 .workshops-section{scroll-margin-top:80px}.workshop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.workshop-card{border-radius:20px;background:#eff3ff;padding:26px;display:flex;flex-direction:column;align-items:flex-start;min-height:275px}.workshop-card h3{font:800 clamp(25px,3vw,36px)/1.08 Manrope,sans-serif;letter-spacing:-.05em;margin:18px 0}.workshop-card p{line-height:1.55;margin:0 0 22px}.workshop-card strong{margin-top:auto}.workshop-schedule{border-top:1px solid var(--line);margin-top:38px;padding-top:30px}.workshop-schedule h3{font-size:32px;margin:0 0 10px}.workshop-schedule p{max-width:680px;line-height:1.6}.workshop-schedule .button{margin-top:14px}@media(max-width:650px){.workshop-grid{grid-template-columns:1fr}.workshop-card{min-height:0;padding:22px}}
+
+/* Gallery photographs in a one-row horizontal slider */
+.gallery-slider-wrap{margin:24px 0 56px}
+.gallery-slider-controls{display:flex;align-items:center;justify-content:space-between;gap:18px;color:#1947c1;font-size:14px;margin:0 0 14px}
+.gallery-slider-controls>div{display:flex;gap:9px}
+.gallery-slider-controls button{display:grid;place-items:center;width:44px;height:44px;border:1px solid #1947c1;border-radius:100%;background:white;color:#1947c1;font-size:23px;cursor:pointer}
+.gallery-photo-track{display:flex!important;flex-wrap:nowrap!important;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding:0 0 12px}
+.gallery-photo-track figure{scroll-snap-align:start;flex:0 0 min(78vw,440px);width:min(78vw,440px);margin:0;overflow:hidden;border-radius:24px;background:#eef2ff}
+.gallery-photo-track img{display:block;width:100%;height:clamp(280px,48vw,530px);object-fit:contain;object-position:center;background:#eff1f9}
+.gallery-photo-track figcaption{color:#1947c1;font-size:13px;letter-spacing:.08em;padding:14px 20px 16px}
+.exhibition-archive-grid .archive-poster.archive-poster-image{height:auto!important;min-height:0!important;display:block!important}
+.exhibition-archive-grid .archive-poster-image img{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;aspect-ratio:auto!important}
+@media(max-width:650px){.gallery-photo-track figure{flex-basis:86vw;width:86vw}.gallery-photo-track img{height:440px}.gallery-slider-controls{font-size:12px}}
