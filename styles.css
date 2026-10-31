@@ -1381,3 +1381,18 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 #founders .founder-grid-three .founder-photo-image{width:100%!important;aspect-ratio:4/5!important;height:auto!important;object-fit:cover!important;object-position:center top!important;border-radius:22px!important}
 #founders .founder-grid-three .founder-card h3{overflow-wrap:anywhere}
 @media(max-width:800px){#founders .founder-grid-three{grid-template-columns:1fr!important}}
+
+/* Workshop detail templates */
+.workshop-detail{padding-top:65px;max-width:1180px}.workshop-detail h1{font-size:clamp(39px,6vw,80px);line-height:1.02;max-width:1020px}
+.workshop-back{display:inline-block;margin:0 0 36px;color:#1c48bd;font-weight:700}
+.workshop-detail-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,.7fr);gap:45px;margin-top:36px}
+.workshop-detail-layout>div>p:first-child{font-size:clamp(18px,2vw,22px);line-height:1.65;max-width:690px}
+.workshop-detail h2{font-size:30px;margin-top:42px}
+.workshop-price-grid{display:grid;gap:12px}
+.workshop-price-card{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:22px 26px;background:#eef2ff;border-radius:20px}
+.workshop-price-card strong{font-size:22px;color:#1742bd;white-space:nowrap}
+.workshop-detail-aside{border-radius:24px;background:#e9f4e4;padding:28px;height:max-content}
+.workshop-detail-aside h3{font-size:28px;margin:0 0 10px}
+.workshop-detail-aside p{line-height:1.6}.workshop-detail-aside .button{margin:12px 0}
+.workshop-pricing-note{color:#6a6a6a;font-size:13px!important}
+@media(max-width:700px){.workshop-detail-layout{grid-template-columns:1fr;gap:24px}.workshop-price-card{padding:17px}.workshop-price-card strong{font-size:18px}}
