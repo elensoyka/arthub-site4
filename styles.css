@@ -1357,3 +1357,20 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
  clip-path:inset(0 round 24px)!important;
  overflow:clip!important;
 }
+
+/* Weekly workshops timetable */
+.workshop-calendar-events{margin:22px 0 28px;max-width:900px}
+.workshop-week-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0 24px}
+.workshop-week-label{font-size:clamp(18px,2.2vw,25px);font-weight:800;letter-spacing:-.035em;color:#1947c1;text-align:center}
+.workshop-week-button{width:46px;height:46px;flex:0 0 46px;border:1.5px solid #1947c1;background:white;border-radius:50%;color:#1947c1;font-size:24px;cursor:pointer}
+.workshop-week-button:disabled{opacity:.3;cursor:default}
+.workshop-day-groups{display:grid;gap:22px}
+.workshop-day-group{display:grid;gap:9px}
+.workshop-day-heading{font-size:15px;font-weight:800;color:#1947c1;text-transform:capitalize;margin:0 0 4px;letter-spacing:.01em}
+.workshop-event-card{display:grid;grid-template-columns:minmax(118px,140px) minmax(0,1fr) 25px;align-items:center;gap:15px;padding:20px 22px;border-radius:19px;background:#eef2ff;color:#1742bd;transition:background .15s,transform .15s}
+.workshop-event-card:hover,.workshop-event-card:focus-visible{background:#e0e9ff;transform:translateY(-1px)}
+.workshop-event-time{font-size:14px;white-space:nowrap;font-weight:700}
+.workshop-event-name{font-size:clamp(16px,1.8vw,21px);font-weight:750;line-height:1.3;letter-spacing:-.035em}
+.workshop-event-arrow{text-align:right;font-size:23px}
+.workshop-empty{margin:12px 0;color:#526aa4}
+@media(max-width:650px){.workshop-event-card{grid-template-columns:1fr 24px;column-gap:8px;row-gap:6px;padding:17px}.workshop-event-time{grid-column:1}.workshop-event-name{grid-column:1}.workshop-event-arrow{grid-column:2;grid-row:1 / span 2}.workshop-week-controls{padding-bottom:17px}}
