@@ -56,7 +56,7 @@ function publicEvents(events){
 export default {
  async fetch(request,env){
   const url=new URL(request.url);
-  if(url.pathname!=="/api/exhibitions")return env.ASSETS.fetch(request);
+  if(url.pathname!=="/api/exhibitions")return new Response("Not found",{status:404});
   try {
    const events=await getEvents(await accessToken(env));
    return json({updated_at:new Date().toISOString(),timezone:"Asia/Tbilisi",events:publicEvents(events)});
