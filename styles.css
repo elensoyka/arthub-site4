@@ -1291,3 +1291,31 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
   min-height:370px!important;max-height:370px!important;
  }
 }
+
+/* Final gallery polish: round the actual visible photo edges, not only the cards. */
+.gallery-photo-track figure{
+  border-radius:22px!important;
+  overflow:hidden!important;
+}
+.gallery-photo-track figure img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  border-radius:22px!important;
+  clip-path:inset(0 round 22px);
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+  border-radius:20px!important;
+  overflow:hidden!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image img{
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  border-radius:20px!important;
+  clip-path:inset(0 round 20px);
+}
