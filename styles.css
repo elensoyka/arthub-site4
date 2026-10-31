@@ -1110,3 +1110,31 @@ h1 { max-width: 1040px; line-height: .95; }
 .exhibition-archive-grid .archive-copy p{color:#173bbf!important;position:static!important;margin:0!important;line-height:1.5!important}
 /* Match approved header color; remove legacy pink overrides */
 html body .topbar{background:#173ed8!important;color:#fff!important}
+
+/* Unified exhibition card composition: featured exhibition and archive */
+.exhibition-archive-grid{align-items:start;gap:22px}
+.exhibition-archive-grid .exhibition-archive-card{
+  background:#eef2ff!important;border:0!important;border-radius:24px!important;
+  padding:20px!important;display:flex!important;flex-direction:column!important;gap:0!important;
+  box-shadow:none!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+  width:100%!important;max-width:100%!important;height:clamp(250px,38vw,420px)!important;
+  border-radius:18px!important;overflow:hidden!important;background:#fff!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+}
+.exhibition-archive-grid .archive-poster-image img{
+  display:block!important;position:static!important;width:100%!important;height:100%!important;
+  max-height:none!important;object-fit:contain!important;object-position:center center!important;
+}
+.exhibition-archive-grid .archive-copy{
+  background:transparent!important;padding:24px 4px 8px!important;
+  color:#173bbf!important;
+}
+.exhibition-archive-grid .archive-copy h3{font-size:clamp(25px,3.4vw,38px)!important;line-height:1.15!important}
+.exhibition-archive-grid .archive-copy p{font-size:17px!important;line-height:1.55!important}
+@media(max-width:768px){
+  .exhibition-archive-grid .exhibition-archive-card{padding:18px!important;border-radius:24px!important}
+  .exhibition-archive-grid .archive-poster.archive-poster-image{height:clamp(260px,82vw,390px)!important;border-radius:18px!important}
+  .exhibition-archive-grid .archive-copy{padding:22px 3px 6px!important}
+}
