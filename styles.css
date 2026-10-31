@@ -1206,3 +1206,36 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
  max-height:none!important;object-fit:contain!important;
  border-radius:18px!important;
 }
+
+/* Exhibition archive: compact sideways swipe gallery, rather than tall stacked cards */
+.exhibition-archive-grid{
+ display:flex!important;flex-wrap:nowrap!important;align-items:stretch!important;
+ overflow-x:auto!important;overflow-y:hidden!important;
+ scroll-snap-type:x mandatory;scroll-padding-inline:0;
+ gap:16px!important;padding:0 0 14px!important;
+ -webkit-overflow-scrolling:touch;
+ scrollbar-width:thin;
+}
+.exhibition-archive-grid .exhibition-archive-card{
+ box-sizing:border-box!important;
+ flex:0 0 min(77vw,360px)!important;width:min(77vw,360px)!important;
+ scroll-snap-align:start!important;align-self:stretch!important;
+ padding:14px!important;border-radius:22px!important;
+}
+.exhibition-archive-grid .archive-poster.archive-poster-image{
+ width:100%!important;height:270px!important;min-height:0!important;
+ background:transparent!important;display:flex!important;
+ justify-content:center!important;align-items:center!important;
+ border-radius:16px!important;overflow:hidden!important;
+}
+.exhibition-archive-grid .archive-poster-image img{
+ width:100%!important;height:100%!important;max-height:100%!important;
+ object-fit:contain!important;border-radius:16px!important;
+}
+.exhibition-archive-grid .archive-copy{padding:16px 3px 5px!important}
+.exhibition-archive-grid .archive-copy h3{font-size:23px!important}
+.exhibition-archive-grid .archive-copy p{font-size:15px!important;line-height:1.45!important}
+@media(min-width:900px){
+ .exhibition-archive-grid .exhibition-archive-card{flex-basis:320px!important;width:320px!important}
+ .exhibition-archive-grid .archive-poster.archive-poster-image{height:295px!important}
+}
