@@ -1,0 +1,12 @@
+{
+  "name": "arthub-site4",
+  "main": "./backend/calendar-worker.js",
+  "compatibility_date": "2026-10-30",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  }
+}
