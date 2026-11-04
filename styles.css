@@ -1451,3 +1451,26 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 .residency-room-photos img{display:block;width:100%;height:205px;object-fit:cover;object-position:center;min-width:0}
 @media(max-width:850px){.residency-room-photos img{height:190px}}
 @media(max-width:480px){.residency-room-photos{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-height:125px}.residency-room-photos img{height:160px}}
+
+/* ArtHub introduction and interactive possibility map */
+#about.about-intro{height:auto;overflow:visible;background:#fff;padding-top:clamp(58px,7vw,105px)}
+.about-intro-heading{max-width:1010px}
+.about-intro-heading h1{color:#1742bd;letter-spacing:-.055em;line-height:1.03;font-size:clamp(43px,6vw,90px);margin:12px 0 30px}
+.about-intro-lead{font-size:clamp(19px,2.5vw,29px);line-height:1.45;color:#1742bd;font-weight:650;max-width:950px}
+.about-intro-secondary{font-size:clamp(16px,1.7vw,21px);line-height:1.6;max-width:760px}
+.opportunity-heading{display:flex;align-items:end;justify-content:space-between;gap:22px;margin:55px 0 24px}
+.opportunity-heading h2{font-size:clamp(30px,3.7vw,50px);margin:0;letter-spacing:-.04em}
+.opportunity-heading p{margin:0 0 8px;color:#5670b1}
+.opportunity-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.opportunity-card{display:flex;position:relative;flex-direction:column;min-width:0;min-height:246px;padding:24px 21px;border-radius:23px;background:#f0f3ff;text-decoration:none;color:#1742bd;transition:transform .2s ease,background .2s ease}
+.opportunity-card:hover,.opportunity-card:focus-visible{background:#e1edff;transform:translateY(-3px)}
+.opportunity-card:nth-child(4n+2),.opportunity-card:nth-child(4n+3){background:#e8f4dc}
+.opportunity-card:nth-child(4n+2):hover,.opportunity-card:nth-child(4n+3):hover{background:#dcf1c4}
+.opportunity-number{font-size:12px;font-weight:800;opacity:.7}
+.opportunity-card h3{font-size:clamp(23px,2.3vw,33px);line-height:1.08;letter-spacing:-.04em;margin:24px 0 12px;overflow-wrap:break-word}
+.opportunity-card p{font-size:14px;line-height:1.5;margin:0 0 26px;max-width:240px}
+.opportunity-arrow{margin-top:auto;font-size:25px;align-self:end;font-weight:600}
+.opportunity-outro{margin:25px 0 0;color:#1742bd;font-size:clamp(16px,1.6vw,20px);line-height:1.5;max-width:740px}
+@media(max-width:1000px){.opportunity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.opportunity-heading{display:block;margin-top:40px}.opportunity-grid{grid-template-columns:1fr 1fr;gap:10px}.opportunity-card{min-height:225px;padding:18px 14px;border-radius:17px}.opportunity-card h3{font-size:clamp(20px,5vw,27px);margin:18px 0 9px}.opportunity-card p{font-size:12px}.opportunity-arrow{font-size:20px}}
+@media(max-width:370px){.opportunity-grid{grid-template-columns:1fr}.opportunity-card{min-height:0}}
