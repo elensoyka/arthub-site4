@@ -1427,3 +1427,21 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 .residency-apply:disabled{opacity:.65;cursor:not-allowed;transform:none}
 @media(max-width:860px){.residency-layout{grid-template-columns:1fr}.residency-facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:520px){.residency-facts{grid-template-columns:1fr}.residency-facts>div{padding:16px}.residency-availability{padding:22px}}
+
+/* Open Residency: room layouts with expandable previews */
+.residency-layout>.residency-intro{grid-column:1;grid-row:1;min-width:0}
+.residency-layout>.residency-availability{grid-column:2;grid-row:1;min-width:0}
+.residency-space-selection{grid-column:1/-1;grid-row:2;margin-top:4px}
+.residency-space-selection>h3{font-size:clamp(28px,3.4vw,42px);letter-spacing:-.04em;margin-bottom:12px}
+.residency-space-selection>p{max-width:710px;line-height:1.6}
+.residency-rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.residency-room{min-width:0;border:1px solid #d5def9;border-radius:24px;background:#fff;overflow:hidden}
+.residency-room summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 25px;font-size:clamp(22px,2.6vw,31px);font-weight:800;color:#1742bd;line-height:1.16;list-style:none}
+.residency-room summary::-webkit-details-marker{display:none}
+.residency-room summary>span:last-child{font-size:28px;font-weight:400}
+.residency-room[open] summary>span:last-child{transform:rotate(45deg)}
+.residency-room-body{padding:0 24px 24px}
+.residency-room-body>img,.residency-photo-pending{width:100%;height:auto;aspect-ratio:4/3;border-radius:16px;object-fit:cover}
+.residency-photo-pending{display:flex;align-items:center;justify-content:center;padding:28px;background:#e8eeff;color:#1742bd;text-align:center;font-weight:700}
+.residency-room-body>p{line-height:1.65;font-size:16px}
+@media(max-width:860px){.residency-layout>.residency-intro,.residency-layout>.residency-availability,.residency-space-selection{grid-column:1;grid-row:auto}.residency-rooms{grid-template-columns:1fr}}
