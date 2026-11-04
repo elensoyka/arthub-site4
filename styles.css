@@ -1403,7 +1403,7 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 #workshops .workshop-category-card:hover{transform:translateY(-3px);background:#e3ecff}
 #workshops .workshop-category-card h3{font-size:clamp(23px,2.5vw,31px)!important;line-height:1.13;overflow-wrap:break-word}
 #workshops .workshop-category-link{margin-top:auto;padding-top:16px;color:#1742bd;font-size:14px;font-weight:800}
-#about{height:0;overflow:hidden}
+/* The About section is visible and must grow with its content. */
 @media(max-width:780px){#workshops .workshop-category-grid{grid-template-columns:1fr!important}#workshops .workshop-category-card{min-height:0}}
 
 /* Open Residency — editorial two-column presentation */
