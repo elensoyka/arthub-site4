@@ -1405,3 +1405,25 @@ html body .topbar{background:#173ed8!important;color:#fff!important}
 #workshops .workshop-category-link{margin-top:auto;padding-top:16px;color:#1742bd;font-size:14px;font-weight:800}
 #about{height:0;overflow:hidden}
 @media(max-width:780px){#workshops .workshop-category-grid{grid-template-columns:1fr!important}#workshops .workshop-category-card{min-height:0}}
+
+/* Open Residency — editorial two-column presentation */
+.open-residency-section{background:#f6f8ff}
+.open-residency-section .section-heading h2{letter-spacing:-.045em}
+.residency-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.85fr);gap:clamp(24px,4vw,60px);align-items:start}
+.residency-intro h3{font-size:clamp(28px,3.2vw,44px);line-height:1.12;margin:0 0 18px}
+.residency-intro p{font-size:clamp(16px,1.6vw,19px);line-height:1.65;max-width:780px}
+.residency-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:34px 0}
+.residency-facts>div{display:flex;flex-direction:column;gap:9px;background:#e6ecff;padding:22px 16px;border-radius:20px}
+.residency-facts strong{font-size:clamp(30px,3.6vw,48px);letter-spacing:-.06em;line-height:1;color:#1742bd}
+.residency-facts span{font-size:13px;line-height:1.4}
+.residency-availability{background:#e8f5e0;padding:clamp(24px,3vw,38px);border-radius:26px;color:#1742bd}
+.residency-availability h3{font-size:clamp(26px,3vw,37px);line-height:1.12;margin:14px 0 18px}
+.residency-availability>p{line-height:1.55}
+.residency-slot-group{padding:15px 0;border-top:1px solid rgba(23,66,189,.2)}
+.residency-slot-group h4{font-size:17px;margin:0 0 8px}
+.residency-slot-group p{margin:0;line-height:1.7;font-weight:650}
+.residency-availability-note{font-size:13px;line-height:1.55}
+.residency-apply{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;width:100%;max-width:100%}
+.residency-apply:disabled{opacity:.65;cursor:not-allowed;transform:none}
+@media(max-width:860px){.residency-layout{grid-template-columns:1fr}.residency-facts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.residency-facts{grid-template-columns:1fr}.residency-facts>div{padding:16px}.residency-availability{padding:22px}}
