@@ -15,6 +15,8 @@
     "Написать в Telegram":"Message on Telegram", "Перед переводом":"Before you book", "Как это работает":"How it works",
     "Люди ArtHub":"The people behind ArtHub", "Основатели и команда":"Founders and team",
     "Художница, педагог, автор идеи и основатель ArtHub.":"Artist, educator and founder of ArtHub.",
+    "Художница, педагог. Куратор детского направления ArtHub.":"Artist, educator. Curator of ArtHub’s children’s programme.",
+    "Дизайнер, педагог. Куратор творческого направления ArtHub.":"Designer, educator. Curator of ArtHub’s creative programme.",
     "Актриса, педагог, создатель визуального театра Live Book. Куратор театрального направления ArtHub.":"Actor, educator and creator of Live Book visual theatre. Curator of ArtHub's theatre programme.",
     "Открыть точку в Google Maps":"Open in Google Maps",
     "Место, где у идей появляется время и место для того, чтобы выйти в масштаб.":"A place where ideas find the time and space to grow."
