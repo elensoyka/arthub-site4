@@ -20,12 +20,13 @@
      ['2026-11-20','2026-11-27','Drawing in Circles','Drawing in Circles'],
      ['2026-11-27','2026-12-04','',''],
      ['2026-12-04','2026-12-11','',''],
-     ['2026-12-11','2026-12-18','',''],
-     ['2026-12-18','2026-12-25','',''],
+     // Dec 11–18 and Dec 18–25 are available for enquiries by the owner's correction (12 Nov 2026).
      ['2026-12-25','2027-01-01','',''],
      ['2027-01-01','2027-01-08','','']
    ].map(([start,end,artist_ru,artist_en])=>({type:'exhibition-booking',start,end,artist_ru,artist_en}));
    const events=cached?cached.events:[];
+   // Owner-confirmed available weeks. These replace stale hard-coded bookings.
+   const ownerAvailable=new Set(['2026-12-11','2026-12-18']);
 
    const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
    const today=parts.year+'-'+parts.month+'-'+parts.day;
@@ -37,12 +38,14 @@
       const start=addDays(first,i*7),end=addDays(start,7);
       const overlaps=events.filter(e=>e.type!=='exhibition-opening' && e.start && e.end && e.start.slice(0,10)<end && e.end.slice(0,10)>start);
       const known=knownBooked.find(e=>e.start===start && e.end===end);
-      const booked=overlaps.length>0 || !!known;
+      const availableByOwner=ownerAvailable.has(start) && end===addDays(start,7);
+      // The owner's explicit correction takes precedence over stale calendar bookings for these two weeks.
+      const booked=!availableByOwner && (overlaps.length>0 || !!known);
       const verified=!!cached;
-      const slot=el('div','week-slot '+(booked?'booked':verified?'available':'unverified'));
+      const slot=el('div','week-slot '+(availableByOwner?'available':booked?'booked':verified?'available':'unverified'));
       slot.append(el('span','',format(start)+'–'+format(end)));
       const named=overlaps.find(e=>e.type==='exhibition'&&(e.artist_ru||e.artist_en))||known;
-      slot.append(el('strong','',booked?(named?(locale()==='en'?(named.artist_en||named.artist_ru):(named.artist_ru||named.artist_en)):(locale()==='en'?'Booked':'Занято')):(verified?(locale()==='en'?'Available':'Свободно'):(locale()==='en'?'Check dates':'Уточняется'))));
+      slot.append(el('strong','',availableByOwner?(locale()==='en'?'Available · to be confirmed':'Свободно · уточняется'):booked?(named?(locale()==='en'?(named.artist_en||named.artist_ru):(named.artist_ru||named.artist_en)):(locale()==='en'?'Booked':'Занято')):(verified?(locale()==='en'?'Available':'Свободно'):(locale()==='en'?'Check dates':'Уточняется'))));
       root.append(slot);
    }
    if(cached){
