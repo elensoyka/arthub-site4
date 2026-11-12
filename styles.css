@@ -1547,3 +1547,58 @@ html{scroll-behavior:smooth;scroll-padding-top:95px}
 .growth-cowork-line span{font-size:clamp(17px,2vw,23px);font-weight:800}
 .growth-cowork-line>a{white-space:nowrap;color:#1742bd;font-weight:800;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:800px){.growth-upcoming-exhibitions{grid-template-columns:1fr;gap:24px}.growth-upcoming-exhibitions .exhibition-feature{max-width:590px}.growth-cowork-line{flex-direction:column;align-items:start}.growth-cowork-line>a{white-space:normal}}
+
+/* ArtHub workshops and exhibition alignment – November 2026 */
+.growth-upcoming-exhibitions{align-items:stretch}
+.growth-upcoming-exhibitions .exhibition-feature{height:100%;display:grid;grid-template-rows:520px 1fr;align-items:stretch}
+.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster{height:520px;display:grid;place-items:center;background:#f8f8f8;padding:20px}
+.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster img{height:100%;width:100%;max-height:100%;object-fit:contain;object-position:center}
+.growth-upcoming-exhibitions .exhibition-feature>div:last-child{display:flex;flex-direction:column;align-items:flex-start;min-height:230px}
+.growth-upcoming-exhibitions .exhibition-feature .eyebrow{min-height:39px}
+.cowork-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 12px}
+.cowork-gallery img{display:block;width:100%;height:clamp(210px,28vw,395px);object-fit:cover;object-position:center 45%;border-radius:18px}
+.courses-section{background:#e9f0ff;padding-block:clamp(72px,8vw,120px)}
+.courses-section .section-heading{max-width:1050px}
+.courses-section .section-heading h2{color:#1742bd;font-size:clamp(39px,5vw,75px);letter-spacing:-.05em;line-height:1.04}
+.course-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.course-card{background:#fff;border:1px solid #d6dff8;display:flex;flex-direction:column;min-height:330px;padding:clamp(23px,3vw,38px);border-radius:25px;color:#1742bd;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.course-card:nth-child(2),.course-card:nth-child(3){background:#eaf6d4}
+.course-card:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(20,50,110,.1)}
+.course-card-number{font-size:12px;font-weight:800;letter-spacing:.11em}
+.course-card h3{font-size:clamp(35px,4.2vw,57px);line-height:1.05;letter-spacing:-.055em;margin:35px 0 18px;color:#1742bd}
+.course-card p{font-size:17px;line-height:1.55;margin:0 0 26px;max-width:450px}
+.course-card-foot{margin-top:auto;display:flex;justify-content:space-between;gap:12px;align-items:end;border-top:1px solid #bed0e6;padding-top:18px;font-size:14px;flex-wrap:wrap}
+.course-card-foot strong{font-size:19px}
+.course-card-arrow{font-size:14px;font-weight:800;margin-top:20px}
+.course-detail{background:#fff;color:#173c91}
+.course-hero{min-height:min(76vh,780px);background:#1742bd;color:white;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:center;padding:clamp(55px,8vw,125px) max(5vw,24px);gap:15px}
+.course-hero-text{position:relative;z-index:1;max-width:920px}
+.course-back{display:inline-block;color:#d0e102;text-decoration:none;font-weight:800;margin-bottom:45px}
+.course-hero .eyebrow{color:#d0e102}
+.course-hero h1{font-family:Manrope,sans-serif;font-size:clamp(48px,7.5vw,115px);font-weight:800;letter-spacing:-.075em;line-height:.98;color:white;margin:15px 0 32px}
+.course-subtitle{font-size:clamp(21px,2.8vw,35px);font-weight:750;line-height:1.3;max-width:780px;margin:0 0 22px}
+.course-lead{font-size:clamp(16px,1.7vw,19px);max-width:700px;line-height:1.7;color:#e6edff;margin:0 0 30px}
+.course-hero-art img{display:block;width:100%;max-width:360px;transform:rotate(-14deg);filter:drop-shadow(0 15px 30px rgba(0,0,0,.08))}
+.course-detail .course-facts{padding-top:55px;padding-bottom:45px}
+.course-fact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.course-fact{border:1px solid #d2dcf4;background:#f6f9ff;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:15px;min-height:122px}
+.course-fact span{color:#687db1;font-size:13px}
+.course-fact strong{color:#1742bd;font-size:clamp(17px,2vw,25px);line-height:1.35}
+.course-steps{background:#f0f4ff;padding-block:70px}
+.course-steps .section-heading h2{font-size:clamp(38px,5vw,66px);color:#1742bd;line-height:1.05;letter-spacing:-.05em}
+.course-steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.course-steps-grid article{border:1px solid #d4dff4;padding:25px;border-radius:18px;background:white}
+.course-steps-grid article span{color:#7388bc;font-size:13px;font-weight:800}
+.course-steps-grid article h3{color:#1742bd;margin:28px 0 13px;font-size:25px;line-height:1.15}
+.course-steps-grid article p{line-height:1.65;font-size:15px}
+.course-note{max-width:920px;margin-top:30px;color:#455c91;line-height:1.6}
+.course-final-cta{background:#e8f4d0;display:flex;justify-content:space-between;align-items:center;gap:30px;padding-block:75px}
+.course-final-cta h2{font-size:clamp(38px,5vw,70px);letter-spacing:-.05em;color:#1742bd;max-width:780px}
+.course-final-cta p{max-width:700px;line-height:1.6}
+.course-final-cta .button{flex-shrink:0}
+.course-page-footer{padding:28px max(5vw,24px);background:#1742bd;color:white}
+.course-page-footer a{color:white}
+@media(max-width:950px){.growth-upcoming-exhibitions .exhibition-feature{grid-template-rows:410px 1fr}.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster{height:410px}.course-steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:740px){.growth-upcoming-exhibitions .exhibition-feature{grid-template-rows:450px 1fr}.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster{height:450px}.cowork-gallery{gap:8px}.cowork-gallery img{height:250px;border-radius:10px}.course-hero{grid-template-columns:1fr;padding-top:52px}.course-hero-art{display:none}.course-card-grid{grid-template-columns:1fr}.course-card{min-height:280px}.course-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-final-cta{flex-direction:column;align-items:start}}
+@media(max-width:470px){.cowork-gallery{grid-template-columns:1fr 1fr}.cowork-gallery img:first-child{grid-column:span 2;height:310px}.cowork-gallery img{height:225px}.course-hero h1{font-size:clamp(46px,12vw,70px)}.course-fact-grid{grid-template-columns:1fr}.course-steps-grid{grid-template-columns:1fr}.growth-upcoming-exhibitions .exhibition-feature{grid-template-rows:380px 1fr}.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster{height:380px}}
+@media(prefers-reduced-motion:reduce){.course-card{transition:none}}
