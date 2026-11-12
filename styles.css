@@ -1602,3 +1602,36 @@ html{scroll-behavior:smooth;scroll-padding-top:95px}
 @media(max-width:740px){.growth-upcoming-exhibitions .exhibition-feature{grid-template-rows:450px 1fr}.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster{height:450px}.cowork-gallery{gap:8px}.cowork-gallery img{height:250px;border-radius:10px}.course-hero{grid-template-columns:1fr;padding-top:52px}.course-hero-art{display:none}.course-card-grid{grid-template-columns:1fr}.course-card{min-height:280px}.course-fact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-final-cta{flex-direction:column;align-items:start}}
 @media(max-width:470px){.cowork-gallery{grid-template-columns:1fr 1fr}.cowork-gallery img:first-child{grid-column:span 2;height:310px}.cowork-gallery img{height:225px}.course-hero h1{font-size:clamp(46px,12vw,70px)}.course-fact-grid{grid-template-columns:1fr}.course-steps-grid{grid-template-columns:1fr}.growth-upcoming-exhibitions .exhibition-feature{grid-template-rows:380px 1fr}.growth-upcoming-exhibitions .exhibition-feature-art.exhibition-poster{height:380px}}
 @media(prefers-reduced-motion:reduce){.course-card{transition:none}}
+
+
+/* Approved ArtHub photographic placements — 12 Nov 2026 */
+.course-card-photo,
+.corporate-card-photo {
+  display:block;
+  width:100%;
+  height:clamp(165px,18vw,230px);
+  object-fit:cover;
+  border-radius:16px;
+  margin-top:17px;
+}
+.course-card h3 { margin-top:20px; }
+.growth-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.corporate-card-photo { height:clamp(190px,23vw,280px); }
+.course-hero-art.course-hero-photo {
+  overflow:hidden;
+  border-radius:20px;
+  background:transparent;
+  padding:0;
+}
+.course-hero-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:370px;
+  object-fit:cover;
+}
+@media (max-width:740px) {
+  .growth-feature-grid { grid-template-columns:1fr; }
+  .course-hero-art.course-hero-photo { display:block; width:100%; }
+  .course-hero-photo img { min-height:0; height:auto; max-height:420px; object-fit:contain; }
+}
