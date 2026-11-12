@@ -12,8 +12,21 @@
  let cached=null;
  function render(){
    root.replaceChildren();
-   if(!cached){setStatus('Не удалось проверить бронирования. Уточните даты у ArtHub.','Availability cannot be verified. Please ask ArtHub about dates.');root.append(el('p','',locale()==='en'?'Availability requires confirmation.':'Доступность требует подтверждения.'));return;}
-   const events=cached.events;
+   // Verified booked weeks, kept visible even if the Calendar API is temporarily unavailable.
+   // Unknown weeks are NEVER labelled available without live calendar confirmation.
+   const knownBooked=[
+     ['2026-11-06','2026-11-13','Фёдор Дыдыкин','Fedor Dydykin'],
+     ['2026-11-13','2026-11-20','Лера и Лора — ELSE','Lera & Lora — ELSE'],
+     ['2026-11-20','2026-11-27','Drawing in Circles','Drawing in Circles'],
+     ['2026-11-27','2026-12-04','',''],
+     ['2026-12-04','2026-12-11','',''],
+     ['2026-12-11','2026-12-18','',''],
+     ['2026-12-18','2026-12-25','',''],
+     ['2026-12-25','2027-01-01','',''],
+     ['2027-01-01','2027-01-08','','']
+   ].map(([start,end,artist_ru,artist_en])=>({type:'exhibition-booking',start,end,artist_ru,artist_en}));
+   const events=cached?cached.events:[];
+
    const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
    const today=parts.year+'-'+parts.month+'-'+parts.day;
    // Friday week boundaries are the booking unit; first grid slot starts this Friday or next Friday.
@@ -23,14 +36,20 @@
    for(let i=0;i<12;i++){
       const start=addDays(first,i*7),end=addDays(start,7);
       const overlaps=events.filter(e=>e.type!=='exhibition-opening' && e.start && e.end && e.start.slice(0,10)<end && e.end.slice(0,10)>start);
-      const booked=overlaps.length>0;
-      const slot=el('div','week-slot '+(booked?'booked':'available'));
+      const known=knownBooked.find(e=>e.start===start && e.end===end);
+      const booked=overlaps.length>0 || !!known;
+      const verified=!!cached;
+      const slot=el('div','week-slot '+(booked?'booked':verified?'available':'unverified'));
       slot.append(el('span','',format(start)+'–'+format(end)));
-      const named=overlaps.find(e=>e.type==='exhibition'&&(e.artist_ru||e.artist_en));
-      slot.append(el('strong','',booked?(named?(locale()==='en'?(named.artist_en||named.artist_ru):(named.artist_ru||named.artist_en)):(locale()==='en'?'Booked':'Занято')):(locale()==='en'?'Available':'Свободно')));
+      const named=overlaps.find(e=>e.type==='exhibition'&&(e.artist_ru||e.artist_en))||known;
+      slot.append(el('strong','',booked?(named?(locale()==='en'?(named.artist_en||named.artist_ru):(named.artist_ru||named.artist_en)):(locale()==='en'?'Booked':'Занято')):(verified?(locale()==='en'?'Available':'Свободно'):(locale()==='en'?'Check dates':'Уточняется'))));
       root.append(slot);
    }
-   setStatus('Занятость обновляется из Google Calendar. Для бронирования свяжитесь с ArtHub.','Availability updates from Google Calendar. Contact ArtHub to confirm a booking.');
+   if(cached){
+     setStatus('Занятость загружена из Google Calendar. Наличие свободных недель уточняйте перед бронированием.','Availability loaded from Google Calendar. Please confirm free weeks before booking.');
+   }else{
+     setStatus('Показаны подтверждённые занятые недели. Проверка свободных дат временно недоступна — уточните у ArtHub.','Known booked weeks shown. Live free-date verification is temporarily unavailable; please ask ArtHub.');
+   }
  }
  async function load(){
   try{
