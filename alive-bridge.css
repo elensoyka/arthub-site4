@@ -5,7 +5,7 @@
 .alive-bridge h2{font-family:"Roboto Condensed",Manrope,sans-serif;color:#1742bd;font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-.045em;margin:12px 0 20px}
 .alive-bridge-head p:not(.eyebrow){max-width:680px;font-size:clamp(15px,1.8vw,19px);line-height:1.65}
 .alive-bridge-head img{width:100%;max-width:190px;justify-self:center;transform:rotate(-12deg)}
-.alive-bridge-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:29px}
+.alive-bridge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:29px}
 .alive-bridge-card{min-height:275px;border-radius:24px;padding:clamp(22px,3vw,36px);background:#fff;color:#1742bd;display:flex;flex-direction:column;gap:20px;border:1px solid #cbd7f3;transition:transform .2s,box-shadow .2s}
 .alive-bridge-card:nth-child(2){background:#eaf6d4}
 .alive-bridge-card:hover,.alive-bridge-card:focus-visible{transform:translateY(-3px);box-shadow:0 12px 23px rgba(20,50,110,.1)}
@@ -17,4 +17,5 @@
 .alive-bridge-primary{background:#1742bd;color:white}
 .alive-bridge-secondary{color:#1742bd;border:1px solid #1742bd}
 .topbar .nav a[href^="events/index.html"]{text-decoration:underline;text-decoration-color:#d0e102;text-decoration-thickness:2px;text-underline-offset:7px}
+@media(max-width:1000px) and (min-width:721px){.alive-bridge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}} 
 @media(max-width:720px){.alive-bridge{border-radius:22px!important;padding:26px 22px!important}.alive-bridge-head{grid-template-columns:1fr}.alive-bridge-head img{width:90px;justify-self:end;margin-top:-65px;opacity:.7}.alive-bridge-grid{grid-template-columns:1fr;gap:12px}.alive-bridge-card{min-height:205px}.alive-bridge-links{flex-direction:column;align-items:stretch}.alive-bridge-links a{width:100%}}
