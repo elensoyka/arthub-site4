@@ -135,6 +135,9 @@ html{scroll-behavior:smooth}body.alive{background:#f9fbff;color:var(--alive-ink)
 </main>
 <footer><strong>ArtHub Tbilisi</strong> · 172 Davit Aghmashenebeli Ave, Tbilisi · <a href="../index.html#contacts" data-ru="Контакты" data-en="Contact">Контакты</a></footer>
 <script>
-(function(){const buttons=[...document.querySelectorAll('[data-lang]')];function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));try{localStorage.setItem('arthub-lang',lang)}catch(e){}}buttons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));let saved='ru';try{saved=localStorage.getItem('arthub-lang')||'ru'}catch(e){}setLang(saved==='en'?'en':'ru')})();
+(function(){const buttons=[...document.querySelectorAll('[data-lang]')];function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));try{localStorage.setItem('arthub-lang',lang)}catch(e){}}window.arthubApplyLang=setLang;buttons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));let saved='ru';try{saved=localStorage.getItem('arthub-lang')||'ru'}catch(e){}setLang(saved==='en'?'en':'ru')})();
 </script>
+<!-- Set ARTHUB_EVENTS_FEED_URL only after confirming the public endpoint. -->
+<script src="live-events-config.js?v=20261114"></script>
+<script src="live-events.js?v=20261114"></script>
 </body></html>
