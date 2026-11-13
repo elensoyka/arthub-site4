@@ -1,3 +1,10 @@
+## 2026-11-14 — Найден действующий проект ArtHub Admin Bot; подготовлен безопасный тест темы
+
+- Пользователь передал ссылку Google Apps Script project id `17H-IQLFVKniGdquAw6nYcGw1h0vJsDerYTtFRRU8OZMehD2ZHuMHGgXi`; Google Drive metadata подтвердила название `ArtHub Admin Bot`, тип `application/vnd.google-apps.script`, владелец `team.arthubtbilisi@gmail.com`, последняя правка 2026-08-17.
+- Исходная ранее сохранённая версия `ArtHub_Admin_Bot_v4_11_FULL_Code.gs` показывает `botToken_()` со Script Properties `ADMIN_BOT_TOKEN`, `tg_()` с Telegram Bot API, входящий `doPost` с защитой от дублей. Код текущего live проекта через доступные инструменты не прочитан, идентичность с v4.11 не подтверждена.
+- Подготовлен отдельный append-only одноразовый тест `ArtHub_Telegram_SMM_topic_test.gs` с функцией `arthubSmmSendTestOnce()`: использует Script Properties токен, отправляет только одно явно маркированное тестовое сообщение в `chat_id=-1004454702372`, `message_thread_id=3683`; не меняет webhook/doPost/doGet и не создаёт trigger. Должен быть вручную добавлен в живой Apps Script и запущен пользователем — НЕ был выполнен и НЕ опубликован.
+- Не добавлять секреты в GitHub/ChatGPT. После проверки фактического сообщения в топике проектировать утверждаемую передачу полнотекстовых материалов, без заданий Маше и без автоматического Instagram-постинга.
+
 ## 2026-11-14 — Telegram: подтверждены адрес и тема SMM · Instagram
 
 - Пользователь создал тему «SMM · Instagram» в существующей группе ArtHub и добавил в группу @arthub_tbilisi_admin_bot.
