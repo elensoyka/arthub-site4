@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Афиша и сообщество ArtHub Tbilisi: лекции, мастерские, выставки и возможности творческого сотрудничества.">
+<title>Афиша и сообщество — ArtHub Tbilisi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{--alive-blue:#1742bd;--alive-lime:#d0e102;--alive-ink:#173c91;--alive-pale:#e9f0ff}
+html{scroll-behavior:smooth}body.alive{background:#f9fbff;color:var(--alive-ink);font-family:Manrope,system-ui,sans-serif}
+.alive *{box-sizing:border-box}
+.alive .alive-nav{display:flex;gap:clamp(10px,2vw,22px);flex-wrap:wrap;align-items:center}
+.alive .alive-nav a{font-size:13px;font-weight:700;text-decoration:none;color:var(--alive-blue)}
+.alive .alive-switch{display:flex;gap:4px;flex-shrink:0}
+.alive .alive-switch button{border:1px solid #bed0e6;border-radius:18px;background:white;color:var(--alive-blue);padding:9px 12px;cursor:pointer}
+.alive .alive-switch button[aria-pressed="true"]{background:var(--alive-lime);border-color:var(--alive-lime)}
+.alive .topbar{gap:15px;flex-wrap:wrap}
+.alive main{max-width:1220px;margin:auto;padding:24px 20px 90px}
+.alive .intro{border-radius:28px;background:var(--alive-blue);color:white;position:relative;overflow:hidden;padding:clamp(30px,5vw,70px);min-height:340px;display:flex;align-items:center}
+.alive .intro:after{content:"";position:absolute;background:url('../arthub-star.svg') center/contain no-repeat;width:clamp(150px,32vw,370px);height:clamp(150px,32vw,370px);right:-45px;top:-58px;opacity:.86;pointer-events:none}
+.alive .intro>div{position:relative;z-index:1;max-width:750px}
+.alive .eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.alive h1,.alive h2,.alive h3{font-family:'Roboto Condensed',Manrope,sans-serif;letter-spacing:-.035em}
+.alive h1{font-size:clamp(52px,8vw,105px);line-height:.9;text-transform:uppercase;margin:22px 0}
+.alive .intro p{max-width:570px;font-size:17px}
+.alive h2{font-size:clamp(38px,5vw,70px);line-height:1;margin:0 0 20px;text-transform:uppercase;color:var(--alive-blue)}
+.alive .section-block{padding-top:65px;scroll-margin-top:120px}
+.alive .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.alive article.alive-card{border:1px solid #d3def4;border-radius:24px;background:white;overflow:hidden;display:flex;flex-direction:column}
+.alive .card-art{background:#eaf6d4;min-height:205px;padding:29px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.alive .card-art span{font:800 clamp(38px,5vw,68px)/.91 'Roboto Condensed',sans-serif;color:var(--alive-blue);text-transform:uppercase;max-width:450px}
+.alive .card-art img{width:100px;max-width:22%;height:auto;transform:rotate(-13deg)}
+.alive .card-copy{padding:24px;display:flex;flex:1;flex-direction:column}
+.alive .date{font-weight:800;color:#486baa;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.alive h3{font-size:clamp(28px,3vw,40px);line-height:1.02;color:var(--alive-blue);margin:12px 0}
+.alive .card-copy p{line-height:1.65;max-width:60ch}
+.alive .actions{margin-top:auto;padding-top:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.alive .actions a{display:inline-flex;align-items:center;justify-content:center;border-radius:30px;padding:12px 18px;background:var(--alive-blue);color:white;text-decoration:none;font-weight:750;font-size:14px}
+.alive .actions a.secondary{background:#eaf0fc;color:var(--alive-blue)}
+.alive .price{font-weight:800;font-size:19px;white-space:nowrap;margin-left:auto}
+.alive .details{margin-top:18px;border-top:1px solid #dce4f3;padding-top:16px}
+.alive details summary{cursor:pointer;color:var(--alive-blue);font-weight:800}
+.alive .community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.alive .community-card{border-radius:22px;background:#eaf6d4;padding:26px;min-height:215px;display:flex;flex-direction:column}
+.alive .community-card:nth-child(2){background:#e9f0ff}
+.alive .community-card h3{margin:0 0 12px;font-size:33px}
+.alive .community-card p{margin:0 0 16px;flex:1}
+.alive .community-card a{font-weight:800;color:var(--alive-blue);text-decoration:underline;text-underline-offset:4px}
+.alive .alive-note{margin:28px 0;color:#5671a6;font-size:13px}
+.alive footer{padding:28px max(20px,calc((100vw - 1180px)/2));background:#e9f0ff;color:var(--alive-blue)}
+.alive footer a{font-weight:800;text-decoration:underline}
+.alive [data-lang-content]{display:none}.alive [data-lang-content="ru"]{display:revert}
+@media(max-width:850px){.alive .community-grid{grid-template-columns:1fr 1fr}.alive .topbar{padding:12px 20px}}
+@media(max-width:650px){.alive .cards,.alive .community-grid{grid-template-columns:1fr}.alive .intro{min-height:310px}.alive .intro:after{opacity:.2;right:-40px;top:38px}.alive .card-art{min-height:160px}.alive .topbar{position:relative}.alive .brand{font-size:24px}.alive .alive-nav{order:3;width:100%}.alive .alive-nav a{font-size:12px}.alive .section-block{padding-top:46px}}
+</style>
+</head>
+<body class="alive">
+<header class="topbar">
+<a class="brand brand-text-only" href="../index.html#top" aria-label="ArtHub — home">ARTHUB<img class="brand-star-image" src="../arthub-star.svg" width="38" height="38" alt=""></a>
+<nav class="alive-nav" aria-label="ArtHub">
+<a href="../index.html" data-ru="Главная" data-en="Home">Главная</a>
+<a href="#events" data-ru="Афиша" data-en="What's on">Афиша</a>
+<a href="#community" data-ru="Сообщество" data-en="Community">Сообщество</a>
+<a href="../index.html#courses" data-ru="Мастерские" data-en="Workshops">Мастерские</a>
+<a href="../index.html#exhibitions" data-ru="Выставки" data-en="Exhibitions">Выставки</a>
+</nav>
+<div class="alive-switch" role="group" aria-label="Language"><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+</header>
+<main>
+<section class="intro"><div>
+<p class="eyebrow" data-ru="ArtHub Tbilisi · Живое пространство" data-en="ArtHub Tbilisi · A living creative space">ArtHub Tbilisi · Живое пространство</p>
+<h1 data-ru="Здесь всё происходит" data-en="It all happens here">Здесь всё происходит</h1>
+<p data-ru="Лекции, мастерские, выставки и люди. Приходите смотреть, делать, учиться и придумывать своё." data-en="Talks, workshops, exhibitions and people. Come to explore, make, learn and create your own thing.">Лекции, мастерские, выставки и люди. Приходите смотреть, делать, учиться и придумывать своё.</p>
+</div></section>
+<section id="events" class="section-block" aria-labelledby="events-heading">
+<h2 id="events-heading" data-ru="Афиша" data-en="What's on">Афиша</h2>
+<div class="cards">
+<article class="alive-card" id="puppet-history">
+<div class="card-art"><span data-ru="История кукольной анимации" data-en="History of puppet animation">История кукольной анимации</span><img src="../arthub-star.svg" alt=""></div>
+<div class="card-copy">
+<div class="date" data-ru="16 ноября 2026 · понедельник · 20:00" data-en="16 November 2026 · Monday · 20:00">16 ноября 2026 · понедельник · 20:00</div>
+<h3 data-ru="Как всё начиналось" data-en="How it all began">Как всё начиналось</h3>
+<p data-ru="От первых кукольных фильмов до наших дней. Вспомним мастеров разных эпох, созданные ими маленькие миры и движения, которыми куклы передают чувства." data-en="From early puppet animation to today: makers of different eras, miniature worlds, and the subtle gestures that communicate emotions.">От первых кукольных фильмов до наших дней. Вспомним мастеров разных эпох, созданные ими маленькие миры и движения, которыми куклы передают чувства.</p>
+<p><strong data-ru="Лектор: Ксения Липская" data-en="Speaker: Ksenia Lipskaya">Лектор: Ксения Липская</strong></p>
+<details class="details"><summary data-ru="Подробнее о лекции" data-en="About the lecture">Подробнее о лекции</summary>
+<p data-ru="Поговорим об истории кукольной анимации, о том, как художники создавали своих героев и декорации, как научились передавать чувства с помощью едва заметных жестов и почему куклы трогают зрителей любого возраста." data-en="Discover the history of puppet animation: how artists made characters and sets, how subtle gestures came to express feeling, and why these films still move people of all ages.">Поговорим об истории кукольной анимации, о том, как художники создавали своих героев и декорации, как научились передавать чувства с помощью едва заметных жестов и почему куклы трогают зрителей любого возраста.</p>
+</details>
+<div class="actions"><a href="https://instagram.com/arthub.tbilisi" rel="noopener" target="_blank" data-ru="Запись в Instagram ↗" data-en="Book via Instagram ↗">Запись в Instagram ↗</a><span class="price">15 ₾</span></div>
+</div>
+</article>
+<article class="alive-card" id="puppet-making">
+<div class="card-art"><span data-ru="Изготовление кукол" data-en="Making animation puppets">Изготовление кукол</span><img src="../arthub-star.svg" alt=""></div>
+<div class="card-copy">
+<div class="date" data-ru="19 ноября 2026 · четверг · 20:00" data-en="19 November 2026 · Thursday · 20:00">19 ноября 2026 · четверг · 20:00</div>
+<h3 data-ru="Как рождается герой" data-en="Creating a character">Как рождается герой</h3>
+<p data-ru="От эскиза и материалов до устройства внутри куклы, подвижного каркаса и деталей, которые придают персонажу характер." data-en="From sketches and materials to the structure inside a puppet, movable armatures and the small details that make a character unique.">От эскиза и материалов до устройства внутри куклы, подвижного каркаса и деталей, которые придают персонажу характер.</p>
+<p><strong data-ru="Лектор: Ксения Липская" data-en="Speaker: Ksenia Lipskaya">Лектор: Ксения Липская</strong></p>
+<details class="details"><summary data-ru="Подробнее о лекции" data-en="About the lecture">Подробнее о лекции</summary>
+<p data-ru="Рассмотрим создание анимационной куклы шаг за шагом: идея, эскиз, выбор материалов, внутреннее устройство, подвижность и финальные детали. Как художественный замысел встречается с задачами съёмки?" data-en="A look at the creation of an animation puppet, step by step: idea, sketches, materials, inner mechanics, movement and finishing details. How does artistic vision meet the practical needs of filming?">Рассмотрим создание анимационной куклы шаг за шагом: идея, эскиз, выбор материалов, внутреннее устройство, подвижность и финальные детали. Как художественный замысел встречается с задачами съёмки?</p>
+</details>
+<div class="actions"><a href="https://instagram.com/arthub.tbilisi" rel="noopener" target="_blank" data-ru="Запись в Instagram ↗" data-en="Book via Instagram ↗">Запись в Instagram ↗</a><span class="price">15 ₾</span></div>
+</div>
+</article>
+</div>
+<p class="alive-note" data-ru="Это первая редакция афиши. Запись пока через официальный Instagram ArtHub; сайт не собирает персональные данные." data-en="This is the first agenda preview. Booking is currently through ArtHub’s official Instagram; the website does not collect personal data.">Это первая редакция афиши. Запись пока через официальный Instagram ArtHub; сайт не собирает персональные данные.</p>
+</section>
+<section id="community" class="section-block" aria-labelledby="community-heading">
+<h2 id="community-heading" data-ru="Сообщество" data-en="Community">Сообщество</h2>
+<div class="community-grid">
+<div class="community-card"><h3 data-ru="Создавать" data-en="Make">Создавать</h3><p data-ru="Найдите своё место для работы, экспериментов и собственных художественных проектов." data-en="Find space for your work, experiments and independent art projects.">Найдите своё место для работы, экспериментов и собственных художественных проектов.</p><a href="../index.html#spaces" data-ru="Пространства ↗" data-en="Explore spaces ↗">Пространства ↗</a></div>
+<div class="community-card"><h3 data-ru="Учиться" data-en="Learn">Учиться</h3><p data-ru="Приходите в мастерские ArtHub — пробовать материалы, придумывать и делать своими руками." data-en="Join ArtHub workshops to explore materials, invent and make things by hand.">Приходите в мастерские ArtHub — пробовать материалы, придумывать и делать своими руками.</p><a href="../index.html#courses" data-ru="Мастерские ↗" data-en="Workshops ↗">Мастерские ↗</a></div>
+<div class="community-card"><h3 data-ru="Показывать" data-en="Exhibit">Показывать</h3><p data-ru="Предложите выставку, познакомьтесь с программой резиденции и разделите свой проект с другими." data-en="Propose an exhibition, explore our residency programme and share your project.">Предложите выставку, познакомьтесь с программой резиденции и разделите свой проект с другими.</p><a href="../index.html#open-residency" data-ru="Open Residency ↗" data-en="Open Residency ↗">Open Residency ↗</a></div>
+</div>
+</section>
+</main>
+<footer><strong>ArtHub Tbilisi</strong> · 172 Davit Aghmashenebeli Ave, Tbilisi · <a href="../index.html#contacts" data-ru="Контакты" data-en="Contact">Контакты</a></footer>
+<script>
+(function(){const buttons=[...document.querySelectorAll('[data-lang]')];function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));try{localStorage.setItem('arthub-lang',lang)}catch(e){}}buttons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));let saved='ru';try{saved=localStorage.getItem('arthub-lang')||'ru'}catch(e){}setLang(saved==='en'?'en':'ru')})();
+</script>
+</body></html>
