@@ -32,10 +32,49 @@
       return ['Язык: русский', 'Event language: Russian'];
     return ['Язык: ' + s, 'Event language: ' + s];
   }
+  // Preserve the site's approved creative cards on first migration.
+  // Only fields actually changed in the source register replace existing copy.
+  var approvedBaseline = {
+    E003: {title:'История кукольной анимации', descriptionHash:549560954},
+    E004: {title:'Изготовление кукол', descriptionHash:2201764647},
+    E005: {title:'Pitch Night', descriptionHash:2882112315}
+  };
+  function hashText(value) {
+    var h=2166136261, s=String(value||'');
+    for(var i=0;i<s.length;i++) h=Math.imul(h ^ s.charCodeAt(i),16777619);
+    return h>>>0;
+  }
+  function updateApprovedCard(ev, nodeId) {
+    var old=document.getElementById(nodeId);
+    var baseline=approvedBaseline[ev.id];
+    if(!old || !baseline) return false;
+    var date=old.querySelector('.date');
+    if(date) localized(date,formatDate(ev.date,ev.time,'ru-RU'),formatDate(ev.date,ev.time,'en-GB'));
+    var lang=old.querySelector('.event-lang'), pairs=languagePair(ev.language);
+    if(lang) localized(lang,pairs[0],pairs[1]);
+    // Preserve headings ("Как всё начиналось", etc.) unless the original event name changes.
+    if(ev.title.ru !== baseline.title) {
+      var artTitle=old.querySelector('.card-art span');
+      if(artTitle) localized(artTitle,String(ev.title.ru||''),String(ev.title.en||''));
+      var heading=old.querySelector('.card-copy h3');
+      if(heading) localized(heading,String(ev.title.ru||''),String(ev.title.en||''));
+    }
+    // Preserve approved copy and expanded lecture details on initial import.
+    if(hashText(ev.description.ru)!==baseline.descriptionHash) {
+      var description=old.querySelector('.card-copy > p:not(:has(strong))');
+      if(description) localized(description,String(ev.description.ru||''),String(ev.description.en||''));
+    }
+    var price=old.querySelector('.actions .price'), rawPrice=String(ev.price||'').trim(), donation=/donation/i.test(rawPrice);
+    if(price) localized(price,donation?'Вход — donation':rawPrice?rawPrice+' ₾':'По записи',donation?'Admission: donation':rawPrice?rawPrice+' GEL':'Booking required');
+    var href=old.querySelector('.actions a');
+    if(href && /^https:\/\//.test(ev.url||'')) href.href=ev.url;
+    return true;
+  }
   function render(ev) {
     if (!ev || !/^E\d{3,5}$/.test(String(ev.id)) || !ev.title || !ev.description) return;
     var existingIds = {E003:'puppet-history',E004:'puppet-making',E005:'pitch-night'};
     var nodeId = existingIds[ev.id] || 'event-' + ev.id.toLowerCase();
+    if (updateApprovedCard(ev, nodeId)) return;
     var article = element('article','alive-card');
     article.id = nodeId;
     article.dataset.eventId = ev.id;
