@@ -61,7 +61,7 @@
     }
     // Preserve approved copy and expanded lecture details on initial import.
     if(hashText(ev.description.ru)!==baseline.descriptionHash) {
-      var description=old.querySelector('.card-copy > p:not(:has(strong))');
+      var description=old.querySelector('.card-copy > p');
       if(description) localized(description,String(ev.description.ru||''),String(ev.description.en||''));
     }
     var price=old.querySelector('.actions .price'), rawPrice=String(ev.price||'').trim(), donation=/donation/i.test(rawPrice);
