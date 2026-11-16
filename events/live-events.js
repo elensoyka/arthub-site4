@@ -74,6 +74,8 @@
     if (!ev || !/^E\d{3,5}$/.test(String(ev.id)) || !ev.title || !ev.description) return;
     var existingIds = {E003:'puppet-history',E004:'puppet-making',E005:'pitch-night'};
     var nodeId = existingIds[ev.id] || 'event-' + ev.id.toLowerCase();
+    // Owner-approved Nov 16 programme supersedes stale entries for workshop and Pitch Night.
+    if (ev.id === 'E004' || ev.id === 'E005') return;
     if (updateApprovedCard(ev, nodeId)) return;
     var article = element('article','alive-card');
     article.id = nodeId;
