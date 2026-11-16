@@ -254,6 +254,11 @@ html{scroll-behavior:smooth}
    frame.src='programme/detail.html?item='+encodeURIComponent(item)+'&lang='+(lang==='en'?'en':'ru');
    if(!dialog.open)dialog.showModal();
  }
+ document.querySelectorAll('.language-switch button[data-lang]').forEach(button=>{
+   button.addEventListener('click',()=>{
+    if(schedule.contentWindow)schedule.contentWindow.postMessage({type:'arthub:lang',lang:button.dataset.lang},location.origin);
+   });
+ });
  document.querySelector('.arthub-close').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
  dialog.addEventListener('close',()=>{frame.removeAttribute('src')});
