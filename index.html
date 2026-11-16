@@ -10,7 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=arthub-courses-20261112" />
 <link rel="stylesheet" href="alive-bridge.css?v=20261113" />
-</head>
+<style>
+.alive-bridge-card .bridge-preview-info{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0 0 14px}
+.bridge-date{font-size:14px;font-weight:800}
+.bridge-time{font:800 27px/1.1 'Roboto Condensed',Arial,sans-serif}
+.bridge-language{font-weight:800;font-size:11px;border-radius:16px;background:#eaf0fc;padding:5px 10px}
+.alive-bridge-card h3{margin:12px 0}
+</style></head>
 <body>
   <header class="topbar">
     <a class="brand brand-text-only" href="#top" aria-label="ArtHub — на главную">ARTHUB<img class="brand-star-image" src="arthub-star.svg" alt="" width="38" height="38"></a>
@@ -56,12 +62,10 @@
     <img src="arthub-star.svg" alt="" aria-hidden="true" loading="lazy">
   </div>
   <div class="alive-bridge-grid">
-    <a class="alive-bridge-card" href="events/index.html#puppet-history"><span class="alive-bridge-meta" data-ru="16 ноября · 20:00 · 15 ₾ · русский" data-en="16 November · 20:00 · 15 ₾ · Russian">16 ноября · 20:00 · 15 ₾ · русский</span>
-      <h3 data-ru="История кукольной анимации" data-en="History of puppet animation">История кукольной анимации</h3><span class="alive-bridge-arrow" data-ru="Узнать о лекции ↗" data-en="Explore the talk ↗">Узнать о лекции ↗</span></a>
-    <a class="alive-bridge-card" href="events/index.html#puppet-making"><span class="alive-bridge-meta" data-ru="19 ноября · 20:00 · 40 ₾ · мастер-класс" data-en="19 November · 20:00 · 40 ₾ · workshop">19 ноября · 20:00 · 40 ₾ · мастер-класс</span><h3 data-ru="Воркшоп по декорациям" data-en="Set-design workshop">Воркшоп по декорациям</h3><span class="alive-bridge-arrow" data-ru="Сделать декорацию ↗" data-en="Make a set ↗">Сделать декорацию ↗</span></a>
-    <a class="alive-bridge-card" href="events/index.html#pitch-night"><span class="alive-bridge-meta" data-ru="25 ноября · 19:00 · donation" data-en="25 November · 19:00 · donation">25 ноября · 19:00 · donation</span>
-      <h3>Pitch Night</h3><span class="alive-bridge-arrow" data-ru="Русский / English · Узнать о встрече ↗" data-en="Russian / English · Explore the event ↗">Русский / English · Узнать о встрече ↗</span></a>
-    <a class="alive-bridge-card" href="events/index.html#big-fish"><span class="alive-bridge-meta" data-ru="21 ноября · 20:30 · кинопоказ" data-en="21 November · 20:30 · film night">21 ноября · 20:30 · кинопоказ</span><h3 data-ru="«Большая рыба» / Big Fish" data-en="Big Fish">«Большая рыба» / Big Fish</h3><span class="alive-bridge-arrow" data-ru="На кинопоказ ↗" data-en="Film details ↗">На кинопоказ ↗</span></a>
+    <a class="alive-bridge-card" href="programme/detail.html?item=puppet-history"><div class="bridge-preview-info"><span class="bridge-date" data-ru="16 ноября" data-en="16 November">16 ноября</span><span class="bridge-time">20:00</span><span class="bridge-language">RU</span></div><h3 data-ru="История кукольной анимации" data-en="History of puppet animation">История кукольной анимации</h3><span class="alive-bridge-arrow" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</span></a>
+    <a class="alive-bridge-card" href="programme/detail.html?item=sets-workshop"><div class="bridge-preview-info"><span class="bridge-date" data-ru="19 ноября" data-en="19 November">19 ноября</span><span class="bridge-time">20:00</span><span class="bridge-language">Язык уточняется</span></div><h3 data-ru="Воркшоп по декорациям" data-en="Set-design workshop">Воркшоп по декорациям</h3><span class="alive-bridge-arrow" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</span></a>
+    <a class="alive-bridge-card" href="programme/detail.html?item=pitch-night"><div class="bridge-preview-info"><span class="bridge-date" data-ru="25 ноября" data-en="25 November">25 ноября</span><span class="bridge-time">19:00</span><span class="bridge-language">RU / EN</span></div><h3 data-ru="Pitch Night" data-en="Pitch Night">Pitch Night</h3><span class="alive-bridge-arrow" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</span></a>
+    <a class="alive-bridge-card" href="programme/detail.html?item=big-fish"><div class="bridge-preview-info"><span class="bridge-date" data-ru="21 ноября" data-en="21 November">21 ноября</span><span class="bridge-time">20:30</span><span class="bridge-language">Язык уточняется</span></div><h3 data-ru="«Большая рыба» / Big Fish" data-en="Big Fish">«Большая рыба» / Big Fish</h3><span class="alive-bridge-arrow" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</span></a>
   </div>
   <div class="alive-bridge-links"><a class="alive-bridge-primary" href="programme/index.html" data-ru="Расписание · запись ↗" data-en="See what's on ↗">Вся афиша ↗</a>
   <a class="alive-bridge-secondary" href="events/index.html#community" data-ru="Познакомиться с сообществом ↗" data-en="Explore our community ↗">Познакомиться с сообществом ↗</a></div>
