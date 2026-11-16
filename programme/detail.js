@@ -29,9 +29,9 @@ function render(){
  const event=item.type==='events';
  document.title=t(item.title)+' — ArtHub Tbilisi';
  $('detailTitle').textContent=t(item.title);
- $('detailStatus').textContent=event?L('Событие','Event'):item.type==='courses'?L('Идёт набор','Enrolling'):L('Регулярные занятия','Weekly class');
+ $('detailStatus').textContent=event?L('Событие','Event'):item.type==='courses'?L('✳ Идёт набор','✳ Enrolling'):L('Можно присоединиться','Join anytime');
  $('detailIntro').textContent=t(item.text);
- $('aboutHeading').textContent=L('О занятии','About this class');
+ $('aboutHeading').textContent=L('Описание','Description');
  $('detailDescription').textContent=t(item.text);
  $('howHeading').textContent=L('Как всё устроено','How it works');
  $('detailHow').textContent=t(item.detail);
@@ -57,9 +57,22 @@ function render(){
   panel.append(fact(L('Время','Time'),item.time));
  }else{
   const dn=weekdayNames[language];
-  const schedule=item.dates?item.dates.map(d=>shortDate(d)+' · '+item.time).join(' / '):
-    item.days.map(d=>dn[d]+' · '+(item.times?.[d]||item.time)).join(' / ');
-  panel.append(fact(L('Расписание','Schedule'),schedule));
+  const scheduleRows=item.slots?
+    item.days.flatMap(d=>item.slots.map(slot=>({day:dn[d],label:t(slot.label),time:slot.time}))):
+    item.dates?item.dates.map(d=>({day:shortDate(d),label:'',time:item.time})):
+    item.days.map(d=>({day:dn[d],label:'',time:item.times?.[d]||item.time}));
+  const scheduleDiv=document.createElement('div');scheduleDiv.className='detail-fact';
+  const scheduleLabel=document.createElement('span');scheduleLabel.className='detail-label';
+  scheduleLabel.textContent=L('Расписание','Schedule');scheduleDiv.append(scheduleLabel);
+  const scheduleList=document.createElement('div');scheduleList.className='detail-schedule-list';
+  scheduleRows.forEach(row=>{
+    const entry=document.createElement('div');entry.className='detail-schedule-row';
+    const day=document.createElement('span');
+    day.textContent=row.day+(row.label?' · '+row.label:'');
+    const hour=document.createElement('strong');hour.textContent=row.time;
+    entry.append(day,hour);scheduleList.append(entry);
+  });
+  scheduleDiv.append(scheduleList);panel.append(scheduleDiv);
   if(item.start)panel.append(fact(L('Начало / в расписании с','Starts / listed from'),shortDate(item.start)));
   if(item.age)panel.append(fact(L('Возраст','Ages'),t(item.age)));
  }
