@@ -39,6 +39,7 @@ const events=[
 window.ArtHubProgrammeData={groups,events,teachers,teachingLanguage,telegram};
 if(!document.getElementById('weekGrid'))return;
 const $=id=>document.getElementById(id),lang=()=>document.documentElement.lang==='en'?'en':'ru',loc=(v)=>v?.[lang()]||'';
+if(new URLSearchParams(location.search).get('lang')==='en') document.documentElement.lang='en';
 const todayBase='2026-11-16';let offset=0,filter='all';
 const dateAdd=(s,n)=>{const d=new Date(s+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
 const mondayOf=(s)=>{const d=new Date(s+'T12:00:00Z'),w=d.getUTCDay();return dateAdd(s,-((w+6)%7))};
