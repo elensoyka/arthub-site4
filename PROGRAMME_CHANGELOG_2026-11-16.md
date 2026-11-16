@@ -30,3 +30,15 @@ Direct owner requests from 16 Nov; connected @arthub.tbilisi Instagram posts for
 2. Inspect site preview and mobile RU/EN.
 3. Synchronize public Google Sheets feed events E004/E005.
 4. Approve feature branch merge to design/blue-lime-editorial and deploy Cloudflare if access allows. Never alter main without explicit permission.
+
+
+## 16 November 2026 — Poster-based schedule reconciliation (supersedes provisional timings above)
+Source: Three user-uploaded posters covering **Monday/Tuesday**, **Wednesday/Thursday**, **Friday/Saturday**. These are the most recent direct source. Updated `programme/programme.js`, `programme/index.html`, `courses/theatre-puppet.html`, `index.html` in **feature/programme-nov-2026**, not deployed.
+
+- **Monday, Wednesday, Friday**: morning after-school groups **10:00–11:30 and 11:30–13:00**; mending/embroidery **13:00–16:00**; afternoon after-school groups **16:00–17:30 and 17:30–19:00**. (Prior provisional Tue/Thu 10:30–12:00 morning schedule is obsolete.) Monday stop-motion animation **19:00–22:00**, from **Nov 23**; Friday evening theatre puppetry **19:00–22:00** (poster notes **two places available**).
+- **Tuesday and Thursday**: theatre puppetry morning **10:00–13:00** (prior Wed/Fri morning listing obsolete), calligraphy **13:00–15:00**, papier-mâché **15:00–17:00**. Tuesday clay animation **17:00–19:00**, evening theatre puppetry **19:00–22:00**; Thursday clay animation **17:00–20:00** and model-making **20:00–22:00**.
+- **Saturday**: calligraphy **11:00–14:00**, stop-motion puppet animation **14:00–17:00**, model-making **17:00–19:00**.
+- Day/time assignments match uploaded posters. Existing one-off November calligraphy series (14, 21, 28 Nov) is separate from Tue/Thu recurring calligraphy; weekday price not yet agreed, marked "Уточняется". Group prices not printed on posters retain previously published prices, pending validation (notably morning after-school prices).
+- Previously agreed course starts remain: animation puppet **23 Nov**, clay **1 Dec**, model-making **3 Dec**. Poster does not give start dates, so these remain user-direct decisions.
+- Design, photos, exhibition calendar, main branch and live deployment untouched. No real browser/mobile preview or Cloudflare publishing verified.
+- Earlier changelog statements indicating morning Tue/Thu and theatre morning Wed/Fri are explicitly **superseded** by this section.
