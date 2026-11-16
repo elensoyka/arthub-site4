@@ -100,6 +100,13 @@ html.programme-embedded .programme-list{grid-template-columns:repeat(2,minmax(0,
  function detailUrl(id){
   return 'programme/detail.html?item='+encodeURIComponent(id)+'&lang='+document.documentElement.lang;
  }
+ window.addEventListener('message',function(e){
+  if(e.origin!==location.origin || !e.data || e.data.type!=='arthub:lang')return;
+  if(e.data.lang==='ru'||e.data.lang==='en'){
+    const btn=document.querySelector('[data-lang="'+e.data.lang+'"]');
+    if(btn)btn.click();
+  }
+ });
  document.addEventListener('click',function(e){
   const a=e.target.closest('a[href*="detail.html?item="]');
   if(!a)return;
