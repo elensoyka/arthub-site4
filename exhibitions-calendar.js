@@ -26,7 +26,7 @@
    // Exhibition week statuses explicitly approved by the owner on 12 Nov 2026.
    // Do not let stale Google Calendar records override these website statuses.
    const ownerWeekStatus=new Map([
-     ['2026-12-11','available'], ['2026-12-18','available'],
+     ['2026-12-11','booked'], ['2026-12-18','available'],
      ['2026-12-25','pending'], ['2027-01-01','pending'],
      ['2027-01-08','available'], ['2027-01-15','available'], ['2027-01-22','available']
    ]);
@@ -42,7 +42,7 @@
       const overlaps=events.filter(e=>e.type!=='exhibition-opening' && e.start && e.end && e.start.slice(0,10)<end && e.end.slice(0,10)>start);
       const known=knownBooked.find(e=>e.start===start && e.end===end);
       const explicitStatus=ownerWeekStatus.get(start);
-      const booked=!explicitStatus && (overlaps.length>0 || !!known);
+      const booked=explicitStatus==='booked' || (!explicitStatus && (overlaps.length>0 || !!known));
       const verified=!!cached;
       const state=explicitStatus==='available'?'available':explicitStatus==='pending'?'unverified':booked?'booked':verified?'available':'unverified';
       const slot=el('div','week-slot '+state);
