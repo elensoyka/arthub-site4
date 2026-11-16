@@ -98,3 +98,6 @@ Supersedes previous after-school child/teen split and prior colour/status design
 - Course preview and full detail page show each weekday with its precise time **on separate stacked rows** (no ambiguous time-range choices). For merged after-school, one card displays four groups, with day collection and exact times. In the weekly calendar the four after-school slots still appear at their corresponding hours but point to the same one detailed card.
 - Heading formerly "О занятии" changed to **Описание** to avoid resemblance to "0 занятий"; details show days/times as individual rows and regular-group status "Можно присоединиться".
 - The work is in `feature/schedule-clarity-nov-2026`; current `main` branch remains untouched. No photographs changed, no pricing amounts revised. Cloudflare publication must be separately verified. Master prompt next version v1.7.
+
+## Merge status — 16 November 2026, schedule clarity
+PR #9 merged successfully into `design/blue-lime-editorial` at `74a323cad5dcf88476950fd39a0ed5b412b57d9b`. `main` was not changed. Website programme code and decision log are saved. Public Cloudflare site was NOT verified (both known programme URLs inaccessible to checking browser). Browser visual/mobile QA not yet done; do not claim live publication. Master prompt v1.7 is the full prior prompt v1.6 plus this approved revision.
