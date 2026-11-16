@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Расписание и набор — ArtHub Tbilisi</title>
+<meta name="description" content="Расписание ArtHub Tbilisi: регулярные мастерские, набор в группы, лекции, воркшопы и кинопоказы.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{--blue:#1742bd;--lime:#d0e102;--muted:#526aa3;--line:#cfdcf6}
+*{box-sizing:border-box}body{margin:0;background:#f8faff;color:var(--blue);font-family:Manrope,Arial,sans-serif}
+.programme-main{max-width:1260px;margin:auto;padding:18px 20px 100px}
+.programme-hero{background:var(--blue);color:white;padding:clamp(26px,5vw,65px);border-radius:26px;position:relative;overflow:hidden}
+.programme-hero:after{content:"";background:url('../arthub-star.svg') center/contain no-repeat;position:absolute;right:-64px;top:-62px;width:clamp(150px,25vw,315px);height:clamp(150px,25vw,315px);pointer-events:none}
+.programme-hero>*{position:relative;z-index:1;max-width:780px}
+.programme-hero h1{font:800 clamp(52px,8vw,106px)/.9 'Roboto Condensed',Arial,sans-serif;letter-spacing:-.05em;margin:20px 0}
+.programme-hero p{font-size:17px;line-height:1.6}
+.programme-eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.programme-nav{display:flex;flex-wrap:wrap;gap:13px;padding:14px 0 20px;align-items:center}
+.programme-nav a{color:var(--blue);font-weight:800;font-size:13px;text-decoration:none}
+.programme-lang{display:flex;gap:5px;margin-left:auto}
+.programme-lang button{background:white;color:var(--blue);border:1px solid var(--line);border-radius:20px;padding:9px 13px;cursor:pointer;font-weight:800}
+.programme-lang button[aria-pressed=true]{background:var(--lime);border-color:var(--lime)}
+.programme-section{padding-top:55px;scroll-margin-top:20px}
+.programme-section h2{font:800 clamp(37px,5vw,65px)/1 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:-.03em;margin:0 0 14px}
+.programme-section>p{max-width:760px;line-height:1.65}
+.programme-weeknav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:28px 0 17px}
+.programme-weeknav button,.programme-filter button{cursor:pointer;border:1px solid var(--line);border-radius:50px;background:white;color:var(--blue);padding:12px 18px;font-weight:800}
+.programme-weeknav button:disabled{opacity:.35;cursor:not-allowed}
+#weekLabel{font-weight:900;font-size:17px;margin-right:auto}
+.programme-filter{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 24px}
+.programme-filter button[aria-pressed=true]{background:var(--lime);border-color:var(--lime)}
+.week-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+.week-day{border:1px solid var(--line);border-radius:18px;background:white;padding:13px 10px;min-height:170px}
+.week-day header{font-size:12px;font-weight:900;letter-spacing:.03em;border-bottom:1px solid #e3eafa;padding-bottom:10px;margin-bottom:10px}
+.week-item{display:block;text-align:left;width:100%;border:0;border-radius:9px;background:#edf2ff;color:var(--blue);padding:10px 8px;margin:7px 0;cursor:pointer;font:700 12px/1.4 Manrope,Arial,sans-serif}
+.week-item.events{background:var(--lime)}.week-item.courses{background:#e4ebff}.week-item.regular{background:#eaf6d4}
+.week-item strong{display:block;font-weight:900;font-size:12px}
+.programme-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:25px}
+.programme-card{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;min-width:0}
+.programme-card.highlight{background:#eaf6d4}
+.programme-kicker{font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:.1em;color:var(--muted)}
+.programme-card h3{font:800 clamp(26px,3vw,37px)/1.06 'Roboto Condensed',Arial,sans-serif;margin:13px 0}
+.programme-card p{font-size:14px;line-height:1.65}
+.programme-card .meta{font-size:13px;font-weight:800;color:#3e5d9a}
+.programme-card details{margin:12px 0 16px;border-top:1px solid var(--line);padding-top:14px}
+.programme-card summary{font-weight:900;cursor:pointer}
+.programme-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.programme-actions a{display:inline-flex;background:var(--blue);padding:12px 19px;border-radius:28px;color:white;text-decoration:none;font-weight:800;font-size:13px}
+.programme-price{font-weight:900;font-size:15px}
+.programme-empty{color:var(--muted);font-size:13px}.programme-note{color:var(--muted);font-size:12px;max-width:850px}
+.programme-card:target{outline:3px solid var(--lime)}
+@media(max-width:1050px){.week-days{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){.week-days{grid-template-columns:repeat(2,minmax(0,1fr))}.programme-list{grid-template-columns:1fr}.week-day{min-height:120px}.programme-hero:after{opacity:.28}.programme-hero h1{font-size:60px}}
+@media(max-width:380px){.week-days{grid-template-columns:1fr}.programme-main{padding-left:12px;padding-right:12px}}
+</style></head>
+<body><main class="programme-main">
+<nav class="programme-nav"><a href="../index.html" data-ru="← ArtHub" data-en="← ArtHub">← ArtHub</a><a href="#calendar" data-ru="Календарь" data-en="Calendar">Календарь</a><a href="#groups" data-ru="Регулярные группы" data-en="Regular groups">Регулярные группы</a><a href="#upcoming" data-ru="Афиша" data-en="What's on">Афиша</a><div class="programme-lang"><button data-lang="ru" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div></nav>
+<section class="programme-hero"><p class="programme-eyebrow" data-ru="ART HUB TBILISI · Программа" data-en="ART HUB TBILISI · Programme">ART HUB TBILISI · Программа</p><h1 data-ru="Приходите делать" data-en="Come and make">Приходите делать</h1><p data-ru="Еженедельные мастерские, лаборатории с набором, лекции, встречи и кино. Выберите неделю и нажмите на занятие — откроется подробная карточка с условиями и записью." data-en="Weekly studios, courses now enrolling, talks, gatherings and cinema. Pick a week and tap a class to see details and how to join.">Еженедельные мастерские, лаборатории с набором, лекции, встречи и кино. Выберите неделю и нажмите на занятие — откроется подробная карточка с условиями и записью.</p></section>
+<section class="programme-section" id="calendar"><h2 data-ru="Расписание по неделям" data-en="Week by week">Расписание по неделям</h2><p data-ru="Зелёным выделены события, голубым — курсы и регулярные занятия. Для групп с набором дата первого занятия указана в карточке. Если время ещё согласовывается, мы пишем об этом прямо." data-en="Special events are highlighted in lime; classes and ongoing courses in blue or pale green. Course start dates and provisional times are noted in their details.">Зелёным выделены события, голубым — курсы и регулярные занятия. Для групп с набором дата первого занятия указана в карточке. Если время ещё согласовывается, мы пишем об этом прямо.</p>
+<div class="programme-weeknav"><strong id="weekLabel"></strong><button id="prevWeek" type="button" data-ru="← Раньше" data-en="← Earlier">← Раньше</button><button id="thisWeek" type="button" data-ru="Эта неделя" data-en="This week">Эта неделя</button><button id="nextWeek" type="button" data-ru="Позже →" data-en="Later →">Позже →</button></div>
+<div class="programme-filter"><button data-filter="all" aria-pressed="true" data-ru="Все" data-en="All">Все</button><button data-filter="regular" aria-pressed="false" data-ru="Регулярные" data-en="Regular">Регулярные</button><button data-filter="courses" aria-pressed="false" data-ru="Идёт набор" data-en="Enrolling">Идёт набор</button><button data-filter="events" aria-pressed="false" data-ru="События" data-en="Events">События</button></div>
+<div id="weekGrid" class="week-days" aria-live="polite"></div><p class="programme-note" data-ru="Расписание — рабочая редакция на 16 ноября 2026. Для дополнительных утренних занятий и части стоимости требуется окончательная сверка с афишами." data-en="Working schedule as of 16 November 2026. Some morning sessions and prices await final confirmation.">Расписание — рабочая редакция на 16 ноября 2026. Для дополнительных утренних занятий и части стоимости требуется окончательная сверка с афишами.</p>
+</section><section class="programme-section" id="groups"><h2 data-ru="Регулярные группы и лаборатории" data-en="Weekly groups & labs">Регулярные группы и лаборатории</h2><p data-ru="Занятия, к которым можно присоединиться. Для каждого направления указаны время, возраст, оплата и статус набора." data-en="Join an ongoing creative practice. Each card shows the time, ages, price and enrolment status.">Занятия, к которым можно присоединиться. Для каждого направления указаны время, возраст, оплата и статус набора.</p><div class="programme-list" id="groupCards"></div></section>
+<section class="programme-section" id="upcoming"><h2 data-ru="Ближайшие события" data-en="Upcoming events">Ближайшие события</h2><p data-ru="Отдельные лекции, воркшопы, кинопоказы и творческие встречи." data-en="One-off talks, workshops, film nights and creative get-togethers.">Отдельные лекции, воркшопы, screenings and creative get-togethers.</p><div class="programme-list" id="eventCards"></div></section>
+<p class="programme-note" data-ru="ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Запись через Telegram ArtHub." data-en="ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Register via ArtHub Telegram.">ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Запись через Telegram ArtHub.</p>
+</main><script src="programme.js?v=20261116"></script></body></html>
