@@ -104,3 +104,32 @@ PR #9 merged successfully into `design/blue-lime-editorial` at `74a323cad5dcf884
 
 ## 16 November 2026 — Rollback of most recent revision v1.7
 The site owner rejected the latest age-colour and schedule clarity redesign and explicitly requested restoring the preceding version. Fully restored `programme/programme.js`, `programme/index.html`, `programme/detail.js` and `programme/detail.html` to the exact contents of pre-PR #9 commit `0a1e1cf472b2c981909316b4c2b8b5499ae6137c`. The earlier programme and full-page details from PR #8 remain intact. PR #9 historical merge remains on GitHub but its four functional changes have been reversed by follow-up commits. Version v1.7 must NOT be treated as the current approved design; the authoritative content for the programme UI is the pre-v1.7 version (v1.6). This is a code rollback; Cloudflare public deployment still requires separate verification. Main branch unchanged. No other site sections altered.
+
+
+## 16 Nov 2026 — Landing navigation, exhibitions, clarity (new approved design direction)
+User dictated revisions in conversation; direct current instruction supersedes prior outdated website text and the superseded v1.7 age-colour experiment. **Do not restore v1.7 UI redesign.**
+
+### Exhibition booking, privacy
+- 11–18 December 2026 exhibition week is BOOKED, not available.
+- Existing Google Calendar `Выставки | ArtHub` event `fah1nofm6cboof3phi9iv306js` edited: private internal description confirms booking by **Катя Райтман**, title unknown. Calendar event is private; no duplicate created.
+- Website `exhibitions-calendar.js` explicitly labels `2026-12-11` booked; public UI displays only `Занято / Booked` and must NEVER contain Katya's name. Explanatory RU/EN text adjusted on main page.
+- Other week statuses unchanged (notably Dec 18–25 available; late Dec/early Jan tentative per previous instructions).
+
+### Landing UX
+- Existing blue/lime editorial site preserved; main descriptive headline now `Творческий и культурный центр ArtHub Tbilisi / Creative & Cultural Centre`.
+- Clear service heading hierarchy: `Мастерские ArtHub` with prior slogan as small eyebrow; `Коворкинг для художников` with prior "idea has workspace" phrase as eyebrow; `Корпоративные программы`; `Цех бутафории` (working label after owner explicitly said she liked this variant).
+- Opportunity map uses functional names, no metaphor-based navigation (coworking, team programmes, custom props/sets, exhibitions, courses, workspaces). Corporate offer categories: wool/textile, team model making, puppet making.
+- Top nav distinguishes in-page anchors from teacher-directory external navigation; all internal destinations checked. Homepage timetable embedded at `#programme`, with auto height updates; clicking schedule, programme and event previews opens a large inline dialog with the existing full RU/EN detail page, no page navigation. Standalone programme URL retained as fallback and opens its own native dialog.
+- Uniform button radius (999px), blue fill, white bold text in shared CSS and landing, including previously green coworking strip action.
+- Event preview: small `Лекция · RU` label for animation history; animation-set workshop `RU`; Pitch Night `RU / EN`; Big Fish `EN · русские субтитры` (interpreting dictated "русские цифры" as "русские субтитры"; verify with organizer if needed).
+- Public events catalogue and programme event-data match. Existing photos and prices unchanged; main branch unchanged.
+
+### Quality / remaining
+- Source syntax passed for `programme/programme.js`, `programme/detail.js`, `exhibitions-calendar.js`, and inline scripts on homepage and programme page. Internal nav #links all resolve to existing IDs. Booking artist name absent from public homepage code.
+- Browser screenshots, responsive device testing, Cloudflare publication: NOT VERIFIED and must not be claimed.
+- Complete master prompt updated to v1.8; supersedes stale contrary requirements in v1.7. A decision remains whether to retain permanent heading `Цех бутафории`; owner used several voice-recognition variants, and this was her clearest affirmative preference.
+
+### Next decisions and work for corporate section
+- Confirm final naming and precise scope (production, purchasing, sourcing, setup and installation); differentiate props and event decoration.
+- Confirm fixed or custom packages, durations, prices, group limits, materials, off-site delivery.
+- Add actual case-study photos once approved, route enquiries to ArtHub Telegram and define intake questions.
