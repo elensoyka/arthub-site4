@@ -58,7 +58,7 @@ function render(){
  }else{
   const dn=weekdayNames[language];
   const scheduleRows=item.slots?
-    item.days.flatMap(d=>item.slots.map(slot=>({day:dn[d],label:t(slot.label),time:slot.time}))):
+    item.slots.map(slot=>({day:item.days.map(d=>dn[d]).join(' · '),label:t(slot.label),time:slot.time})):
     item.dates?item.dates.map(d=>({day:shortDate(d),label:'',time:item.time})):
     item.days.map(d=>({day:dn[d],label:'',time:item.times?.[d]||item.time}));
   const scheduleDiv=document.createElement('div');scheduleDiv.className='detail-fact';
