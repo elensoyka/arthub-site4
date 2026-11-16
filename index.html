@@ -16,6 +16,25 @@
 .bridge-time{font:800 27px/1.1 'Roboto Condensed',Arial,sans-serif}
 .bridge-language{font-weight:800;font-size:11px;border-radius:16px;background:#eaf0fc;padding:5px 10px}
 .alive-bridge-card h3{margin:12px 0}
+</style><style>
+:root{--arthub-button-radius:999px;--arthub-button-blue:#1742bd;--arthub-button-lime:#d0e102}
+.button,.intro-outline-action,.alive-bridge-primary,.alive-bridge-secondary,
+.growth-cowork-line>a,.footer-contact-buttons>a{
+ box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;
+ min-height:46px;border-radius:var(--arthub-button-radius);background:var(--arthub-button-blue);
+ color:#fff;border:2px solid var(--arthub-button-blue);font-weight:800;padding:10px 22px;
+ text-decoration:none;text-align:center;line-height:1.3;white-space:normal}
+.button:hover,.intro-outline-action:hover,.alive-bridge-primary:hover,.alive-bridge-secondary:hover,
+.growth-cowork-line>a:hover{background:#0d2c92;color:#fff}
+.growth-cowork-line>a{text-decoration:none}
+.arthub-programme-embed{scroll-margin-top:85px;margin-top:65px}
+.arthub-programme-embed #arthubProgrammeEmbed{border:0;width:100%;height:1700px;display:block;overflow:hidden;background:transparent}
+.arthub-inline-dialog{padding:0;width:min(1050px,96vw);height:92dvh;max-height:92dvh;max-width:96vw;border:0;border-radius:22px;box-shadow:0 20px 100px #09194c66}
+.arthub-inline-dialog::backdrop{background:#091a5bb8}
+.arthub-inline-dialog iframe{height:100%;width:100%;border:0}
+.arthub-inline-dialog .arthub-close{position:absolute;right:14px;top:14px;z-index:3;border:0;background:var(--arthub-button-lime);color:var(--arthub-button-blue);font-size:28px;font-weight:900;border-radius:50%;width:44px;height:44px;cursor:pointer}
+html{scroll-behavior:smooth}
+@media(max-width:700px){.arthub-programme-embed #arthubProgrammeEmbed{height:2600px}.arthub-inline-dialog{width:100vw;height:100dvh;max-height:100dvh;max-width:100vw;border-radius:0}}
 </style></head>
 <body>
   <header class="topbar">
@@ -99,6 +118,14 @@
     <a class="course-card" href="#programme" data-modal-item="calligraphy"><span class="course-card-number">04 / CALLIGRAPHY</span><h3 data-ru="Каллиграфия" data-en="Calligraphy">Каллиграфия</h3><p data-ru="Буквы, линии, ритм руки — три субботы в мастерской." data-en="Letters, lines and the rhythm of your hand — three Saturdays in the studio.">Буквы, линии, ритм руки — три субботы в мастерской.</p><div class="course-card-foot"><span data-ru="14, 21, 28 ноября · 11:00–14:00" data-en="Nov 14, 21, 28 · 11:00–14:00">14, 21, 28 ноября · 11:00–14:00</span><strong data-ru="Узнать стоимость" data-en="Ask for price">Узнать стоимость</strong></div><span class="course-card-arrow">Подробнее ↗</span></a>
   </div><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;align-items:center"><a class="button" href="#programme" data-ru="Расписание регулярных занятий ↓" data-en="Weekly timetable ↓">Все регулярные занятия и запись ↗</a><span data-ru="Арт-продлёнка · папье-маше · вышивка · куклы · пластилин · макетирование" data-en="After-school · papier-mâché · embroidery · puppets · clay animation · model making">Арт-продлёнка · папье-маше · вышивка · куклы · пластилин · макетирование</span><a href="teachers/index.html" style="color:#1742bd;font-weight:800" data-ru="Познакомиться с преподавателями ↗" data-en="Meet the teachers ↗">Познакомиться с преподавателями ↗</a></div>
 </section>
+    <section class="section arthub-programme-embed" id="programme">
+      <div class="section-heading">
+        <p class="eyebrow" data-ru="Все занятия в одном месте" data-en="Every class in one place">Все занятия в одном месте</p>
+        <h2 data-ru="Расписание ArtHub" data-en="ArtHub Timetable">Расписание ArtHub</h2>
+        <p data-ru="Выбирайте неделю и занятие. Подробное описание откроется здесь же, без перехода на другую страницу." data-en="Choose a week and a class. Full details open here, without leaving the landing page.">Выбирайте неделю и занятие. Подробное описание откроется здесь же, без перехода на другую страницу.</p>
+      </div>
+      <iframe id="arthubProgrammeEmbed" loading="lazy" title="Расписание ArtHub" src="programme/index.html?embed=1"></iframe>
+    </section>
     <section class="section exhibitions-section" id="exhibitions">
   <div class="section-heading">
     <p class="eyebrow" data-ru="Галерея ArtHub" data-en="ArtHub Gallery">Галерея ArtHub</p>
@@ -215,5 +242,34 @@
   <script src="i18n.js"></script>
   <script src="exhibitions-calendar.js?v=20261112-week-status-v2"></script>
   <script src="gallery-slider.js"></script>
-</body>
+<dialog id="arthubDetailDialog" class="arthub-inline-dialog" aria-label="Подробное описание"><button type="button" class="arthub-close" aria-label="Закрыть подробности">×</button><iframe id="arthubDetailFrame" title="Подробности программы ArtHub"></iframe></dialog>
+<script>
+(function(){
+ const dialog=document.getElementById('arthubDetailDialog');
+ const frame=document.getElementById('arthubDetailFrame');
+ const schedule=document.getElementById('arthubProgrammeEmbed');
+ if(!dialog||!frame||!schedule)return;
+ function show(item,lang){
+   if(!/^[a-z0-9-]+$/.test(item))return;
+   frame.src='programme/detail.html?item='+encodeURIComponent(item)+'&lang='+(lang==='en'?'en':'ru');
+   if(!dialog.open)dialog.showModal();
+ }
+ document.querySelector('.arthub-close').addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+ dialog.addEventListener('close',()=>{frame.removeAttribute('src')});
+ document.addEventListener('click',e=>{
+  const a=e.target.closest('a[data-modal-item]');if(!a)return;
+  e.preventDefault();show(a.dataset.modalItem,document.documentElement.lang);
+ });
+ window.addEventListener('message',e=>{
+  if(e.origin!==location.origin||!e.data||typeof e.data!=='object')return;
+  if(e.source!==schedule.contentWindow)return;
+  if(e.data.type==='arthub:detail')show(e.data.item,e.data.lang);
+  if(e.data.type==='arthub:height'&&Number.isFinite(e.data.height)){
+    const h=Math.max(300,Math.min(10000,Math.ceil(e.data.height)+15));
+    if(Math.abs(schedule.offsetHeight-h)>8)schedule.style.height=h+'px';
+  }
+ });
+})();
+</script></body>
 </html>
