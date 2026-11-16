@@ -57,7 +57,14 @@ html{scroll-behavior:smooth}body.alive{background:#f9fbff;color:var(--alive-ink)
 @media(max-width:850px){.alive .community-grid{grid-template-columns:1fr 1fr}.alive .topbar{padding:12px 20px}}
 @media(max-width:650px){.alive .cards,.alive .community-grid{grid-template-columns:1fr}.alive .intro{min-height:310px}.alive .intro:after{opacity:.2;right:-40px;top:38px}.alive .card-art{min-height:160px}.alive .topbar{position:relative}.alive .brand{font-size:24px}.alive .alive-nav{order:3;width:100%}.alive .alive-nav a{font-size:12px}.alive .section-block{padding-top:46px}}
 </style>
-</head>
+<style>
+.alive article.alive-card-compact .card-copy{padding:clamp(22px,3vw,31px)}
+.alive .alive-card-compact .event-time{font:800 32px/1.1 'Roboto Condensed',Arial,sans-serif;color:#1742bd;margin:8px 0 3px}
+.alive .alive-card-compact .event-kind{font-size:11px;letter-spacing:.11em;font-weight:900;color:#5574b8;text-transform:uppercase;margin-bottom:12px}
+.alive .alive-card-compact .event-lang{padding:5px 10px;font-size:11px;margin:12px 0 6px}
+.alive .alive-card-compact .actions{margin-top:auto}
+.alive .alive-card-compact .actions a{min-width:150px;justify-content:space-between}
+</style></head>
 <body class="alive">
 <header class="topbar">
 <a class="brand brand-text-only" href="../index.html#top" aria-label="ArtHub — home">ARTHUB<img class="brand-star-image" src="../arthub-star.svg" width="38" height="38" alt=""></a>
@@ -79,42 +86,45 @@ html{scroll-behavior:smooth}body.alive{background:#f9fbff;color:var(--alive-ink)
 <section id="events" class="section-block" aria-labelledby="events-heading">
 <h2 id="events-heading" data-ru="Афиша" data-en="What's on">Афиша</h2>
 <div class="cards">
-<article class="alive-card" id="puppet-history">
-<div class="card-art"><span data-ru="История кукольной анимации" data-en="History of puppet animation">История кукольной анимации</span><img src="../arthub-star.svg" alt=""></div>
-<div class="card-copy">
-<div class="date" data-ru="16 ноября 2026 · понедельник · 20:00" data-en="16 November 2026 · Monday · 20:00">16 ноября 2026 · понедельник · 20:00</div>
-<div class="event-lang" data-ru="Язык: русский" data-en="Event language: Russian">Язык: русский</div>
-<h3 data-ru="Как всё начиналось" data-en="How it all began">Как всё начиналось</h3>
-<p data-ru="От первых кукольных фильмов до наших дней. Вспомним мастеров разных эпох, созданные ими маленькие миры и движения, которыми куклы передают чувства." data-en="From early puppet animation to today: makers of different eras, miniature worlds, and the subtle gestures that communicate emotions.">От первых кукольных фильмов до наших дней. Вспомним мастеров разных эпох, созданные ими маленькие миры и движения, которыми куклы передают чувства.</p>
-<p><strong data-ru="Лектор: Ксения Липская" data-en="Speaker: Ksenia Lipskaya">Лектор: Ксения Липская</strong></p>
-<details class="details"><summary data-ru="Подробнее о лекции" data-en="About the lecture">Подробнее о лекции</summary>
-<p data-ru="Поговорим об истории кукольной анимации, о том, как художники создавали своих героев и декорации, как научились передавать чувства с помощью едва заметных жестов и почему куклы трогают зрителей любого возраста." data-en="Discover the history of puppet animation: how artists made characters and sets, how subtle gestures came to express feeling, and why these films still move people of all ages.">Поговорим об истории кукольной анимации, о том, как художники создавали своих героев и декорации, как научились передавать чувства с помощью едва заметных жестов и почему куклы трогают зрителей любого возраста.</p>
-</details>
-<div class="actions"><a href="https://t.me/arthub_tbilisi" rel="noopener" target="_blank" data-ru="Запись в Instagram ↗" data-en="Book via Instagram ↗">Запись в Instagram ↗</a><span class="price">15 ₾</span></div>
-</div>
-</article>
-<article class="alive-card" id="puppet-making"><div class="card-art"><span data-ru="Декорации для анимации" data-en="Sets for animation">Декорации для анимации</span><img src="../arthub-star.svg" alt=""></div>
-<div class="card-copy"><div class="date" data-ru="19 ноября 2026 · четверг · 20:00" data-en="19 November 2026 · Thursday · 20:00">19 ноября 2026 · четверг · 20:00</div>
-<div class="event-lang" data-ru="Мастер-класс · 2 часа" data-en="Workshop · 2 hours">Мастер-класс · 2 часа</div>
-<h3 data-ru="Построить пространство для героя" data-en="Build a world for a character">Построить пространство для героя</h3>
-<p data-ru="По режиссёрскому заданию создаём декорацию для кукольной анимации из бумаги и картона. Комната, остановка или киоск — и свой технический способ оживить пространство." data-en="Build a cardboard and paper animation set from a director’s brief. Choose a room, bus stop or kiosk and invent the technical details for a moving character.">По режиссёрскому заданию создаём декорацию для кукольной анимации из бумаги и картона. Комната, остановка или киоск — и свой технический способ оживить пространство.</p>
-<details class="details"><summary data-ru="Подробнее о воркшопе" data-en="Workshop details">Подробнее о воркшопе</summary><p data-ru="За два часа каждый сделает объёмную декорацию, опробует её с подвижной куклой и заберёт макет домой. Материалы предоставляются. В посте Instagram указано 19:00, время 20:00 установлено по последнему указанию организатора." data-en="In two hours each participant will build a set, test it with a puppet and take it home. Materials included. The Instagram post lists 19:00; the event time here follows the organiser’s latest instruction of 20:00.">За два часа каждый сделает объёмную декорацию, опробует её с подвижной куклой и заберёт макет домой. Материалы предоставляются. В посте Instagram указано 19:00, время 20:00 установлено по последнему указанию организатора.</p></details>
-<div class="actions"><a href="https://t.me/arthub_tbilisi" target="_blank" rel="noopener noreferrer" data-ru="Записаться в Telegram ↗" data-en="Book via Telegram ↗">Записаться в Telegram ↗</a><span class="price">40 ₾</span></div>
-</div></article>
-<article class="alive-card" id="pitch-night">
-<div class="card-art"><span data-ru="Pitch Night" data-en="Pitch Night">Pitch Night</span><img src="../arthub-star.svg" alt=""></div>
-<div class="card-copy">
-<div class="date" data-ru="25 ноября 2026 · среда · 19:00" data-en="25 November 2026 · Wednesday · 19:00">25 ноября 2026 · среда · 19:00</div>
-<div class="event-lang" data-ru="Языки: русский и английский" data-en="Event languages: Russian &amp; English">Языки: русский и английский</div>
-<h3 data-ru="Идеи ищут друг друга" data-en="Ideas meet people">Идеи ищут друг друга</h3>
-<p data-ru="Приходите рассказать о своём проекте, познакомиться с другими авторами и найти людей для совместной работы. У каждого выступающего — пять минут на свою идею, затем общение и новые знакомства." data-en="Share your project, meet fellow creatives and find people to collaborate with. Each pitch lasts five minutes, followed by conversation and new connections.">Приходите рассказать о своём проекте, познакомиться с другими авторами и найти людей для совместной работы. У каждого выступающего — пять минут на свою идею, затем общение и новые знакомства.</p>
-<p><strong data-ru="Ведущая: Дарья Гук" data-en="Host: Daria Huck">Ведущая: Дарья Гук</strong></p>
-<details class="details"><summary data-ru="Как проходит вечер" data-en="How the evening works">Как проходит вечер</summary>
-<p data-ru="Пятиминутные презентации проектов: кто вы, над чем работаете и кого или что ищете для развития своей идеи. После выступлений можно задать вопросы, познакомиться и найти единомышленников." data-en="Five-minute project pitches: who you are, what you are working on, and what or whom you are looking for. After the pitches, there is time for questions, introductions and potential collaborations.">Пятиминутные презентации проектов: кто вы, над чем работаете и кого или что ищете для развития своей идеи. После выступлений можно задать вопросы, познакомиться и найти единомышленников.</p>
-</details>
-<div class="actions"><a href="https://t.me/arthub_tbilisi" rel="noopener" target="_blank" data-ru="Записаться в Telegram ↗" data-en="Book via Telegram ↗">Записаться в Telegram ↗</a><span class="price" data-ru="Вход — donation" data-en="Admission: donation">Вход — donation</span></div>
-</div>
-</article><article class="alive-card" id="big-fish"><div class="card-art"><span data-ru="Кино в ArtHub" data-en="Cinema at ArtHub">Кино в ArtHub</span><img src="../arthub-star.svg" alt=""></div><div class="card-copy"><div class="date" data-ru="21 ноября 2026 · суббота · 20:30" data-en="21 November 2026 · Saturday · 20:30">21 ноября 2026 · суббота · 20:30</div><h3 data-ru="«Большая рыба» / Big Fish" data-en="Big Fish">«Большая рыба» / Big Fish</h3><p data-ru="Смотрим фильм вместе, а после — обсуждаем истории, воображение и то, как рождаются необычные миры." data-en="Join us for a film night and a conversation about stories, imagination and unusual worlds.">Смотрим фильм вместе, а после — обсуждаем истории, воображение и то, как рождаются необычные миры.</p><div class="actions"><a href="https://t.me/arthub_tbilisi" target="_blank" rel="noopener noreferrer" data-ru="Записаться в Telegram ↗" data-en="Book via Telegram ↗">Записаться в Telegram ↗</a><span class="price" data-ru="Цена уточняется" data-en="Price to confirm">Цена уточняется</span></div></div></article>
+<article class="alive-card alive-card-compact" id="puppet-history">
+ <div class="card-copy">
+ <span class="event-kind" data-ru="Событие" data-en="Event">Событие</span>
+ <div class="date" data-ru="16 ноября 2026" data-en="16 November 2026">16 ноября 2026</div>
+ <div class="event-time">20:00</div>
+ <div class="event-lang">RU</div>
+ <h3 data-ru="История кукольной анимации" data-en="History of puppet animation">История кукольной анимации</h3>
+ <p data-ru="От первых кукольных фильмов до современного стоп-моушн." data-en="From early puppet films to contemporary stop-motion.">От первых кукольных фильмов до современного стоп-моушн.</p>
+ <div class="actions"><a href="../programme/detail.html?item=puppet-history" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</a></div>
+ </div></article>
+<article class="alive-card alive-card-compact" id="puppet-making">
+ <div class="card-copy">
+ <span class="event-kind" data-ru="Событие" data-en="Event">Событие</span>
+ <div class="date" data-ru="19 ноября 2026" data-en="19 November 2026">19 ноября 2026</div>
+ <div class="event-time">20:00</div>
+ <div class="event-lang">Язык уточняется</div>
+ <h3 data-ru="Воркшоп по декорациям" data-en="Set-design workshop">Воркшоп по декорациям</h3>
+ <p data-ru="Собираем собственную объёмную декорацию для кукольной анимации." data-en="Make your own three-dimensional set for puppet animation.">Собираем собственную объёмную декорацию для кукольной анимации.</p>
+ <div class="actions"><a href="../programme/detail.html?item=sets-workshop" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</a></div>
+ </div></article>
+<article class="alive-card alive-card-compact" id="pitch-night">
+ <div class="card-copy">
+ <span class="event-kind" data-ru="Событие" data-en="Event">Событие</span>
+ <div class="date" data-ru="25 ноября 2026" data-en="25 November 2026">25 ноября 2026</div>
+ <div class="event-time">19:00</div>
+ <div class="event-lang">RU / EN</div>
+ <h3 data-ru="Pitch Night" data-en="Pitch Night">Pitch Night</h3>
+ <p data-ru="Пять минут на идею — и знакомства с будущими соавторами." data-en="Five minutes for an idea, then find your future collaborators.">Пять минут на идею — и знакомства с будущими соавторами.</p>
+ <div class="actions"><a href="../programme/detail.html?item=pitch-night" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</a></div>
+ </div></article><article class="alive-card alive-card-compact" id="big-fish">
+ <div class="card-copy">
+ <span class="event-kind" data-ru="Событие" data-en="Event">Событие</span>
+ <div class="date" data-ru="21 ноября 2026" data-en="21 November 2026">21 ноября 2026</div>
+ <div class="event-time">20:30</div>
+ <div class="event-lang">Язык уточняется</div>
+ <h3 data-ru="«Большая рыба» / Big Fish" data-en="Big Fish">«Большая рыба» / Big Fish</h3>
+ <p data-ru="Киновечер с просмотром фильма и обсуждением." data-en="A film night and discussion.">Киновечер с просмотром фильма и обсуждением.</p>
+ <div class="actions"><a href="../programme/detail.html?item=big-fish" data-ru="Подробнее ↗" data-en="Details ↗">Подробнее ↗</a></div>
+ </div></article>
 </div><p><a href="../programme/index.html" style="color:#1742bd;font-weight:900" data-ru="Открыть полное расписание и набор в группы ↗" data-en="Explore weekly timetable & courses ↗">Открыть полное расписание и набор в группы ↗</a></p>
 <p class="alive-note" data-ru="Запись — в Telegram ArtHub. Полное расписание и регулярные группы доступны на отдельной странице." data-en="Book through ArtHub Telegram. Explore the full weekly timetable and regular workshops on the programme page.">Это первая редакция афиши. Запись пока через официальный Instagram ArtHub; сайт не собирает персональные данные.</p>
 </section>
