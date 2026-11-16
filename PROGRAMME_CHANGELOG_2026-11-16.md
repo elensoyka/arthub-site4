@@ -42,3 +42,21 @@ Source: Three user-uploaded posters covering **Monday/Tuesday**, **Wednesday/Thu
 - Previously agreed course starts remain: animation puppet **23 Nov**, clay **1 Dec**, model-making **3 Dec**. Poster does not give start dates, so these remain user-direct decisions.
 - Design, photos, exhibition calendar, main branch and live deployment untouched. No real browser/mobile preview or Cloudflare publishing verified.
 - Earlier changelog statements indicating morning Tue/Thu and theatre morning Wed/Fri are explicitly **superseded** by this section.
+
+
+## 16 November 2026 — Teacher profiles, teaching languages and requested release
+
+Approved by direct owner request:
+- Teacher directory `teachers/index.html` and 5 bilingual profile pages:
+  - `teachers/elena-rybina.html` — Елена Рыбина / Elena Rybina
+  - `teachers/ulyana-lashchenko.html` — Ульяна Лащенко / Ulyana Lashchenko
+  - `teachers/maria-kondratyeva.html` — Мария Кондратьева / Maria Kondratyeva
+  - `teachers/anna-mchedlishvili.html` — Анна Мчедлишвили / Anna Mchedlishvili
+  - `teachers/ksenia-lipskaya.html` — Ксения Липская / Ksenia Lipskaya (surname is Липская with **п**).
+- Every group card on `programme/index.html` now includes teacher name(s), linked to their profile, and teaching language. Direct course pages also show these two fields.
+- Approved mapping: model making → Ульяна Лащенко; animation puppet → Ксения Липская; calligraphy and papier-mâché → Мария Кондратьева; after-school → Мария Кондратьева + Елена Рыбина; visible mending → Анна Мчедлишвили; evening theatre puppetry and clay animation → Елена Рыбина.
+- **Morning theatre puppetry** instructor was not specified and is shown as “Уточняется” rather than inventing a teacher.
+- **Russian teaching language confirmed only for Ksenia's stop-motion programme** by linked Instagram copy. Other group teaching languages are currently “Уточняется” until owner confirms. Teaching language is not the same as website interface (RU/EN).
+- Profiles intentionally contain restrained role-based summaries and placeholders for a future approved portrait, biography and portfolio; do not fabricate awards or credentials.
+- Site link to teacher directory added to the homepage and weekly timetable; course detail pages have teacher links. Google Calendar, prices, photos and `main` unchanged.
+- Requested by owner: publish site. GitHub branch ready for PR to `design/blue-lime-editorial`; Cloudflare publishing must be separately verified because no Cloudflare deployment tool is connected.
