@@ -60,3 +60,13 @@ Approved by direct owner request:
 - Profiles intentionally contain restrained role-based summaries and placeholders for a future approved portrait, biography and portfolio; do not fabricate awards or credentials.
 - Site link to teacher directory added to the homepage and weekly timetable; course detail pages have teacher links. Google Calendar, prices, photos and `main` unchanged.
 - Requested by owner: publish site. GitHub branch ready for PR to `design/blue-lime-editorial`; Cloudflare publishing must be separately verified because no Cloudflare deployment tool is connected.
+
+
+## Release attempt / GitHub merge — 16 November 2026
+- The user directly requested publication of the redesigned site with teacher profiles and teaching-language labels.
+- PR #7, `feature/programme-nov-2026` → `design/blue-lime-editorial`, successfully merged. Merge SHA: `4df86cc298b467c159f629a29d88d34a31c9e8b7`.
+- The `main` branch remains untouched. Files for the timetable and all five teacher pages have been fetched and verified from the merged target branch.
+- JavaScript source passes syntax parsing, the 13 group records include explicit teacher arrays and language fields, and the Telegram CTA is present. No linked or rendered browser preview was obtainable.
+- GitHub status API reported no CI statuses for the merge commit.
+- Cloudflare Workers actual deployment and public HTTP visibility **NOT VERIFIED** (known addresses `https://arthub-site4.workers.dev/` and `https://arthubtbilisi.com/` could not be fetched by available clients). Do not mark publication as complete until checking Cloudflare Workers & Pages → arthub-site4 → Deployments and verifying public pages.
+- Master prompt v1.5 prepared (v1.4 plus release and instructor addendum).
