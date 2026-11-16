@@ -16,19 +16,23 @@ unknown:L('Уточняется','To be confirmed'),
 both:L('RU · EN','RU · EN')
 };
 const groups=[
-{id:'after-school-kids',teachers:["maria","elena"],language:'unknown',type:'regular',title:L('Арт-продлёнка · дети','Creative after-school · children'),age:L('Дети','Children'),days:[1,3,5],time:'16:00–17:30',start:'2026-11-16',price:L('35 ₾ разово · 120 ₾ / 4 · 220 ₾ / 8','35 ₾ drop-in · 120 ₾ / 4 · 220 ₾ / 8'),text:L('Картон, рисунок, ткань, шерсть, папье-маше. Можно присоединиться к постоянной группе.','Drawing, cardboard, textile, felt and papier-mâché. Join the weekly group.'),detail:L('Продолжительность — 1,5 часа. Понедельник, среда и пятница. Для тех, кто учится в первую смену.','90-minute sessions Monday, Wednesday and Friday. After-school sessions.'),status:L('Идёт набор','Enrolling')},
-{id:'after-school-teens',teachers:["maria","elena"],language:'unknown',type:'regular',title:L('Арт-продлёнка · дети и подростки','Creative after-school · children and teens'),age:L('Дети и подростки','Children and teens'),days:[1,3,5],time:'17:30–19:00',start:'2026-11-16',price:L('35 ₾ разово · 120 ₾ / 4 · 220 ₾ / 8','35 ₾ drop-in · 120 ₾ / 4 · 220 ₾ / 8'),text:L('Вечерняя мастерская для собственных проектов и знакомства с материалами.','An evening studio for individual projects and experimenting with materials.'),detail:L('Понедельник, среда и пятница. Продолжительность — 1,5 часа.','Monday, Wednesday and Friday, 90 minutes.'),status:L('Идёт набор','Enrolling')},
-{id:'after-school-morning-early',teachers:["maria","elena"],language:'unknown',type:'regular',title:L('Арт-продлёнка · утренняя группа','Morning creative studio'),age:L('Дети и подростки · вторая смена','Children and teens · afternoon school shift'),days:[1,3,5],time:'10:00–11:30',start:'2026-11-16',price:L('35 ₾ разово · 120 ₾ / 4 · 220 ₾ / 8','35 ₾ drop-in · 120 ₾ / 4 · 220 ₾ / 8'),text:L('Творческие занятия перед школой: рисунок, картон, ткань, папье-маше и собственные проекты.','Creative classes before school: drawing, cardboard, textile, papier-mâché and personal projects.'),detail:L('Понедельник, среда и пятница · 10:00–11:30. Для учащихся во вторую смену.','Monday, Wednesday and Friday · 10:00–11:30. For children attending afternoon school.'),status:L('Идёт набор','Enrolling')},
-{id:'after-school-morning-late',teachers:["maria","elena"],language:'unknown',type:'regular',title:L('Арт-продлёнка · утренняя группа','Morning creative studio'),age:L('Дети и подростки · вторая смена','Children and teens · afternoon school shift'),days:[1,3,5],time:'11:30–13:00',start:'2026-11-16',price:L('35 ₾ разово · 120 ₾ / 4 · 220 ₾ / 8','35 ₾ drop-in · 120 ₾ / 4 · 220 ₾ / 8'),text:L('Творческие занятия перед школой: рисунок, картон, ткань, папье-маше и собственные проекты.','Creative classes before school: drawing, cardboard, textile, papier-mâché and personal projects.'),detail:L('Понедельник, среда и пятница · 11:30–13:00. Для учащихся во вторую смену.','Monday, Wednesday and Friday · 11:30–13:00. For children attending afternoon school.'),status:L('Идёт набор','Enrolling')},
-{id:'embroidery',teachers:["anna"],language:'unknown',type:'regular',title:L('Починка одежды и вышивальный коворкинг','Visible mending & embroidery studio'),age:L('Взрослые и подростки · уточнить','Adults and teens · confirm'),days:[1,3,5],time:'13:00–16:00',start:'2026-11-16',price:L('55 ₾ разово · 180 ₾ / 4 · 320 ₾ / 8','55 ₾ drop-in · 180 ₾ / 4 · 320 ₾ / 8'),text:L('Аня Мчедлишвили: штопка, сашико, аппликация, вышивка и работа над собственной вещью.','With Anya Mchedlishvili: mending, sashiko, appliqué, embroidery and personal projects.'),detail:L('Три часа. Можно прийти со своей вещью или проектом.','Three-hour sessions. Bring a garment or your own project.'),status:L('Можно присоединиться','Open to join')},
-{id:'papier-mache',teachers:["maria"],language:'both',type:'regular',title:L('Папье-маше','Papier-mâché studio'),age:L('Возраст уточняется','Age to confirm'),days:[2,4],time:'15:00–17:00',start:'2026-11-17',price:L('Стоимость уточняется','Price to confirm'),text:L('Лепка, объёмные формы, фактуры и объекты из бумаги.','Paper sculpture, form, surface and handmade objects.'),detail:L('Вторник и четверг, 15:00–17:00 — по афишам 16 ноября.','Tuesday and Thursday, 15:00–17:00, confirmed by the latest posters.'),status:L('Идёт набор','Enrolling')},
-{id:'theatre-am',teachers:['elena'],language:'both',type:'courses',title:L('Театральная кукла · утро','Theatre puppetry · morning'),age:L('14+ и взрослые','14+ and adults'),days:[2,4],time:'10:00–13:00',start:'2026-11-17',price:L('320 ₾ / 8 занятий','320 ₾ / 8 sessions'),text:L('От эскиза и пеноплекса до подвижной куклы, декорации и будущего спектакля.','From sketches and foam to a performing puppet, sets and a final production.'),detail:L('Вторник и четверг. Постоянная группа, один блок — восемь занятий по три часа.','Tuesday and Thursday. Continuing group, eight three-hour sessions per block.'),status:L('Идёт набор','Enrolling')},
-{id:'theatre-pm',teachers:["elena"],language:'both',type:'courses',title:L('Театральная кукла · вечер','Theatre puppetry · evening'),age:L('Взрослые','Adults'),days:[2,5],time:'19:00–22:00',start:'2026-11-16',price:L('320 ₾ / 8 занятий','320 ₾ / 8 sessions'),text:L('Вечерняя лаборатория театральной куклы: персонажи, конструкции, характеры и спектакль.','Evening puppet theatre lab: characters, structures, movement and performance.'),detail:L('Вторник и пятница, 19:00–22:00. Два свободных места — по расписанию 16 ноября.','Tuesday and Friday, 19:00–22:00. Two places shown in the latest poster.'),status:L('Есть свободные места','Places available')},
-{id:'stop-motion',teachers:["ksenia"],language:'confirmed',type:'courses',title:L('Анимационная кукла и декорация','Animation puppet & set design'),age:L('14+ и взрослые','14+ and adults'),days:[1,6],time:'19:00–22:00',times:{6:'14:00–17:00'},start:'2026-11-23',price:L('400 ₾ / 8 занятий · 3 блока','400 ₾ / 8 sessions · 3 blocks'),text:L('С Ксенией Липской: кукла на каркасе, костюм, декорация и покадровая съёмка.','With Ksenia Lipskaya: armature, puppet, costume, set and stop-motion filming.'),detail:L('Старт 23 ноября. Пн 19:00–22:00 и сб 14:00–17:00. 24 занятия за 12 недель. Всего 5 мест. Полная стоимость 1200 ₾ тремя платежами.','Starts 23 November. Mon 19:00–22:00 and Sat 14:00–17:00. 24 sessions over 12 weeks, max five participants. Total 1200 ₾ in three payments.'),status:L('Идёт набор · старт 23.11','Enrolling · starts Nov 23')},
-{id:'model-making',teachers:["ulyana"],language:'unknown',type:'courses',title:L('Создайте свой дом · макетирование','Build your own house · model making'),age:L('Взрослые и подростки','Adults and teens'),days:[4,6],time:'20:00–22:00',times:{6:'17:00–19:00'},start:'2026-12-03',price:L('340 ₾ / 8 занятий','340 ₾ / 8 sessions'),text:L('За четыре недели создадим настоящий объёмный макет дома — возможного или фантастического.','Create an architectural model of a real or imagined home over four weeks.'),detail:L('Старт 3 декабря. Чт 20:00–22:00, сб 17:00–19:00. 8 занятий по 2 часа, до 6 человек.','Starts December 3. Thu 20:00–22:00, Sat 17:00–19:00. Eight two-hour sessions, max six participants.'),status:L('Идёт набор · старт 03.12','Enrolling · starts Dec 3')},
-{id:'clay-animation',teachers:["elena"],language:'both',type:'courses',title:L('Пластилиновая анимация','Clay animation'),age:L('14+ и взрослые','14+ and adults'),days:[2,4],time:'17:00–19:00',times:{4:'17:00–20:00'},start:'2026-12-01',price:L('240 ₾ / 8 занятий','240 ₾ / 8 sessions'),text:L('Персонажи из пластилина, маленькие декорации и первые анимационные сцены.','Clay characters, miniature sets and stop-motion experiments.'),detail:L('Запланирован старт во вторник, 1 декабря. Вт 17:00–19:00, чт 17:00–20:00 — по афишам 16 ноября.','Planned start: Tuesday, December 1. Tue 17:00–19:00, Thu 17:00–20:00, as shown on the latest posters.'),status:L('Идёт набор · старт 01.12','Enrolling · starts Dec 1')},
-{id:'calligraphy-weekdays',teachers:["maria"],language:'both',type:'regular',title:L('Каллиграфия · регулярная мастерская','Calligraphy · weekly studio'),age:L('Возраст уточняется','Age to confirm'),days:[2,4],time:'13:00–15:00',start:'2026-11-17',price:L('Стоимость регулярной группы уточняется','Weekly group price to confirm'),text:L('Во вторник и четверг исследуем буквы, линии, композицию и новые графические инструменты.','Explore letters, lines, composition and drawing tools every Tuesday and Thursday.'),detail:L('Вторник и четверг, 13:00–15:00. Стоимость серии субботних встреч указана в отдельной карточке.','Tuesday and Thursday, 13:00–15:00. Saturday mini-series has a separate price.'),status:L('Открыта запись','Registration open')},
-{id:'calligraphy',teachers:["maria"],language:'both',type:'regular',title:L('Каллиграфия · субботняя серия «Развидеть буквы»','Calligraphy · Saturday series Unsee the Letters'),age:L('Взрослые и подростки · уточнить','Adults and teens · confirm'),days:[],time:'11:00–14:00',start:'2026-11-14',price:L('50 ₾ встреча · 120 ₾ / 3','50 ₾ per workshop · 120 ₾ / 3'),text:L('Три самостоятельные субботние встречи: ритм, контраст и геометрия. Мария Кондратьева.','Three independent Saturday sessions: rhythm, contrast and geometry with Maria Kondratyeva.'),detail:L('14, 21, 28 ноября, 11:00–14:00. Материалы включены. Можно прийти отдельно.','November 14, 21 and 28, 11:00–14:00. Materials included. Single sessions welcome.'),status:L('Запись открыта','Booking open'),dates:['2026-11-14','2026-11-21','2026-11-28']}
+{id:'after-school',teachers:["maria","elena"],language:'both',type:'regular',audience:'kids',
+title:L('Арт-продлёнка','Creative after-school'),age:L('Дети и подростки','Children and teens'),
+days:[1,3,5],time:'10:00–11:30',
+slots:[{label:L('Утро · первая группа','Morning · group one'),time:'10:00–11:30'},{label:L('Утро · вторая группа','Morning · group two'),time:'11:30–13:00'},{label:L('После школы · первая группа','After school · group one'),time:'16:00–17:30'},{label:L('После школы · вторая группа','After school · group two'),time:'17:30–19:00'}],
+start:'2026-11-16',price:L('35 ₾ разово · 120 ₾ / 4 · 220 ₾ / 8','35 ₾ drop-in · 120 ₾ / 4 · 220 ₾ / 8'),
+text:L('Картон, движущиеся игрушки, шерсть, ткань и папье-маше. Создаём собственные проекты, исследуем материалы и учимся придумывать вместе.','Cardboard, moving toys, wool, textiles and papier-mâché. We make original projects, explore materials and invent together.'),
+detail:L('Четыре группы по 1,5 часа в понедельник, среду и пятницу: 10:00–11:30, 11:30–13:00, 16:00–17:30 и 17:30–19:00. Утренние занятия — для учащихся во вторую смену, вечерние — для первой.','Four 90-minute sessions on Monday, Wednesday and Friday: 10:00–11:30, 11:30–13:00, 16:00–17:30 and 17:30–19:00. Morning sessions suit children attending afternoon school, and later groups suit children attending morning school.'),
+status:L('Можно присоединиться','Join anytime')},
+{id:'embroidery',teachers:["anna"],language:'confirmed',type:'regular',title:L('Починка одежды и вышивальный коворкинг','Visible mending & embroidery studio'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[1,3,5],time:'13:00–16:00',start:'2026-11-16',price:L('55 ₾ разово · 180 ₾ / 4 · 320 ₾ / 8','55 ₾ drop-in · 180 ₾ / 4 · 320 ₾ / 8'),text:L('Аня Мчедлишвили: штопка, сашико, аппликация, вышивка и работа над собственной вещью.','With Anya Mchedlishvili: mending, sashiko, appliqué, embroidery and personal projects.'),detail:L('Три часа. Можно прийти со своей вещью или проектом.','Three-hour sessions. Bring a garment or your own project.'),status:L('Можно присоединиться','Join anytime')},
+{id:'papier-mache',teachers:["maria"],language:'both',type:'regular',title:L('Папье-маше','Papier-mâché studio'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[2,4],time:'15:00–17:00',start:'2026-11-17',price:L('Стоимость уточняется','Price to confirm'),text:L('Лепка, объёмные формы, фактуры и объекты из бумаги.','Paper sculpture, form, surface and handmade objects.'),detail:L('Вторник и четверг, 15:00–17:00 — по афишам 16 ноября.','Tuesday and Thursday, 15:00–17:00, confirmed by the latest posters.'),status:L('Можно присоединиться','Join anytime')},
+{id:'theatre-am',teachers:['elena'],language:'both',type:'courses',title:L('Театральная кукла · утро','Theatre puppetry · morning'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[2,4],time:'10:00–13:00',start:'2026-11-17',price:L('320 ₾ / 8 занятий','320 ₾ / 8 sessions'),text:L('От эскиза и пеноплекса до подвижной куклы, декорации и будущего спектакля.','From sketches and foam to a performing puppet, sets and a final production.'),detail:L('Вторник и четверг. Постоянная группа, один блок — восемь занятий по три часа.','Tuesday and Thursday. Continuing group, eight three-hour sessions per block.'),status:L('Идёт набор','Enrolling')},
+{id:'theatre-pm',teachers:["elena"],language:'both',type:'courses',title:L('Театральная кукла · вечер','Theatre puppetry · evening'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[2,5],time:'19:00–22:00',start:'2026-11-16',price:L('320 ₾ / 8 занятий','320 ₾ / 8 sessions'),text:L('Вечерняя лаборатория театральной куклы: персонажи, конструкции, характеры и спектакль.','Evening puppet theatre lab: characters, structures, movement and performance.'),detail:L('Вторник и пятница, 19:00–22:00. Два свободных места — по расписанию 16 ноября.','Tuesday and Friday, 19:00–22:00. Two places shown in the latest poster.'),status:L('Есть свободные места','Places available')},
+{id:'stop-motion',teachers:["ksenia"],language:'confirmed',type:'courses',title:L('Анимационная кукла и декорация','Animation puppet & set design'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[1,6],time:'19:00–22:00',times:{6:'14:00–17:00'},start:'2026-11-23',price:L('400 ₾ / 8 занятий · 3 блока','400 ₾ / 8 sessions · 3 blocks'),text:L('С Ксенией Липской: кукла на каркасе, костюм, декорация и покадровая съёмка.','With Ksenia Lipskaya: armature, puppet, costume, set and stop-motion filming.'),detail:L('Старт 23 ноября. Пн 19:00–22:00 и сб 14:00–17:00. 24 занятия за 12 недель. Всего 5 мест. Полная стоимость 1200 ₾ тремя платежами.','Starts 23 November. Mon 19:00–22:00 and Sat 14:00–17:00. 24 sessions over 12 weeks, max five participants. Total 1200 ₾ in three payments.'),status:L('Идёт набор · старт 23.11','Enrolling · starts Nov 23')},
+{id:'model-making',teachers:["ulyana"],language:'both',type:'courses',title:L('Создайте свой дом · макетирование','Build your own house · model making'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[4,6],time:'20:00–22:00',times:{6:'17:00–19:00'},start:'2026-12-03',price:L('340 ₾ / 8 занятий','340 ₾ / 8 sessions'),text:L('За четыре недели создадим настоящий объёмный макет дома — возможного или фантастического.','Create an architectural model of a real or imagined home over four weeks.'),detail:L('Старт 3 декабря. Чт 20:00–22:00, сб 17:00–19:00. 8 занятий по 2 часа, до 6 человек.','Starts December 3. Thu 20:00–22:00, Sat 17:00–19:00. Eight two-hour sessions, max six participants.'),status:L('Идёт набор · старт 03.12','Enrolling · starts Dec 3')},
+{id:'clay-animation',teachers:["elena"],language:'both',type:'courses',title:L('Пластилиновая анимация','Clay animation'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[2,4],time:'17:00–19:00',times:{4:'17:00–20:00'},start:'2026-12-01',price:L('240 ₾ / 8 занятий','240 ₾ / 8 sessions'),text:L('Персонажи из пластилина, маленькие декорации и первые анимационные сцены.','Clay characters, miniature sets and stop-motion experiments.'),detail:L('Запланирован старт во вторник, 1 декабря. Вт 17:00–19:00, чт 17:00–20:00 — по афишам 16 ноября.','Planned start: Tuesday, December 1. Tue 17:00–19:00, Thu 17:00–20:00, as shown on the latest posters.'),status:L('Идёт набор · старт 01.12','Enrolling · starts Dec 1')},
+{id:'calligraphy-weekdays',teachers:["maria"],language:'both',type:'regular',title:L('Каллиграфия · регулярная мастерская','Calligraphy · weekly studio'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[2,4],time:'13:00–15:00',start:'2026-11-17',price:L('Стоимость регулярной группы уточняется','Weekly group price to confirm'),text:L('Во вторник и четверг исследуем буквы, линии, композицию и новые графические инструменты.','Explore letters, lines, composition and drawing tools every Tuesday and Thursday.'),detail:L('Вторник и четверг, 13:00–15:00. Стоимость серии субботних встреч указана в отдельной карточке.','Tuesday and Thursday, 13:00–15:00. Saturday mini-series has a separate price.'),status:L('Можно присоединиться','Join anytime')},
+{id:'calligraphy',teachers:["maria"],language:'both',type:'regular',title:L('Каллиграфия · субботняя серия «Развидеть буквы»','Calligraphy · Saturday series Unsee the Letters'),age:L('Взрослые и подростки 14+','Adults and teens 14+'),days:[],time:'11:00–14:00',start:'2026-11-14',price:L('50 ₾ встреча · 120 ₾ / 3','50 ₾ per workshop · 120 ₾ / 3'),text:L('Три самостоятельные субботние встречи: ритм, контраст и геометрия. Мария Кондратьева.','Three independent Saturday sessions: rhythm, contrast and geometry with Maria Kondratyeva.'),detail:L('14, 21, 28 ноября, 11:00–14:00. Материалы включены. Можно прийти отдельно.','November 14, 21 and 28, 11:00–14:00. Materials included. Single sessions welcome.'),status:L('Можно присоединиться','Join anytime'),dates:['2026-11-14','2026-11-21','2026-11-28']}
 ];
 const events=[
 {id:'puppet-history',teachers:['ksenia'],language:'confirmed',type:'events',title:L('История кукольной анимации','History of puppet animation'),date:'2026-11-16',time:'20:00',price:L('15 ₾','15 ₾'),text:L('Лекция Ксении Липской — от первых кукольных фильмов до современности.','Ksenia Lipskaya on the history of puppet animation.'),detail:L('Русский язык.','In Russian.')},
@@ -46,41 +50,62 @@ const mondayOf=(s)=>{const d=new Date(s+'T12:00:00Z'),w=d.getUTCDay();return dat
 const weekday=(s)=>new Date(s+'T12:00:00Z').getUTCDay();
 const format=(s,options)=>new Intl.DateTimeFormat(lang()==='en'?'en-GB':'ru-RU',{timeZone:'UTC',...options}).format(new Date(s+'T12:00:00Z'));
 function localizedStatic(){document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[lang()]});document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang())))}
+const weekdays={ru:['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat']};
+const upcomingCourses=()=>groups.filter(g=>g.type==='courses');
+function scheduleRows(item){
+ if(item.slots) return item.slots.map(slot=>({day:item.days.map(d=>weekdays[lang()][d]).join(' · '),time:slot.time,label:loc(slot.label)}));
+ if(item.dates) return item.dates.map(d=>({day:format(d,{day:'numeric',month:'short'}),time:item.time,label:''}));
+ return item.days.map(d=>({day:weekdays[lang()][d],time:item.times?.[d]||item.time,label:''}));
+}
 function card(item){
  const event=item.type==='events',id=(event?'event-':'group-')+item.id;
- const dayNames=lang()==='ru'?['вс','пн','вт','ср','чт','пт','сб']:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
- const dates=event?[format(item.date,{weekday:'short',day:'numeric',month:'long'})]:
-   item.dates?item.dates.map(d=>format(d,{day:'numeric',month:'short'})):
-   [item.days.map(d=>dayNames[d]).join(' · ')];
- const timeText=event?item.time:item.days?.length?
-   [...new Set(item.days.map(d=>item.times?.[d]||item.time))].join(' / '):item.time;
- const language=loc(teachingLanguage[item.language||'unknown']);
- const showPrice=event?'':item.id.startsWith('after-school')?'220 ₾ / 8':
+ const price=event?'':item.id==='after-school'?'220 ₾ / 8':
    item.id==='embroidery'?'320 ₾ / 8':
    item.id.startsWith('theatre-')?'320 ₾ / 8':
    item.id==='stop-motion'?'400 ₾ / 8':
    item.id==='model-making'?'340 ₾ / 8':
    item.id==='clay-animation'?'240 ₾ / 8':
    item.id==='calligraphy'?'120 ₾ / 3':'';
- const kind=event?(lang()==='ru'?'Событие':'Event'):
-   item.type==='courses'?(lang()==='ru'?'Идёт набор':'Enrolling'):
-   (lang()==='ru'?'Регулярно':'Weekly');
+ const status=event?(lang()==='ru'?'Событие':'Event'):item.type==='courses'?(lang()==='ru'?'Идёт набор':'Enrolling'):(lang()==='ru'?'Можно присоединиться':'Join anytime');
+ const icon=event?'✦':item.type==='courses'?'✳':'';
+ const timing=event?
+ '<div class="preview-date">'+format(item.date,{weekday:'short',day:'numeric',month:'long'})+'</div><div class="preview-time">'+item.time+'</div>':
+ scheduleRows(item).map(x=>'<div class="preview-schedule-row"><span class="preview-day">'+x.day+(x.label?' · '+x.label:'')+'</span><strong>'+x.time+'</strong></div>').join('');
  const href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
- return '<article class="programme-card programme-card-compact '+(event?'highlight':'')+'" id="'+id+'">'+
-  '<span class="programme-kicker">'+kind+'</span>'+
-  '<h3>'+loc(item.title)+'</h3>'+
-  '<div class="programme-preview-facts"><div class="preview-date">'+dates.join(' · ')+'</div>'+
-  '<div class="preview-time">'+timeText+'</div>'+
-  '<div class="preview-language">'+(lang()==='ru'?'Язык: ':'Language: ')+language+'</div></div>'+
-  (showPrice?'<div class="preview-price">'+showPrice+'</div>':'')+
-  '<a class="programme-more" href="'+href+'">'+(lang()==='ru'?'Подробнее':'Details')+' <span aria-hidden="true">↗</span></a>'+
-  '</article>';
+ return '<article class="programme-card programme-card-compact '+(event?'highlight ': '')+
+ (item.audience==='kids'?'audience-kids':'audience-adults')+'" id="'+id+'">'+
+ '<div class="preview-top"><span class="programme-kicker">'+icon+' '+status+'</span>'+
+ (!event?'<span class="audience-tag">'+(item.audience==='kids'?(lang()==='ru'?'Дети и подростки':'Children and teens'):(lang()==='ru'?'14+ · взрослые':'14+ · adults'))+'</span>':'')+'</div>'+
+ '<h3>'+loc(item.title)+'</h3><div class="programme-preview-facts">'+timing+
+ '<div class="preview-language">'+(lang()==='ru'?'Язык: ':'Language: ')+loc(teachingLanguage[item.language||'unknown'])+'</div></div>'+
+ (price?'<div class="preview-price">'+price+'</div>':'')+
+ '<a class="programme-more" href="'+href+'">'+(lang()==='ru'?'Подробнее':'Details')+' <span aria-hidden="true">↗</span></a></article>';
+}
+function renderRecruitment(){
+ const host=$('recruitmentList');if(!host)return;
+ host.replaceChildren();
+ const activeWeek=dateAdd(todayBase,offset*7);
+ upcomingCourses().forEach(item=>{
+  const a=document.createElement('a');
+  a.className='recruitment-link';
+  a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
+  const title=document.createElement('strong');title.textContent=loc(item.title);
+  const date=document.createElement('span');
+  date.textContent=(lang()==='ru'?'✳ Идёт набор · старт ':'✳ Enrolling · starts ')+format(item.start,{day:'numeric',month:'long'});
+  a.append(title,date);host.append(a);
+ });
 }
 function entries(date){
-const day=weekday(date),items=[];
-groups.forEach(g=>{if(date<g.start)return;if(g.dates?(g.dates.includes(date)):g.days.includes(day)){items.push({item:g,time:(g.times?.[day]||g.time)})}});
-events.forEach(e=>{if(e.date===date)items.push({item:e,time:e.time})});
-return items.filter(x=>filter==='all'||x.item.type===filter).sort((a,b)=>a.time.localeCompare(b.time));
+ const day=weekday(date),items=[];
+ groups.forEach(g=>{
+  if(date<g.start)return;
+  if(g.dates?g.dates.includes(date):g.days.includes(day)){
+   if(g.slots)g.slots.forEach(slot=>items.push({item:g,time:slot.time,slotLabel:loc(slot.label)}));
+   else items.push({item:g,time:g.times?.[day]||g.time});
+  }
+ });
+ events.forEach(e=>{if(e.date===date)items.push({item:e,time:e.time})});
+ return items.filter(x=>filter==='all'||x.item.type===filter).sort((a,b)=>a.time.localeCompare(b.time));
 }
 function render(){
 localizedStatic();
@@ -91,9 +116,9 @@ $('weekGrid').replaceChildren();
 for(let i=0;i<7;i++){const date=dateAdd(monday,i),day=document.createElement('div');day.className='week-day';
 const h=document.createElement('header');h.textContent=format(date,{weekday:'short',day:'numeric',month:'short'});day.append(h);
 const items=entries(date);if(!items.length){const p=document.createElement('p');p.className='programme-empty';p.textContent=lang()==='ru'?'Нет записей':'No sessions';day.append(p)}
-items.forEach(({item,time})=>{const a=document.createElement('a');a.className='week-item '+item.type;a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
-const tt=document.createElement('strong');tt.textContent=time;a.append(tt,document.createTextNode(loc(item.title)));day.append(a)});$('weekGrid').append(day)}
-$('groupCards').innerHTML=groups.map(card).join('');$('eventCards').innerHTML=events.map(card).join('');
+items.forEach(({item,time,slotLabel})=>{const a=document.createElement('a');a.className='week-item '+item.type;a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
+const tt=document.createElement('strong');tt.textContent=time;a.append(tt,document.createTextNode(loc(item.title)+(slotLabel?' · '+slotLabel:'')));if(item.type==='courses'){const star=document.createElement('span');star.className='enrolling-star';star.textContent='✳';star.title=lang()==='ru'?'Идёт набор':'Enrolling';a.append(star)}day.append(a)});$('weekGrid').append(day)}
+renderRecruitment();$('groupCards').innerHTML=groups.map(card).join('');$('eventCards').innerHTML=events.map(card).join('');
 document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
 }
 $('prevWeek').addEventListener('click',()=>{offset=Math.max(0,offset-1);render()});
