@@ -70,3 +70,15 @@ Approved by direct owner request:
 - GitHub status API reported no CI statuses for the merge commit.
 - Cloudflare Workers actual deployment and public HTTP visibility **NOT VERIFIED** (known addresses `https://arthub-site4.workers.dev/` and `https://arthubtbilisi.com/` could not be fetched by available clients). Do not mark publication as complete until checking Cloudflare Workers & Pages → arthub-site4 → Deployments and verifying public pages.
 - Master prompt v1.5 prepared (v1.4 plus release and instructor addendum).
+
+
+## 16 Nov 2026 — Approved compact preview / full-page details (supersedes earlier card design)
+**Verbatim intent preserved from latest owner message, after a failed voice-message submission:**
+- All preview cards (weekly classes and events) must be visually brief, bold and immediately scannable: heading, **date or weekdays on its own line**, **time on another line**, short language label, and only the **base pass/subscription price** when there is one. Never display individual/drop-in prices in the preview. One-off events have no subscription price in the preview; their full ticket price remains in details.
+- **Подробнее** must open a **full dedicated class/event page** with complete existing programme description, teacher link, language, schedule, age, all payment options and **Записаться** button that opens official ArtHub Telegram. No tiny inline accordion and no direct Telegram registration button in preview.
+- RU / EN teaching for **calligraphy, papier-mâché, theatre puppetry and clay animation** (explicit owner decision; no "by request" caveat). Ksenia Lipskaya stop-motion remains RU as previously confirmed; other groups remain "to confirm".
+- **Both morning and evening theatre puppetry taught by Elena Rybina.** Overrides older "morning teacher TBD" notes.
+- Blue cards indicate enrolling courses, lime cards indicate one-off events, pale-green denotes regular classes. Explain the scheme on the weekly schedule.
+- Preserve approved site design, course descriptions, schedule, teachers and prices. Photos postponed.
+**Implementation in feature/compact-programme-cards:** programme/programme.js renders compact cards and exports verified local class data; programme/detail.html and detail.js display full standalone detail pages; short cards link to full pages, registration CTA only appears on those pages; events/index.html and home event previews similarly link to detail pages; courses/theatre-puppet.html and courses/calligraphy.html reflect confirmed language and teacher. RU/EN preserved. Old event feed's E003/E004/E005 ignored to avoid replacing owner-approved previews with stale data.
+**Not yet deployed:** wait for validation of merge and live publishing. main untouched.
