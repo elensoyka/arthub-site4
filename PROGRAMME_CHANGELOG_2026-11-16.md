@@ -82,3 +82,7 @@ Approved by direct owner request:
 - Preserve approved site design, course descriptions, schedule, teachers and prices. Photos postponed.
 **Implementation in feature/compact-programme-cards:** programme/programme.js renders compact cards and exports verified local class data; programme/detail.html and detail.js display full standalone detail pages; short cards link to full pages, registration CTA only appears on those pages; events/index.html and home event previews similarly link to detail pages; courses/theatre-puppet.html and courses/calligraphy.html reflect confirmed language and teacher. RU/EN preserved. Old event feed's E003/E004/E005 ignored to avoid replacing owner-approved previews with stale data.
 **Not yet deployed:** wait for validation of merge and live publishing. main untouched.
+
+
+## Merge / publication status for compact cards — 16 Nov 2026
+PR #8 (feature/compact-programme-cards → design/blue-lime-editorial) merged successfully. Merge SHA: `74cb3772c51379426cdf009cf9c1be559b2755d5`. Main unchanged. The approved message and full preview/detail routing rules are retained above. New master PDF is v1.6. Public URLs `arthub-site4.elensoyka.workers.dev/programme/index.html` and `arthubtbilisi.com/programme/index.html` were **not accessible to the verification browser**. Cloudflare deployment therefore **not confirmed** and must not be represented as successful. JavaScript syntax and reference checks were completed; real on-device layout still unverified.
