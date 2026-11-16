@@ -116,7 +116,7 @@ $('weekGrid').replaceChildren();
 for(let i=0;i<7;i++){const date=dateAdd(monday,i),day=document.createElement('div');day.className='week-day';
 const h=document.createElement('header');h.textContent=format(date,{weekday:'short',day:'numeric',month:'short'});day.append(h);
 const items=entries(date);if(!items.length){const p=document.createElement('p');p.className='programme-empty';p.textContent=lang()==='ru'?'Нет записей':'No sessions';day.append(p)}
-items.forEach(({item,time,slotLabel})=>{const a=document.createElement('a');a.className='week-item '+item.type;a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
+items.forEach(({item,time,slotLabel})=>{const a=document.createElement('a');a.className='week-item '+item.type+' '+(item.audience==='kids'?'audience-kids':'audience-adults');a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
 const tt=document.createElement('strong');tt.textContent=time;a.append(tt,document.createTextNode(loc(item.title)+(slotLabel?' · '+slotLabel:'')));if(item.type==='courses'){const star=document.createElement('span');star.className='enrolling-star';star.textContent='✳';star.title=lang()==='ru'?'Идёт набор':'Enrolling';a.append(star)}day.append(a)});$('weekGrid').append(day)}
 renderRecruitment();$('groupCards').innerHTML=groups.map(card).join('');$('eventCards').innerHTML=events.map(card).join('');
 document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
