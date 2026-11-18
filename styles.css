@@ -1618,3 +1618,32 @@ a.button:hover,a.alive-bridge-primary:hover,a.alive-bridge-secondary:hover,
 .growth-cowork-line>a:hover,.course-page a.button:hover{
  background:#0d2c92;color:#fff;
 }
+
+
+/* ArtHub OS — 2026-11-18: visual consistency without changing the approved blue/lime design */
+:root{--arthub-card-radius:22px;--arthub-inner-radius:16px;--arthub-button-radius:999px;--arthub-ink:#1742bd}
+.venue-overview{scroll-margin-top:85px}
+.venue-overview .section-heading{max-width:900px}
+.venue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.venue-card{min-width:0;display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #d7e2f4;border-radius:var(--arthub-card-radius)}
+.venue-card>img{display:block;width:100%;height:clamp(260px,27vw,420px);object-fit:cover}
+.venue-copy{padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex:1}
+.venue-label{font-size:11px;letter-spacing:.07em;font-weight:900;text-transform:uppercase;color:#5c74a9}
+.venue-card h3{font:800 clamp(32px,4vw,53px)/1.04 'Roboto Condensed',Arial,sans-serif;letter-spacing:-.035em;margin:0;color:#1742bd}
+.venue-card p{font-size:15px;line-height:1.7;margin:0 0 12px;color:#304c89}
+.venue-card .button{margin-top:auto;border-radius:var(--arthub-button-radius)}
+/* Card containers share one radius, while images have the smaller inner radius. */
+.opportunity-card,.growth-feature-card,.course-card,.exhibition-feature,.venue-card{border-radius:var(--arthub-card-radius)}
+/* Keep every primary action blue, white and pill-shaped. */
+a.button,.growth-cowork-line>a,.venue-card a.button,a.alive-bridge-primary,a.alive-bridge-secondary{
+  min-height:46px;border-radius:var(--arthub-button-radius);
+  background:#1742bd;color:#fff;border:2px solid #1742bd;
+  display:inline-flex;align-items:center;justify-content:center;padding:11px 21px;
+  text-decoration:none;font-weight:800;line-height:1.25;text-align:center
+}
+a.button:hover,.growth-cowork-line>a:hover,.venue-card a.button:hover{background:#0e2c99;color:#fff}
+a:focus-visible,button:focus-visible{outline:3px solid #a4c400;outline-offset:3px}
+.section-heading h2{max-width:100%;overflow-wrap:break-word;letter-spacing:-.045em}
+.section-heading p{line-height:1.65}
+@media(max-width:740px){.venue-grid{grid-template-columns:1fr}.venue-card>img{height:330px}.venue-copy{padding:23px}}
+@media(prefers-reduced-motion:reduce){.venue-card,.venue-card a{transition:none}}
