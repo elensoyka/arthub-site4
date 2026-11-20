@@ -149,3 +149,18 @@ Owner explicitly requested publication. Draft PR #10 was marked ready and merged
 - Audit file: `WEBSITE_UX_AUDIT_AND_PHOTO_REGISTER_2026-11-18.md`. Master prompt v1.9 PDF appended to v1.8, retains prior instructions and adds overrides. Photo inventory and next steps there.
 - **QA completed:** all home internal anchors exist, no duplicate IDs, new inline JavaScript and image-fallback handlers parse; teacher-page JavaScript parses; Ulyana RU/EN copies present and key project names accurate.
 - **QA missing:** real desktop/mobile browser screenshots, verified remote deployment/Cloudflare, upload of optimized WebPs and actual image load checks. Cloudflare URLs were not accessible to verification fetch. Publication should not be claimed.
+
+
+## 20 November 2026 — schedule and prices sync (latest direct decisions, supersedes older fees)
+Source: direct ArtHub owner decisions from 19–20 November; the historical master prompt v1.9 and 16-November posters contain **superseded prices and start dates**. Do not restore those old figures.
+- Art-prodlënka (M/W/F four existing times 10:00–11:30, 11:30–13:00, 16:00–17:30, 17:30–19:00): 25 ₾ single, 180 ₾/12. Teaching RU/EN. **The four existing timetable entries remain in this release**; previously rolled-back UI reorganisation was not reintroduced.
+- Textile coworking (M/W/F 13:00–16:00): 4 ₾/h with own materials, 6 ₾/h with ArtHub materials; Russian. Previous 320 ₾/8 listing removed.
+- Calligraphy Tue/Thu 13:00–15:00: 160 ₾/8, RU/EN; separate Saturday 3-workshop mini-series (50 ₾ each / 120 ₾ for three) unchanged.
+- Papier-mâché Tue/Thu 15:00–18:00: 240 ₾/8, RU/EN, join-anytime status.
+- Theatre puppetry morning Tue/Thu 10:30–13:00, evening Tue 20:00–22:00 and Fri 19:00–22:00: **each** 200 ₾/8; teacher Elena Rybina; evening two vacancies, morning enrolment.
+- Ksenia Lipskaya's animation puppet / stop-motion: starts **Monday 30 Nov 2026**, Mon 19:00–22:00, Sat 14:00–17:00; **16 sessions / 8 weeks**, **360 ₾ per block of eight, 720 ₾ total**, up to five people, Russian. Older 23 Nov / 24 sessions / 1200 ₾ description removed.
+- Ulyana Lashchenko's model making: **Домик на дереве / Treehouse**, starts 3 December, Thu 20:00–22:00 and Sat 17:00–19:00, **200 ₾/8**, max six, RU/EN. Replaces provisional "Создайте свой дом" / 340 ₾.
+- Clay animation Tue/Thu 17:00–19:00, starts 1 Dec; 160 ₾/8, RU/EN. Thursday 17:00–18:00 overlaps papier-mâché; separate rooms/teacher allocation should be verified operationally, do not silently shift courses.
+- Unconfirmed age tags for papier-mâché / calligraphy were intentionally not invented. Course preview shows pass only, except hourly textile coworking where price per hour is the only tariff.
+- Updated: `programme/programme.js`, `programme/index.html`, `programme/detail.js`, `index.html`, `courses/stop-motion.html`, `courses/model-making.html`, `courses/theatre-puppet.html`. Events, exhibition bookings, previously approved design, teacher biographies, main branch remain unchanged.
+- QA: JavaScript syntax parsed; price/time values cross-checked in source. Real mobile/desktop browser and Cloudflare deployment remain to be separately verified.

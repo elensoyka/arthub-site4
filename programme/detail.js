@@ -31,7 +31,7 @@ function render(){
  $('detailTitle').textContent=t(item.title);
  $('detailStatus').textContent=event?L('Событие','Event'):item.type==='courses'?L('Идёт набор','Enrolling'):L('Регулярные занятия','Weekly class');
  $('detailIntro').textContent=t(item.text);
- $('aboutHeading').textContent=L('О занятии','About this class');
+ $('aboutHeading').textContent=L('Описание','Description');
  $('detailDescription').textContent=t(item.text);
  $('howHeading').textContent=L('Как всё устроено','How it works');
  $('detailHow').textContent=t(item.detail);
