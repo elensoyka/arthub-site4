@@ -368,3 +368,5 @@
 .ah-workshop-hire .ah-room-hire-copy > p {
   max-width: 460px;
 }
+
+.ah-room-hire-copy .ah-photo { margin-top: 14px; }
