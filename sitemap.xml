@@ -121,12 +121,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://arthubtbilisi.com/kids/"/>
   </url>
   <url>
-    <loc>https://arthubtbilisi.com/en/programme/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://arthubtbilisi.com/programme/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arthubtbilisi.com/en/programme/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arthubtbilisi.com/programme/"/>
-  </url>
-  <url>
     <loc>https://arthubtbilisi.com/en/props/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://arthubtbilisi.com/props/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://arthubtbilisi.com/en/props/"/>
@@ -215,12 +209,6 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://arthubtbilisi.com/kids/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://arthubtbilisi.com/en/kids/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://arthubtbilisi.com/kids/"/>
-  </url>
-  <url>
-    <loc>https://arthubtbilisi.com/programme/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://arthubtbilisi.com/programme/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://arthubtbilisi.com/en/programme/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://arthubtbilisi.com/programme/"/>
   </url>
   <url>
     <loc>https://arthubtbilisi.com/props/</loc>

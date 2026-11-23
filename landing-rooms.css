@@ -360,3 +360,15 @@
   font-size: clamp(43px, 5.6vw, 85px);
   overflow-wrap: anywhere;
 }
+
+#artist-coworking, #workshop-hire {
+  scroll-margin-top: 90px;
+}
+
+.ah-workshop-hire .ah-room-hire-copy > p {
+  max-width: 460px;
+}
+
+.ah-class-coworking .ah-room-rate {
+  width: fit-content;
+}

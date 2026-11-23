@@ -4,3 +4,15 @@
 /events/index / 301
 /events/ / 301
 /events / 301
+/programme /#courses 301
+/programme/ /#courses 301
+/programme/index /#courses 301
+/programme/index.html /#courses 301
+/programme/detail /#courses 301
+/programme/detail.html /#courses 301
+/en/programme /en/#courses 301
+/en/programme/ /en/#courses 301
+/en/programme/index /en/#courses 301
+/en/programme/index.html /en/#courses 301
+/en/programme/detail /en/#courses 301
+/en/programme/detail.html /en/#courses 301

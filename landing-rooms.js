@@ -68,34 +68,4 @@
     if (event.target === photoDialog) photoDialog.close();
   });
   photoDialog.addEventListener('close', () => { fullImage.removeAttribute('src'); });
-
-  const programme = document.getElementById('arthubProgrammeEmbed');
-  const classDialog = document.getElementById('class-dialog');
-  const detailFrame = classDialog.querySelector('iframe');
-
-  function syncLanguage() {
-    programme.contentWindow?.postMessage({type: 'arthub:lang', lang: document.documentElement.lang}, location.origin);
-    document.querySelectorAll('iframe[data-label-ru][data-label-en]').forEach(frame => {
-      frame.title = document.documentElement.lang === 'en' ? frame.dataset.labelEn : frame.dataset.labelRu;
-    });
-  }
-
-  window.addEventListener('message', event => {
-    if (event.origin !== location.origin || event.source !== programme.contentWindow || !event.data) return;
-    if (event.data.type === 'arthub:height' && Number.isFinite(event.data.height)) {
-      programme.style.height = `${Math.min(5000, Math.max(540, event.data.height + 24))}px`;
-    }
-    if (event.data.type === 'arthub:detail' && typeof event.data.item === 'string' && event.data.item) {
-      const url = new URL('/programme/detail', location.origin);
-      url.searchParams.set('item', event.data.item);
-      url.searchParams.set('lang', document.documentElement.lang);
-      detailFrame.src = url.href;
-      if (!classDialog.open) classDialog.showModal();
-    }
-  });
-
-  classDialog.addEventListener('close', () => { detailFrame.removeAttribute('src'); });
-  programme.addEventListener('load', syncLanguage);
-  document.querySelectorAll('button[data-lang]').forEach(button => button.addEventListener('click', syncLanguage));
-  syncLanguage();
 })();
