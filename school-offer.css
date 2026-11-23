@@ -1,0 +1,51 @@
+.ah-school-offer {
+  margin-block-start: clamp(24px, 4vw, 44px);
+  padding: clamp(18px, 3.5vw, 34px);
+  border-radius: 18px;
+  background: #eef2fc;
+  color: #18305d;
+  scroll-margin-top: 96px;
+}
+
+.ah-school-offer h2 {
+  margin: 0 0 10px;
+  color: #1742bd;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+}
+
+.ah-school-offer p {
+  max-width: 64ch;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.ah-school-offer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ah-school-offer-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border: 1px solid #1742bd;
+  border-radius: 999px;
+  color: #1742bd;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.ah-school-offer-actions a[download] {
+  background: #1742bd;
+  color: #fff;
+}
+
+.ah-school-offer-actions a:hover,
+.ah-school-offer-actions a:focus-visible {
+  text-decoration: underline;
+}
