@@ -32,17 +32,12 @@ const groups=[
 {id:'clay-animation',teachers:["elena"],language:'both',type:'courses',title:L('Пластилиновая анимация','Clay animation'),age:L('12+ и взрослые','12+ and adults'),days:[2,4],time:'18:00–20:00',times:{4:'18:00–20:00'},start:'2026-12-01',price:L('160 ₾ / 8 занятий','160 ₾ / 8 sessions'),text:L('Персонажи из пластилина, маленькие декорации и первые анимационные сцены.','Clay characters, miniature sets and stop-motion experiments.'),detail:L('Набор на группу: вторник и четверг, 18:00–20:00. Восемь занятий по два часа. Дата начала уточняется.','Enrolment: Tuesday and Thursday, 18:00–20:00. Eight two-hour sessions. Start date to be confirmed.'),status:L('Идёт набор','Enrolling')},
 {id:'calligraphy',teachers:["maria"],language:'both',type:'regular',title:L('Каллиграфия','Calligraphy'),age:L('12+ и взрослые','Ages 12+ and adults'),days:[2,4],time:'13:00–15:00',start:'2026-11-17',price:L('30 ₾ разово · 160 ₾ / 8 занятий','30 GEL drop-in · 160 GEL / 8 sessions'),text:L('Во вторник и четверг исследуем буквы, линии, композицию и новые графические инструменты.','Explore letters, lines, composition and drawing tools every Tuesday and Thursday.'),detail:L('Вторник и четверг, 13:00–15:00. 30 ₾ разово, 160 ₾ за 8 занятий.','Tuesday and Thursday, 13:00–15:00. 30 GEL drop-in or 160 GEL for 8 classes.'),status:L('Можно присоединиться','Join anytime')},
 ];
-const events=[
-{id:'puppet-history',teachers:['ksenia'],language:'confirmed',type:'events',title:L('История кукольной анимации','History of puppet animation'),date:'2026-11-16',time:'20:00',price:L('15 ₾','15 ₾'),text:L('Лекция Ксении Липской — от первых кукольных фильмов до современности.','Ksenia Lipskaya on the history of puppet animation.'),detail:L('Русский язык.','In Russian.')},
-{id:'sets-workshop',teachers:[],language:'confirmed',type:'events',title:L('Воркшоп по анимационным декорациям','Animation set-design workshop'),date:'2026-11-19',time:'20:00',price:L('40 ₾','40 ₾'),text:L('Создадим объёмную декорацию из бумаги и картона по режиссёрскому заданию и попробуем разместить в ней куклу.','Build a three-dimensional paper-and-cardboard set from a director’s brief and photograph a puppet in it.'),detail:L('Два часа, материалы предоставляются. Локации на выбор: комната, остановка или киоск. В Instagram указано 19:00, но время 20:00 утверждено владельцем для сайта.','Two hours, materials included. Choose a room, bus stop or kiosk. Instagram listed 19:00; the owner explicitly requested 20:00 for the website.'),link:'https://www.instagram.com/p/DfxOf3eCIjv/'},
-{id:'big-fish',teachers:[],language:'englishSubs',type:'events',title:L('Кино: «Большая рыба»','Film night: Big Fish'),date:'2026-11-21',time:'20:30',price:L('Стоимость уточняется','Price to confirm'),text:L('Фильм на английском языке с русскими субтитрами. Субботний кинопоказ в ArtHub.','Film screening in English with Russian subtitles at ArtHub.'),detail:L('21 ноября, суббота, 20:30. Оригинальная английская дорожка и русские субтитры. Стоимость участия уточняется.','Saturday, November 21 at 20:30. Original English audio with Russian subtitles. Admission price to be confirmed.')},
-{id:'pitch-night',teachers:[],language:'both',type:'events',title:L('Pitch Night · идеи ищут друг друга','Pitch Night · ideas meet people'),date:'2026-11-25',time:'19:00',price:L('Вход — donation','Admission: donation'),text:L('Пять минут на свою идею, общение, поиск единомышленников и будущих соавторов.','Five-minute creative pitches followed by new connections and collaborations.'),detail:L('Перенесено с 18 на 25 ноября (среда), время 19:00 сохранено по прежней афише. Ведущая — Дарья Гук.','Moved from Nov 18 to Wednesday Nov 25; previously listed start time 19:00 retained. Hosted by Daria Guk.')}
-];
+const events=[];
 window.ArtHubProgrammeData={groups,events,teachers,teachingLanguage,telegram};
 if(!document.getElementById('weekGrid'))return;
 const $=id=>document.getElementById(id),lang=()=>document.documentElement.lang==='en'?'en':'ru',loc=(v)=>v?.[lang()]||'';
 if(new URLSearchParams(location.search).get('lang')==='en') document.documentElement.lang='en';
-const todayBase='2026-11-16';let offset=0,filter='all';
+const now=new Date();const localToday=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');let offset=0,filter='all';
 const dateAdd=(s,n)=>{const d=new Date(s+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
 const mondayOf=(s)=>{const d=new Date(s+'T12:00:00Z'),w=d.getUTCDay();return dateAdd(s,-((w+6)%7))};
 const weekday=(s)=>new Date(s+'T12:00:00Z').getUTCDay();
@@ -57,15 +52,7 @@ function card(item){
  const timeText=event?item.time:item.days?.length?
    [...new Set(item.days.map(d=>item.times?.[d]||item.time))].join(' / '):item.time;
  const language=loc(teachingLanguage[item.language||'unknown']);
- const showPrice=event?'':item.id.startsWith('after-school')?'180 ₾ / 12':
-   item.id==='embroidery'?'4–6 ₾/ч':
-   item.id.startsWith('theatre-')?'200 ₾ / 8':
-   item.id==='stop-motion'?'360 ₾ / 8':
-   item.id==='model-making'?'200 ₾ / 8':
-   item.id==='clay-animation'?'160 ₾ / 8':
-   item.id==='papier-mache'?'240 ₾ / 8':
-   item.id==='calligraphy-weekdays'?'160 ₾ / 8':
-   item.id==='calligraphy'?'120 ₾ / 3':'';
+ const showPrice=loc(item.price);
  const kind=event?(lang()==='ru'?'Событие':'Event'):
    item.type==='courses'?(lang()==='ru'?'Идёт набор':'Enrolling'):
    (lang()==='ru'?'Регулярно':'Weekly');
@@ -82,13 +69,13 @@ function card(item){
 }
 function entries(date){
 const day=weekday(date),items=[];
-groups.forEach(g=>{if(date<g.start)return;if(g.dates?(g.dates.includes(date)):g.days.includes(day)){items.push({item:g,time:(g.times?.[day]||g.time)})}});
-events.forEach(e=>{if(e.date===date)items.push({item:e,time:e.time})});
+groups.forEach(g=>{if(g.start&&date<g.start)return;if(g.dates?(g.dates.includes(date)):g.days?.includes(day)){items.push({item:g,time:(g.times?.[day]||g.time)})}});
+
 return items.filter(x=>filter==='all'||x.item.type===filter).sort((a,b)=>a.time.localeCompare(b.time));
 }
 function render(){
 localizedStatic();
-const monday=dateAdd(todayBase,offset*7),sunday=dateAdd(monday,6);
+const monday=dateAdd(mondayOf(localToday),offset*7),sunday=dateAdd(monday,6);
 $('weekLabel').textContent=format(monday,{day:'numeric',month:'long'})+' – '+format(sunday,{day:'numeric',month:'long',year:'numeric'});
 $('prevWeek').disabled=offset<=0;$('nextWeek').disabled=offset>=10;
 $('weekGrid').replaceChildren();
@@ -97,7 +84,7 @@ const h=document.createElement('header');h.textContent=format(date,{weekday:'sho
 const items=entries(date);if(!items.length){const p=document.createElement('p');p.className='programme-empty';p.textContent=lang()==='ru'?'Нет записей':'No sessions';day.append(p)}
 items.forEach(({item,time})=>{const a=document.createElement('a');a.className='week-item '+item.type;a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
 const tt=document.createElement('strong');tt.textContent=time;a.append(tt,document.createTextNode(loc(item.title)));day.append(a)});$('weekGrid').append(day)}
-$('groupCards').innerHTML=groups.map(card).join('');$('eventCards').innerHTML=events.map(card).join('');
+if($('groupCards'))$('groupCards').innerHTML=groups.map(card).join('');
 document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
 }
 $('prevWeek').addEventListener('click',()=>{offset=Math.max(0,offset-1);render()});
