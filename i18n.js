@@ -28,6 +28,12 @@
   function render() {
     document.documentElement.lang=lang;
     document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[lang];});
+    document.querySelectorAll('[data-alt-ru][data-alt-en]').forEach(img => {
+      img.alt = lang === 'en' ? img.dataset.altEn : img.dataset.altRu;
+    });
+    document.querySelectorAll('[data-label-ru][data-label-en]').forEach(el => {
+      el.setAttribute('aria-label', lang === 'en' ? el.dataset.labelEn : el.dataset.labelRu);
+    });
     document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
     for (const n of allTextNodes(document.body)) {
       if(!n.parentElement || ['SCRIPT','STYLE'].includes(n.parentElement.tagName)) continue;
