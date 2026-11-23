@@ -23,3 +23,28 @@ body.ah-service-page { margin: 0; }
 .ah-service-rates dl { margin: 12px 0 0; }
 .ah-service-rates dl div { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid #d5dfef; }
 .ah-service-rates dd { margin: 0; color: #1742bd; font-weight: 800; text-align: right; }
+
+.ah-show-programme { margin: 34px 0; scroll-margin-top: 18px; }
+.ah-show-programme h2 { margin: 0 0 12px; color: #1742bd; font-size: clamp(23px, 3vw, 31px); }
+.ah-show-programme > p { line-height: 1.55; }
+.ah-show-programme a { color: #1742bd; }
+.ah-show-group { padding-top: 22px; }
+.ah-show-card { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr); gap: 18px; align-items: start; padding: 16px; background: #eef2fc; border-radius: 16px; margin-bottom: 10px; }
+.ah-show-card > div:only-child { grid-column: 1 / -1; }
+.ah-show-poster { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: contain; border-radius: 8px; background: #e4edfc; }
+.ah-show-date { margin: 5px 0; font-size: 14px; }
+.ah-show-card h3 { margin: 0 0 8px; color: #1742bd; overflow-wrap: anywhere; }
+.ah-show-card h3 + p { margin: 0; line-height: 1.5; }
+.ah-show-archive { margin-top: 20px; border: 1px solid #d5dfef; border-radius: 14px; padding: 14px; }
+.ah-show-archive summary { color: #1742bd; font-weight: 800; cursor: pointer; }
+.ah-show-archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 12px; margin-top: 16px; }
+.ah-show-archive-grid .ah-show-card { grid-template-columns: minmax(0, 74px) minmax(0, 1fr); margin: 0; }
+.ah-gallery-terms { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+.ah-hire-steps { margin: 0; }
+.ah-hire-steps > div + div { margin-top: 12px; }
+.ah-hire-steps dt { font-weight: 750; }
+.ah-hire-steps dd { margin: 3px 0 0; line-height: 1.5; }
+@media(max-width: 680px) {
+  .ah-gallery-terms { grid-template-columns: 1fr; }
+  .ah-show-card { grid-template-columns: minmax(0, 90px) minmax(0, 1fr); gap: 12px; }
+}

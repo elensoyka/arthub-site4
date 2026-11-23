@@ -13,8 +13,24 @@
   <section class="ah-service-hero"><div><h1>Выставки в ArtHub Tbilisi</h1><p>В зале ArtHub проходят персональные и групповые выставки, открытия и встречи с художниками.</p></div>
     <img src="/site-photos/gallery-02.webp" alt="Картины в выставочном зале ArtHub" fetchpriority="high">
   </section>
-  <div class="ah-service-facts"><section><h2>Посетить выставку</h2><p>Свободное посещение ежедневно с 14:00 до 20:00. Адрес: 172 Davit Aghmashenebeli Ave, Тбилиси.</p></section><section><h2>Организовать свою выставку</h2><p>Аренда зала стоит 240 ₾ за выставочную неделю. Посмотрите доступные недели и свяжитесь с нами, чтобы обсудить даты.</p></section></div>
-  <nav class="ah-service-actions"><a href="/#exhibition-weeks">Календарь выставочных недель</a><a href="/gallery-rent/">Условия аренды</a><a href="/contact/">Как добраться</a><a href="tel:+995595012028">Позвонить в ArtHub</a></nav>
+  <section id="exhibition-programme" class="ah-show-programme">
+    <h2>Выставки ArtHub</h2>
+    <p><strong>Посетить выставку</strong> · Суббота — четверг, 14:00–20:00. Свободное посещение. <a href="/contact/">Адрес: 172 Davit Aghmashenebeli Ave, Тбилиси.</a></p>
+    <section class="ah-show-group">
+      <h2>Сейчас в галерее</h2>
+      <div id="current-exhibition"></div>
+    </section>
+    <section class="ah-show-group">
+      <h2>Следующая выставка</h2>
+      <div id="upcoming-exhibitions"></div>
+    </section>
+    <details id="exhibition-archive" class="ah-show-archive">
+      <summary>Архив выставок</summary>
+      <div class="ah-show-archive-grid" id="exhibition-archive-list"></div>
+    </details>
+  </section>
+  <nav class="ah-service-actions"><a href="/#exhibition-weeks">Выставочные недели</a><a href="/gallery-rent/">Условия аренды</a></nav>
+  <script src="/exhibitions-calendar.js?v=20261123-shows" defer></script>
 
 </main>
 <footer class="ah-service-footer">ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · <a href="tel:+995595012028">+995 595 01 20 28</a></footer>

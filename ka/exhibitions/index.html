@@ -13,8 +13,24 @@
   <section class="ah-service-hero"><div><h1>გამოფენები ArtHub Tbilisi-ში</h1><p>ArtHub-ის დარბაზში ტარდება პერსონალური და ჯგუფური გამოფენები და შეხვედრები ხელოვანებთან.</p></div>
     <img src="/site-photos/gallery-02.webp" alt="ნამუშევრები ArtHub-ის საგამოფენო დარბაზში" fetchpriority="high">
   </section>
-  <div class="ah-service-facts"><section><h2>სტუმრობის საათები</h2><p>გელოდებით ყოველდღე 14:00-დან 20:00-მდე. მისამართი: დავით აღმაშენებლის გამზირი 172, თბილისი.</p></section><section><h2>საკუთარი გამოფენის მოწყობა</h2><p>დარბაზის ქირა საგამოფენო კვირისთვის 240 ₾-ია. თარიღების შესათანხმებლად დაგვიკავშირდით.</p></section></div>
-  <nav class="ah-service-actions"><a href="/#exhibition-weeks">საგამოფენო კალენდარი (რუსულად)</a><a href="/ka/gallery-rent/">დარბაზის ქირაობა</a><a href="/ka/contact/">როგორ მოვიდეთ</a><a href="tel:+995595012028">ArtHub-ში დარეკვა</a></nav>
+  <section id="exhibition-programme" class="ah-show-programme">
+    <h2>გამოფენები ArtHub-ში</h2>
+    <p><strong>გამოფენაზე სტუმრობა</strong> · შაბათიდან ხუთშაბათის ჩათვლით, 14:00–20:00. შესვლა თავისუფალია. <a href="/ka/contact/">დავით აღმაშენებლის გამზირი 172, თბილისი.</a></p>
+    <section class="ah-show-group">
+      <h2>მიმდინარე გამოფენა</h2>
+      <div id="current-exhibition"></div>
+    </section>
+    <section class="ah-show-group">
+      <h2>შემდეგი გამოფენა</h2>
+      <div id="upcoming-exhibitions"></div>
+    </section>
+    <details id="exhibition-archive" class="ah-show-archive">
+      <summary>გამოფენების არქივი</summary>
+      <div class="ah-show-archive-grid" id="exhibition-archive-list"></div>
+    </details>
+  </section>
+  <nav class="ah-service-actions"><a href="/#exhibition-weeks">საგამოფენო კვირები</a><a href="/ka/gallery-rent/">ქირაობის პირობები</a></nav>
+  <script src="/exhibitions-calendar.js?v=20261123-shows" defer></script>
 
 </main>
 <footer class="ah-service-footer">ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · <a href="tel:+995595012028">+995 595 01 20 28</a></footer>
