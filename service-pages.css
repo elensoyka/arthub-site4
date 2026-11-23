@@ -1,0 +1,27 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #18305d; background: #fafaf4; }
+body.ah-service-page { margin: 0; }
+.ah-service-header, .ah-service-footer { background: #173ed8; color: #fff; padding: 16px max(5vw, 18px); }
+.ah-service-header { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.ah-service-header nav, .ah-page-languages { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.ah-service-header a, .ah-service-footer a { color: #fff; }
+.ah-service-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 900; font-size: 25px; }
+.ah-service-main { max-width: 1150px; margin: auto; padding: clamp(26px, 6vw, 78px) max(5vw, 16px); }
+.ah-service-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; gap: clamp(20px, 4vw, 52px); }
+.ah-service-hero h1 { margin: 0 0 16px; color: #1742bd; font-size: clamp(32px, 5.1vw, 72px); line-height: 1.07; overflow-wrap: anywhere; }
+.ah-service-hero p { font-size: clamp(17px, 1.8vw, 23px); line-height: 1.55; }
+.ah-service-hero img { display: block; width: 100%; height: auto; border-radius: 20px; }
+.ah-service-facts { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)); gap: 14px; margin: 32px 0; }
+.ah-service-facts section, .ah-service-enquiry { background: #eef2fc; border-radius: 18px; padding: 20px; }
+.ah-service-facts h2, .ah-service-enquiry h2 { color: #1742bd; margin: 0 0 9px; font-size: 23px; }
+.ah-service-facts p { line-height: 1.55; margin: 0; }
+.ah-service-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.ah-service-actions a, .ah-sms-form button { background: #ddf05c; color: #18305d; border-radius: 999px; padding: 10px 15px; text-decoration: none; font-weight: 750; border: 1px solid transparent; }
+.ah-service-actions a:hover, .ah-sms-form button:hover { border-color: #18305d; }
+.ah-service-enquiry { margin-top: 24px; max-width: 600px; }
+.ah-service-enquiry:has(form[hidden]) { display: none; }
+.ah-sms-form label { display: grid; gap: 5px; margin: 13px 0; font-weight: 650; }
+.ah-sms-form input, .ah-sms-form textarea { padding: 9px; font: inherit; font-weight: 400; border: 1px solid #b7c8ec; border-radius: 8px; min-width: 0; }
+.ah-sms-form p { margin: 0 0 12px; line-height: 1.5; }
+.ah-sms-form button { font: inherit; font-weight: 750; cursor: pointer; }
+.ah-page-languages a[aria-current="page"] { text-decoration: underline; font-weight: 800; }
+@media(max-width: 680px) { .ah-service-hero { grid-template-columns: 1fr; } }

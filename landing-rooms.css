@@ -350,3 +350,13 @@
     margin-left: 3px;
   }
 }
+
+.ah-editor-slogan {
+  font: 800 clamp(20px, 2.2vw, 32px)/1.15 'Roboto Condensed', Arial, sans-serif;
+  margin: 0 0 12px;
+}
+
+.ah-editor-hero h1 {
+  font-size: clamp(43px, 5.6vw, 85px);
+  overflow-wrap: anywhere;
+}

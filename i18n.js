@@ -43,7 +43,8 @@
       const english=translations[key];
       if(english && n.textContent!==english) n.textContent=english;
     }
-    document.title=lang==='en'?'ArtHub Tbilisi — A space for ideas':'ArtHub Tbilisi — пространство для идей';
+    const localizedTitle = document.documentElement.dataset[lang === 'en' ? 'titleEn' : 'titleRu'];
+    if (localizedTitle) document.title = localizedTitle;
   }
   try { lang=localStorage.getItem('arthub-lang')==='en'?'en':'ru'; }catch(e){}
   document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;try{localStorage.setItem('arthub-lang',lang)}catch(e){}render();}));

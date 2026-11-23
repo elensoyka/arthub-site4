@@ -23,7 +23,7 @@ function render(){
  document.documentElement.lang=language;
  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===language)));
  document.querySelectorAll('[data-ru][data-en]').forEach(el=>{el.textContent=el.dataset[language]});
- $('back').href='index.html?lang='+language+'#'+(item?.type==='events'?'upcoming':'groups');
+ $('back').href='index.html?lang='+language+'#'+'calendar';
  if(!item){$('notFound').style.display='block';$('detailBody').hidden=true;return;}
  $('notFound').style.display='none';$('detailBody').hidden=false;
  const event=item.type==='events';
@@ -35,7 +35,6 @@ function render(){
  $('detailDescription').textContent=t(item.text);
  $('howHeading').textContent=L('Как всё устроено','How it works');
  $('detailHow').textContent=t(item.detail);
- $('detailExtra').textContent=L('Здесь появятся дополнительные подробности, программа по занятиям и фотографии после согласования с преподавателем.','A session-by-session outline and photographs will be added after approval by the teacher.');
  $('teacherHeading').textContent=L('Преподаватели','Teachers');
  const teachers=$('detailTeachers');teachers.replaceChildren();
  if(item.teachers?.length){

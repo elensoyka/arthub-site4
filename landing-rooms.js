@@ -86,7 +86,7 @@
       programme.style.height = `${Math.min(5000, Math.max(540, event.data.height + 24))}px`;
     }
     if (event.data.type === 'arthub:detail' && typeof event.data.item === 'string' && event.data.item) {
-      const url = new URL('programme/detail.html', location.href);
+      const url = new URL('/programme/detail', location.origin);
       url.searchParams.set('item', event.data.item);
       url.searchParams.set('lang', document.documentElement.lang);
       detailFrame.src = url.href;

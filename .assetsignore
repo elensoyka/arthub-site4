@@ -1,0 +1,12 @@
+.git
+.git/**
+.wrangler
+.wrangler/**
+wrangler.jsonc
+*.md
+docs/**
+backend/**
+automation/**
+coworking-arthub-1.png
+coworking-arthub-2.png
+coworking-arthub-3.png

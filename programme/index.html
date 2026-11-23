@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Расписание и набор — ArtHub Tbilisi</title>
-<meta name="description" content="Расписание ArtHub Tbilisi: регулярные мастерские и курсы с набором.">
+<title>Расписание занятий — ArtHub Tbilisi</title>
+<meta name="description" content="Недельное расписание регулярных мастерских и курсов ArtHub Tbilisi. Узнайте дни занятий и какие группы набираются.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Roboto+Condensed:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 <style>
 :root{--blue:#1742bd;--lime:#d0e102;--muted:#526aa3;--line:#cfdcf6}
 *{box-sizing:border-box}body{margin:0;background:#f8faff;color:var(--blue);font-family:Manrope,Arial,sans-serif}
@@ -81,9 +81,14 @@ html.programme-embedded .programme-section{padding-top:20px}
 html.programme-embedded .programme-section h2{font-size:clamp(34px,4vw,52px)}
 html.programme-embedded .programme-list{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:720px){html.programme-embedded .programme-list{grid-template-columns:1fr}}
-</style></head>
+</style><style>
+.ah-page-languages { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; }
+.ah-page-languages a { color: inherit; padding: 5px 2px; white-space: nowrap; }
+.ah-page-languages a[aria-current="page"] { font-weight: 850; text-decoration: underline; }
+.ah-embed-language { display: none; }
+</style><link rel="icon" href="/arthub-star.svg" type="image/svg+xml"><link rel="canonical" href="https://arthubtbilisi.com/programme/"><link rel="alternate" hreflang="ru" href="https://arthubtbilisi.com/programme/"><link rel="alternate" hreflang="en" href="https://arthubtbilisi.com/en/programme/"><link rel="alternate" hreflang="x-default" href="https://arthubtbilisi.com/programme/"><meta property="og:type" content="website"><meta property="og:site_name" content="ArtHub Tbilisi"><meta property="og:url" content="https://arthubtbilisi.com/programme/"><meta property="og:title" content="Расписание занятий — ArtHub Tbilisi"><meta property="og:description" content="Недельное расписание регулярных мастерских и курсов ArtHub Tbilisi. Узнайте дни занятий и какие группы набираются."><meta property="og:image" content="https://arthubtbilisi.com/site-photos/workshop-01.webp"><meta property="og:locale" content="ru_RU"><meta name="twitter:card" content="summary_large_image"></head>
 <body><main class="programme-main">
-<nav class="programme-nav"><a href="../index.html" data-ru="← ArtHub" data-en="← ArtHub">← ArtHub</a><a href="#calendar" data-ru="Календарь" data-en="Calendar">Календарь</a><a href="#groups" data-ru="Регулярные группы" data-en="Regular groups">Регулярные группы</a><a href="../teachers/index.html" data-ru="Преподаватели" data-en="Teachers">Преподаватели</a><div class="programme-lang"><button data-lang="ru" aria-pressed="true">RU</button><button data-lang="en" aria-pressed="false">EN</button></div></nav>
+<nav class="programme-nav"><a href="/" data-ru="← ArtHub" data-en="← ArtHub">← ArtHub</a><a href="#calendar" data-ru="Календарь" data-en="Calendar">Календарь</a><a href="#groups" data-ru="Регулярные группы" data-en="Regular groups">Регулярные группы</a><a href="/teachers/" data-ru="Преподаватели" data-en="Teachers">Преподаватели</a><div class="programme-lang"><button data-lang="ru" aria-pressed="true" class="ah-embed-language">RU</button><button data-lang="en" aria-pressed="false" class="ah-embed-language">EN</button></div><span class="ah-page-languages" aria-label="Язык сайта"><a href="/programme/" hreflang="ru" lang="ru" aria-current="page">RU</a><a href="/en/programme/" hreflang="en" lang="en">EN</a></span></nav>
 <section class="programme-hero"><p class="programme-eyebrow" data-ru="ART HUB TBILISI · Программа" data-en="ART HUB TBILISI · Programme">ART HUB TBILISI · Программа</p><h1 data-ru="Приходите делать" data-en="Come and make">Приходите делать</h1><p data-ru="Регулярные мастерские и курсы ArtHub. Выберите неделю и занятие, чтобы увидеть подробности и записаться." data-en="Regular classes and ongoing courses at ArtHub. Select a week and class to see details and book.">Регулярные занятия и курсы. Выберите неделю и нажмите на занятие — откроется подробная карточка с условиями и записью.</p></section>
 <section class="programme-section" id="calendar"><h2 data-ru="Расписание по неделям" data-en="Week by week">Расписание по неделям</h2><p data-ru="Только занятия: голубым выделены курсы с набором, светло-зелёным — регулярные мастерские." data-en="Classes only: enrolling courses are highlighted in blue and regular groups in pale green.">Только занятия: голубым выделены курсы с набором, светло-зелёным — регулярные мастерские.</p>
 <div class="programme-weeknav"><strong id="weekLabel"></strong><button id="prevWeek" type="button" data-ru="← Раньше" data-en="← Earlier">← Раньше</button><button id="thisWeek" type="button" data-ru="Эта неделя" data-en="This week">Эта неделя</button><button id="nextWeek" type="button" data-ru="Позже →" data-en="Later →">Позже →</button></div>
@@ -92,7 +97,7 @@ html.programme-embedded .programme-list{grid-template-columns:repeat(2,minmax(0,
 </section>
 
 <p class="programme-note" data-ru="ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Запись через Telegram ArtHub." data-en="ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Register via ArtHub Telegram.">ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Запись через Telegram ArtHub.</p>
-</main><script src="programme.js?v=20261116-compact2"></script><dialog id="programmeDetailDialog" class="programme-dialog" aria-label="Подробности занятия"><button type="button" onclick="this.closest('dialog').close()" aria-label="Закрыть">×</button><iframe id="programmeDetailFrame" title="Подробная информация о занятии"></iframe></dialog>
+</main><script src="/programme/programme.js?v=20261123-seo"></script><dialog id="programmeDetailDialog" class="programme-dialog" aria-label="Подробности занятия"><button type="button" onclick="this.closest('dialog').close()" aria-label="Закрыть">×</button><iframe id="programmeDetailFrame" title="Подробная информация о занятии"></iframe></dialog>
 <style>.programme-dialog{width:min(1000px,96vw);height:90dvh;max-height:90dvh;padding:0;border:0;border-radius:20px;box-shadow:0 25px 80px #102d7566}.programme-dialog::backdrop{background:#081e69ac}.programme-dialog iframe{width:100%;height:100%;border:0}.programme-dialog>button{position:absolute;right:12px;top:10px;z-index:5;border:0;border-radius:100%;width:42px;height:42px;background:#d0e102;color:#1742bd;font-size:27px;cursor:pointer}</style><script>
 (function(){
  const embedded=new URLSearchParams(location.search).get('embed')==='1';
@@ -108,7 +113,7 @@ html.programme-embedded .programme-list{grid-template-columns:repeat(2,minmax(0,
   }
  });
  document.addEventListener('click',function(e){
-  const a=e.target.closest('a[href*="detail.html?item="]');
+  const a=e.target.closest('a[href*="/programme/detail?item="]');
   if(!a)return;
   const url=new URL(a.getAttribute('href'),location.href);
   const item=url.searchParams.get('item');if(!item)return;

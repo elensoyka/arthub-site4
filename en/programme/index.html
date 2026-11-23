@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class timetable — ArtHub Tbilisi</title>
+<meta name="description" content="Weekly timetable for regular classes and courses at ArtHub Tbilisi. Find class times and groups open for enrolment.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Roboto+Condensed:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+:root{--blue:#1742bd;--lime:#d0e102;--muted:#526aa3;--line:#cfdcf6}
+*{box-sizing:border-box}body{margin:0;background:#f8faff;color:var(--blue);font-family:Manrope,Arial,sans-serif}
+.programme-main{max-width:1260px;margin:auto;padding:18px 20px 100px}
+.programme-hero{background:var(--blue);color:white;padding:clamp(26px,5vw,65px);border-radius:26px;position:relative;overflow:hidden}
+.programme-hero:after{content:"";background:url('../arthub-star.svg') center/contain no-repeat;position:absolute;right:-64px;top:-62px;width:clamp(150px,25vw,315px);height:clamp(150px,25vw,315px);pointer-events:none}
+.programme-hero>*{position:relative;z-index:1;max-width:780px}
+.programme-hero h1{font:800 clamp(52px,8vw,106px)/.9 'Roboto Condensed',Arial,sans-serif;letter-spacing:-.05em;margin:20px 0}
+.programme-hero p{font-size:17px;line-height:1.6}
+.programme-eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.programme-nav{display:flex;flex-wrap:wrap;gap:13px;padding:14px 0 20px;align-items:center}
+.programme-nav a{color:var(--blue);font-weight:800;font-size:13px;text-decoration:none}
+.programme-lang{display:flex;gap:5px;margin-left:auto}
+.programme-lang button{background:white;color:var(--blue);border:1px solid var(--line);border-radius:20px;padding:9px 13px;cursor:pointer;font-weight:800}
+.programme-lang button[aria-pressed=true]{background:var(--lime);border-color:var(--lime)}
+.programme-section{padding-top:55px;scroll-margin-top:20px}
+.programme-section h2{font:800 clamp(37px,5vw,65px)/1 'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;letter-spacing:-.03em;margin:0 0 14px}
+.programme-section>p{max-width:760px;line-height:1.65}
+.programme-weeknav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:28px 0 17px}
+.programme-weeknav button,.programme-filter button{cursor:pointer;border:1px solid var(--line);border-radius:50px;background:white;color:var(--blue);padding:12px 18px;font-weight:800}
+.programme-weeknav button:disabled{opacity:.35;cursor:not-allowed}
+#weekLabel{font-weight:900;font-size:17px;margin-right:auto}
+.programme-filter{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 24px}
+.programme-filter button[aria-pressed=true]{background:var(--lime);border-color:var(--lime)}
+.week-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+.week-day{border:1px solid var(--line);border-radius:18px;background:white;padding:13px 10px;min-height:170px}
+.week-day header{font-size:12px;font-weight:900;letter-spacing:.03em;border-bottom:1px solid #e3eafa;padding-bottom:10px;margin-bottom:10px}
+.week-item{display:block;text-align:left;width:100%;border:0;border-radius:9px;background:#edf2ff;color:var(--blue);padding:10px 8px;margin:7px 0;cursor:pointer;font:700 12px/1.4 Manrope,Arial,sans-serif}
+.week-item.events{background:var(--lime)}.week-item.courses{background:#e4ebff}.week-item.regular{background:#eaf6d4}
+.week-item strong{display:block;font-weight:900;font-size:12px}
+.programme-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:25px}
+.programme-card{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;min-width:0}
+.programme-card.highlight{background:#eaf6d4}
+.programme-kicker{font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:.1em;color:var(--muted)}
+.programme-card h3{font:800 clamp(26px,3vw,37px)/1.06 'Roboto Condensed',Arial,sans-serif;margin:13px 0}
+.programme-card p{font-size:14px;line-height:1.65}
+.programme-card .meta{font-size:13px;font-weight:800;color:#3e5d9a}
+.programme-card details{margin:12px 0 16px;border-top:1px solid var(--line);padding-top:14px}
+.programme-card summary{font-weight:900;cursor:pointer}
+.programme-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.programme-actions a{display:inline-flex;background:var(--blue);padding:12px 19px;border-radius:28px;color:white;text-decoration:none;font-weight:800;font-size:13px}
+.programme-price{font-weight:900;font-size:15px}
+.programme-empty{color:var(--muted);font-size:13px}.programme-note{color:var(--muted);font-size:12px;max-width:850px}
+.programme-card:target{outline:3px solid var(--lime)}
+.programme-byline{font-size:13px;line-height:1.7;font-weight:650;margin:4px 0 15px}
+.programme-byline a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.programme-age{color:#526aa3;font-size:12px;font-weight:700;margin:10px 0 0}
+@media(max-width:1050px){.week-days{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){.week-days{grid-template-columns:repeat(2,minmax(0,1fr))}.programme-list{grid-template-columns:1fr}.week-day{min-height:120px}.programme-hero:after{opacity:.28}.programme-hero h1{font-size:60px}}
+@media(max-width:380px){.week-days{grid-template-columns:1fr}.programme-main{padding-left:12px;padding-right:12px}}
+
+/* Compact editorial cards: one fact per line, full page rather than tiny inline details */
+.programme-card-compact{gap:0;min-height:290px;padding:clamp(20px,3vw,30px);transition:box-shadow .2s ease,transform .2s ease}
+.programme-card-compact:hover{box-shadow:0 15px 32px rgba(23,66,189,.08);transform:translateY(-2px)}
+.programme-card-compact h3{font-size:clamp(29px,3vw,39px);line-height:1.04;letter-spacing:-.01em;margin:13px 0 20px}
+.programme-preview-facts{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:16px}
+.preview-date{font:800 15px/1.4 Manrope,Arial,sans-serif}
+.preview-time{font:900 clamp(23px,3vw,32px)/1.2 'Roboto Condensed',Arial,sans-serif}
+.preview-language{background:#f0f4ff;border-radius:20px;font-weight:800;padding:5px 11px;font-size:12px}
+.preview-price{font:900 16px/1.4 Manrope,Arial,sans-serif;margin:2px 0 15px;color:#1742bd}
+.programme-more{display:flex;justify-content:space-between;align-items:center;background:#1742bd;color:white;text-decoration:none;font-size:14px;font-weight:900;border-radius:40px;padding:13px 20px;margin-top:auto}
+.programme-more:hover,.programme-more:focus-visible{background:#0828a3}
+.programme-card-compact.highlight .programme-more{background:#1742bd;color:white}
+.week-item{text-decoration:none}
+.week-item:hover,.week-item:focus-visible{outline:2px solid #1742bd;outline-offset:2px}
+@media(max-width:700px){.programme-card-compact{min-height:270px}}
+</style><style>
+/* Embedded within the ArtHub landing page. Keep standalone timetable URL available. */
+html.programme-embedded body{background:transparent}
+html.programme-embedded .programme-main{max-width:none;padding:0 2px 20px}
+html.programme-embedded .programme-nav,
+html.programme-embedded .programme-hero{display:none}
+html.programme-embedded .programme-section{padding-top:20px}
+html.programme-embedded .programme-section h2{font-size:clamp(34px,4vw,52px)}
+html.programme-embedded .programme-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:720px){html.programme-embedded .programme-list{grid-template-columns:1fr}}
+</style><style>
+.ah-page-languages { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; }
+.ah-page-languages a { color: inherit; padding: 5px 2px; white-space: nowrap; }
+.ah-page-languages a[aria-current="page"] { font-weight: 850; text-decoration: underline; }
+.ah-embed-language { display: none; }
+</style><link rel="icon" href="/arthub-star.svg" type="image/svg+xml"><link rel="canonical" href="https://arthubtbilisi.com/en/programme/"><link rel="alternate" hreflang="ru" href="https://arthubtbilisi.com/programme/"><link rel="alternate" hreflang="en" href="https://arthubtbilisi.com/en/programme/"><link rel="alternate" hreflang="x-default" href="https://arthubtbilisi.com/programme/"><meta property="og:type" content="website"><meta property="og:site_name" content="ArtHub Tbilisi"><meta property="og:url" content="https://arthubtbilisi.com/en/programme/"><meta property="og:title" content="Class timetable — ArtHub Tbilisi"><meta property="og:description" content="Weekly timetable for regular classes and courses at ArtHub Tbilisi. Find class times and groups open for enrolment."><meta property="og:image" content="https://arthubtbilisi.com/site-photos/workshop-01.webp"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"></head>
+<body><main class="programme-main">
+<nav class="programme-nav"><a href="/en/" data-ru="← ArtHub" data-en="← ArtHub">← ArtHub</a><a href="#calendar" data-ru="Календарь" data-en="Calendar">Calendar</a><a href="#groups" data-ru="Регулярные группы" data-en="Regular groups">Regular groups</a><a href="/en/teachers/" data-ru="Преподаватели" data-en="Teachers">Teachers</a><div class="programme-lang"><button data-lang="ru" aria-pressed="true" class="ah-embed-language">RU</button><button data-lang="en" aria-pressed="false" class="ah-embed-language">EN</button></div><span class="ah-page-languages" aria-label="Site language"><a href="/programme/" hreflang="ru" lang="ru">RU</a><a href="/en/programme/" hreflang="en" lang="en" aria-current="page">EN</a></span></nav>
+<section class="programme-hero"><p class="programme-eyebrow" data-ru="ART HUB TBILISI · Программа" data-en="ART HUB TBILISI · Programme">ART HUB TBILISI · Programme</p><h1 data-ru="Приходите делать" data-en="Come and make">Come and make</h1><p data-ru="Регулярные мастерские и курсы ArtHub. Выберите неделю и занятие, чтобы увидеть подробности и записаться." data-en="Regular classes and ongoing courses at ArtHub. Select a week and class to see details and book.">Regular classes and ongoing courses at ArtHub. Select a week and class to see details and book.</p></section>
+<section class="programme-section" id="calendar"><h2 data-ru="Расписание по неделям" data-en="Week by week">Week by week</h2><p data-ru="Только занятия: голубым выделены курсы с набором, светло-зелёным — регулярные мастерские." data-en="Classes only: enrolling courses are highlighted in blue and regular groups in pale green.">Classes only: enrolling courses are highlighted in blue and regular groups in pale green.</p>
+<div class="programme-weeknav"><strong id="weekLabel"></strong><button id="prevWeek" type="button" data-ru="← Раньше" data-en="← Earlier">← Earlier</button><button id="thisWeek" type="button" data-ru="Эта неделя" data-en="This week">This week</button><button id="nextWeek" type="button" data-ru="Позже →" data-en="Later →">Later →</button></div>
+<div class="programme-filter"><button data-filter="all" aria-pressed="true" data-ru="Все" data-en="All">All</button><button data-filter="regular" aria-pressed="false" data-ru="Регулярные" data-en="Regular">Regular</button><button data-filter="courses" aria-pressed="false" data-ru="Идёт набор" data-en="Enrolling">Enrolling</button></div>
+<div id="weekGrid" class="week-days" aria-live="polite"></div><p class="programme-note" data-ru="Регулярные занятия и курсы ArtHub. Расписание и стоимость могут уточняться при наборе группы." data-en="Regular classes and courses at ArtHub. Confirm group details when booking.">Regular classes and courses at ArtHub. Confirm group details when booking.</p>
+</section>
+
+<p class="programme-note" data-ru="ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Запись через Telegram ArtHub." data-en="ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Register via ArtHub Telegram.">ArtHub Tbilisi · 172 Davit Aghmashenebeli Ave, Tbilisi · Register via ArtHub Telegram.</p>
+</main><script src="/programme/programme.js?v=20261123-seo"></script><dialog id="programmeDetailDialog" class="programme-dialog" aria-label="Class details"><button type="button" onclick="this.closest('dialog').close()" aria-label="Close">×</button><iframe id="programmeDetailFrame" title="Class details"></iframe></dialog>
+<style>.programme-dialog{width:min(1000px,96vw);height:90dvh;max-height:90dvh;padding:0;border:0;border-radius:20px;box-shadow:0 25px 80px #102d7566}.programme-dialog::backdrop{background:#081e69ac}.programme-dialog iframe{width:100%;height:100%;border:0}.programme-dialog>button{position:absolute;right:12px;top:10px;z-index:5;border:0;border-radius:100%;width:42px;height:42px;background:#d0e102;color:#1742bd;font-size:27px;cursor:pointer}</style><script>
+(function(){
+ const embedded=new URLSearchParams(location.search).get('embed')==='1';
+ if(embedded)document.documentElement.classList.add('programme-embedded');
+ function detailUrl(id){
+  return 'programme/detail.html?item='+encodeURIComponent(id)+'&lang='+document.documentElement.lang;
+ }
+ window.addEventListener('message',function(e){
+  if(e.origin!==location.origin || !e.data || e.data.type!=='arthub:lang')return;
+  if(e.data.lang==='ru'||e.data.lang==='en'){
+    const btn=document.querySelector('[data-lang="'+e.data.lang+'"]');
+    if(btn)btn.click();
+  }
+ });
+ document.addEventListener('click',function(e){
+  const a=e.target.closest('a[href*="/programme/detail?item="]');
+  if(!a)return;
+  const url=new URL(a.getAttribute('href'),location.href);
+  const item=url.searchParams.get('item');if(!item)return;
+  e.preventDefault();
+  if(embedded&&window.parent!==window){
+   parent.postMessage({type:'arthub:detail',item:item,lang:document.documentElement.lang},location.origin);
+  }else{
+   const dialog=document.getElementById('programmeDetailDialog');
+   const frame=document.getElementById('programmeDetailFrame');
+   frame.src=url.href;dialog.showModal();
+  }
+ });
+ if(embedded&&window.parent!==window){
+  let lastHeight=0;
+  const sendHeight=()=>{
+   const h=Math.ceil(document.body.scrollHeight);
+   if(Math.abs(h-lastHeight)>6){lastHeight=h;parent.postMessage({type:'arthub:height',height:h},location.origin)}
+  };
+  if('ResizeObserver' in window)new ResizeObserver(sendHeight).observe(document.body);
+  window.addEventListener('load',sendHeight);
+  document.addEventListener('click',()=>requestAnimationFrame(sendHeight));
+  sendHeight();
+ }
+})();
+</script></body></html>

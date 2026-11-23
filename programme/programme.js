@@ -56,7 +56,7 @@ function card(item){
  const kind=event?(lang()==='ru'?'Событие':'Event'):
    item.type==='courses'?(lang()==='ru'?'Идёт набор':'Enrolling'):
    (lang()==='ru'?'Регулярно':'Weekly');
- const href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
+ const href='/programme/detail?item='+encodeURIComponent(item.id)+'&lang='+lang();
  return '<article class="programme-card programme-card-compact '+(event?'highlight':'')+'" id="'+id+'">'+
   '<span class="programme-kicker">'+kind+'</span>'+
   '<h3>'+loc(item.title)+'</h3>'+
@@ -82,7 +82,7 @@ $('weekGrid').replaceChildren();
 for(let i=0;i<7;i++){const date=dateAdd(monday,i),day=document.createElement('div');day.className='week-day';
 const h=document.createElement('header');h.textContent=format(date,{weekday:'short',day:'numeric',month:'short'});day.append(h);
 const items=entries(date);if(!items.length){const p=document.createElement('p');p.className='programme-empty';p.textContent=lang()==='ru'?'Нет записей':'No sessions';day.append(p)}
-items.forEach(({item,time})=>{const a=document.createElement('a');a.className='week-item '+item.type;a.href='detail.html?item='+encodeURIComponent(item.id)+'&lang='+lang();
+items.forEach(({item,time})=>{const a=document.createElement('a');a.className='week-item '+item.type;a.href='/programme/detail?item='+encodeURIComponent(item.id)+'&lang='+lang();
 const tt=document.createElement('strong');tt.textContent=time;a.append(tt,document.createTextNode(loc(item.title)));day.append(a)});$('weekGrid').append(day)}
 if($('groupCards'))$('groupCards').innerHTML=groups.map(card).join('');
 document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
