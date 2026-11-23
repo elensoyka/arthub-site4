@@ -1,0 +1,352 @@
+.ah-photo {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.ah-photo-open, .ah-photo-open img {
+  display: block;
+  width: 100%;
+}
+
+.ah-photo-open img {
+  height: auto;
+}
+
+.ah-photo-open[hidden] {
+  display: none;
+}
+
+.ah-photo-open {
+  cursor: zoom-in;
+}
+
+.ah-photo-open:focus-visible {
+  outline: 3px solid var(--ah-blue);
+  outline-offset: -4px;
+}
+
+.ah-offer > .ah-photo {
+  border-radius: 0;
+}
+
+.ah-photo-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  background: #eef2fc;
+  color: var(--ah-navy);
+}
+
+.ah-photo-controls[hidden] {
+  display: none;
+}
+
+.ah-photo-controls button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.ah-photo-controls button:hover:not(:disabled) {
+  background: #dce5f9;
+}
+
+.ah-photo-controls button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.ah-photo-count {
+  min-width: 38px;
+  text-align: center;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ah-offer-grid {
+  align-items: start;
+}
+
+#kids .ah-offer-grid, .ah-paired-offers, .ah-offer-grid.ah-text-offers {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#kids .ah-offer-grid, .ah-paired-offers {
+  max-width: 960px;
+}
+
+.ah-text-offers:not(:first-child) {
+  margin-block: 18px;
+}
+
+.ah-room, #needle-felting, #room-hire, #exhibition-weeks, #how-to-find, #contacts {
+  scroll-margin-top: 90px;
+}
+
+.ah-room {
+  margin-top: clamp(44px, 7vw, 86px);
+  padding-top: clamp(25px, 4vw, 42px);
+  border-top: 1px solid #b8c9ec;
+}
+
+.ah-room:first-of-type {
+  margin-top: 32px;
+}
+
+.ah-room h3, .ah-find h2 {
+  margin: 0 0 12px;
+  color: var(--ah-blue);
+  font: 800 clamp(34px, 5vw, 56px)/1.04 'Roboto Condensed', Arial, sans-serif;
+}
+
+.ah-room-intro p, .ah-room-hire p {
+  max-width: 690px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ah-room-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.ah-room-links .ah-offer-link, .ah-find a, .ah-room-rate a {
+  margin-top: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ah-room-nav {
+  gap: 8px;
+}
+
+.ah-room-jump {
+  padding: 9px 15px;
+  border: 1px solid #b8c9ec;
+  border-radius: 999px;
+  color: var(--ah-blue);
+  font-weight: 800;
+}
+
+.ah-room-jump:hover {
+  background: #e7efff;
+}
+
+.ah-ordered-gallery, .ah-entrance-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(8px, 1.3vw, 16px);
+  margin-top: 24px;
+}
+
+.ah-ordered-exhibition {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ah-entrance-gallery {
+  max-width: 820px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ah-room-hire, .ah-room-felting {
+  margin-top: 26px;
+  padding: clamp(15px, 2vw, 26px);
+  border: 1px solid #d5dfef;
+  border-radius: 21px;
+  background: #eef2fc;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 3vw, 38px);
+}
+
+.ah-room-hire .ah-editor-button {
+  margin-top: 16px;
+}
+
+.ah-room-hire h4, .ah-room-felting h3 {
+  margin: 0 0 9px;
+  font: 800 clamp(25px, 3vw, 37px)/1.1 'Roboto Condensed', Arial, sans-serif;
+}
+
+.ah-room-hire dl {
+  max-width: 400px;
+  margin: 14px 0;
+}
+
+.ah-room-hire dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #d5dfef;
+}
+
+.ah-room-hire dd {
+  margin: 0;
+  color: var(--ah-blue);
+  font-weight: 800;
+  text-align: right;
+}
+
+.ah-room-felting {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+}
+
+.ah-room-felting .ah-offer-body {
+  padding: 0;
+}
+
+.ah-room-intro-with-rate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px 24px;
+}
+
+.ah-room-rate {
+  display: grid;
+  gap: 3px;
+  padding: 15px 20px;
+  border-radius: 18px;
+  background: var(--ah-lime);
+}
+
+.ah-room-rate strong {
+  font-size: 21px;
+}
+
+.ah-menu-toggle {
+  display: none;
+}
+
+.ah-photo-dialog, .ah-class-dialog {
+  max-width: calc(100vw - 20px);
+  max-height: calc(100dvh - 20px);
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: #fafaf4;
+}
+
+.ah-photo-dialog::backdrop, .ah-class-dialog::backdrop {
+  background: rgba(9, 21, 50, .88);
+}
+
+.ah-photo-dialog img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 20px);
+}
+
+.ah-class-dialog {
+  width: min(960px, calc(100vw - 20px));
+  height: min(880px, calc(100dvh - 20px));
+}
+
+.ah-class-dialog iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.ah-dialog-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #b8c9ec;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ah-navy);
+  cursor: pointer;
+  font-size: 28px;
+}
+
+@media (max-width: 1050px) {
+  .topbar {
+    gap: 6px;
+  }
+
+  .ah-menu-toggle {
+    display: block;
+    min-height: 40px;
+    padding: 4px 9px;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .topbar .nav {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    overflow-y: auto;
+    max-height: calc(100dvh - 75px);
+    padding: 14px clamp(16px, 5vw, 50px);
+    background: #173ed8;
+  }
+
+  .topbar .nav.is-open {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px 9px;
+  }
+
+  .topbar .nav a {
+    padding: 12px 4px;
+  }
+}
+
+@media (max-width: 700px) {
+  #kids .ah-offer-grid, .ah-paired-offers, .ah-offer-grid.ah-text-offers,
+  .ah-room-hire, .ah-room-felting {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ah-ordered-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ah-ordered-gallery > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .ah-editor-hero h1 {
+    font-size: clamp(40px, 12.7vw, 79px);
+  }
+
+  .topbar {
+    padding-inline: 14px;
+  }
+
+  .topbar .brand {
+    font-size: clamp(22px, 6vw, 28px);
+    gap: 5px;
+  }
+
+  .topbar .brand-star-image {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+  }
+}
