@@ -89,6 +89,13 @@ html.ah-landing {
   scroll-margin-top: 0;
 }
 
+/* Allow the final section to align below the header when opened by its link. */
+.ah-landing #contacts:target {
+  min-block-size: calc(100vh - var(--ah-header-height, 78px) - 14px);
+  min-block-size: calc(100dvh - var(--ah-header-height, 78px) - 14px);
+  align-content: start;
+}
+
 .ah-room {
   margin-top: clamp(44px, 7vw, 86px);
   padding-top: clamp(25px, 4vw, 42px);
