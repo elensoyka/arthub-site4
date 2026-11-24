@@ -13,6 +13,11 @@
   height: auto;
 }
 
+.ah-photo-portrait .ah-photo-open img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
 .ah-photo-open[hidden] {
   display: none;
 }
