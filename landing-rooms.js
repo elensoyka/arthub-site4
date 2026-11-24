@@ -2,6 +2,15 @@
   const menuButton = document.querySelector('.ah-menu-toggle');
   const navigation = document.getElementById('site-navigation');
 
+  const header = navigation.closest('.topbar');
+  function updateHeaderOffset() {
+    document.documentElement.style.setProperty(
+      '--ah-header-height', `${header.offsetHeight}px`
+    );
+  }
+  updateHeaderOffset();
+  if ('ResizeObserver' in window) new ResizeObserver(updateHeaderOffset).observe(header);
+
   function setMenu(open) {
     menuButton.setAttribute('aria-expanded', String(open));
     navigation.classList.toggle('is-open', open);

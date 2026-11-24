@@ -75,8 +75,18 @@
   margin-top: 18px;
 }
 
-.ah-room, #needle-felting, #room-hire, #exhibition-weeks, #how-to-find, #contacts {
-  scroll-margin-top: 90px;
+html.ah-landing {
+  scroll-behavior: auto;
+  scroll-padding-top: calc(var(--ah-header-height, 78px) + 14px);
+}
+
+/* Align the section's visible content below the header, excluding its top padding. */
+#top > .ah-editor-section[id] {
+  scroll-margin-top: calc(0px - var(--ah-section-inset));
+}
+
+#top #for-schools {
+  scroll-margin-top: 0;
 }
 
 .ah-room {
@@ -340,10 +350,6 @@
   overflow-wrap: anywhere;
 }
 
-#workshop-hire {
-  scroll-margin-top: 90px;
-}
-
 .ah-workshop-hire .ah-room-hire-copy > p {
   max-width: 460px;
 }
@@ -352,4 +358,5 @@
 
 #open-studio + #courses {
   padding-block-start: 0;
+  scroll-margin-top: 0;
 }
