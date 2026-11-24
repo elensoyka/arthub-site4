@@ -370,3 +370,31 @@
 }
 
 .ah-room-hire-copy .ah-photo { margin-top: 14px; }
+
+.ah-open-studio-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.ah-open-studio-grid .ah-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+}
+
+
+#open-studio + #courses {
+  padding-block-start: 0;
+}
+
+@media (max-width: 1050px) {
+  .ah-open-studio-grid .ah-offer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .ah-open-studio-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
