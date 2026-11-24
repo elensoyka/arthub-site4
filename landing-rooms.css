@@ -71,20 +71,8 @@
   font-variant-numeric: tabular-nums;
 }
 
-.ah-offer-grid {
-  align-items: start;
-}
-
-#kids .ah-offer-grid, .ah-paired-offers, .ah-offer-grid.ah-text-offers {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-#kids .ah-offer-grid, .ah-paired-offers {
-  max-width: 960px;
-}
-
-.ah-text-offers:not(:first-child) {
-  margin-block: 18px;
+.ah-offer-grid + .ah-offer-grid {
+  margin-top: 18px;
 }
 
 .ah-room, #needle-felting, #room-hire, #exhibition-weeks, #how-to-find, #contacts {
@@ -201,14 +189,6 @@
   text-align: right;
 }
 
-.ah-room-felting {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
-}
-
-.ah-room-felting .ah-offer-body {
-  padding: 0;
-}
-
 .ah-room-intro-with-rate {
   display: flex;
   flex-wrap: wrap;
@@ -318,8 +298,7 @@
 }
 
 @media (max-width: 700px) {
-  #kids .ah-offer-grid, .ah-paired-offers, .ah-offer-grid.ah-text-offers,
-  .ah-room-hire, .ah-room-felting {
+  .ah-room-hire {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -371,30 +350,6 @@
 
 .ah-room-hire-copy .ah-photo { margin-top: 14px; }
 
-.ah-open-studio-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-}
-
-.ah-open-studio-grid .ah-offer {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  align-items: start;
-}
-
-
 #open-studio + #courses {
   padding-block-start: 0;
-}
-
-@media (max-width: 1050px) {
-  .ah-open-studio-grid .ah-offer {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .ah-open-studio-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
